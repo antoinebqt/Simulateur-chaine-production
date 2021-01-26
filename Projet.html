@@ -14,6 +14,7 @@ var z=0;
 var CLOCK=100;
 let object1 = [];
 let object2 = [];
+var stockage1 = 0;
 
 function myFunction(){
   z++;
@@ -28,6 +29,7 @@ function init(){
   object1 = [x, y];
   x+=30;
   object2 = [x, y];
+  stokage1 = 0;
   
 
   document.getElementById('canvas')
@@ -37,37 +39,57 @@ function init(){
         ctx.fillRect(100, 100, 50, 50);
 
         ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-        ctx.fillRect(200, 100, 50, 3);
+        ctx.fillRect(0, 100, 200, 3);
 }
 
 function clock(){ 
   document.getElementById('canvas')
     var ctx = document.getElementById('canvas').getContext('2d'); 
-  if (z==0){
-    ctx.clearRect(0,0,1000,800);
-    ctx.fillStyle = 'green';  
-    ctx.fillRect(object1[0], object1[1], 10, 10); 
-    ctx.fillStyle = 'blue'; 
-    ctx.fillRect(object2[0], object2[1], 10, 10); 
-    object1[0]+=2;
-    object2[0]+=2;  
-  }
+  
+  if (stokage1!=9)
+  {
+    if (z==0){
+      ctx.clearRect(0,0,1000,800);
+      ctx.fillStyle = 'green';  
+      ctx.fillRect(object1[0], object1[1], 10, 10); 
+      ctx.fillStyle = 'blue'; 
+      ctx.fillRect(object2[0], object2[1], 10, 10); 
+      object1[0]+=2;
+      object2[0]+=2;  
+    }
 
-  if (z==1){
-    ctx.clearRect(0,0,1000,800);
-    ctx.fillStyle = 'green';  
-    ctx.fillRect(object1[0], object1[1], 10, 10); 
-    ctx.fillStyle = 'blue'; 
-    ctx.fillRect(object2[0], object2[1], 10, 10);   
-    object1[1]+=2;
-    object2[1]+=2; 
+    if (z==1){
+      ctx.clearRect(0,0,1000,800);
+      ctx.fillStyle = 'green';  
+      ctx.fillRect(object1[0], object1[1], 10, 10); 
+      ctx.fillStyle = 'blue'; 
+      ctx.fillRect(object2[0], object2[1], 10, 10);   
+      object1[1]+=2;
+      object2[1]+=2; 
+    }
   }
-
+  if (object1[0]==200)
+  {
+      object1[0]=0;
+      stokage1++;
+  }
+  if (object2[0]==200)
+  {
+      object2[0]=0;
+      stokage1++;
+  }
+  ctx.strokeStyle = 'rgb(200, 0, 0)';
+  for (let i = 0; i<stokage1; i++)
+  {
+       
+  }
         ctx.strokeStyle = 'rgb(200, 0, 0)';
-        ctx.strokeRect(100, 100, 50, 50);
+        ctx.strokeRect(220, 80, 50, 50);
 
         ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-        ctx.fillRect(200, 110, 50, 3);
+        ctx.fillRect(0, 110, 200, 3);
+
+  
   setTimeout(function(){clock()},CLOCK);
 }
 window.onload = init;
