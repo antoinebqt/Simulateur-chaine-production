@@ -40,8 +40,8 @@ function animation(){
   document.getElementById('canvas')
     var ctx = document.getElementById('canvas').getContext('2d'); 
       
-      convoyor1();
-      stokage1();
+      requestAnimationFrame(convoyor1);
+      requestAnimationFrame(stokage1);
   
 
   setTimeout(function(){animation()},CLOCK);
@@ -61,8 +61,8 @@ function animation(){
   }
         ctx.fillStyle = convoyor1_set[4];
         ctx.fillRect(convoyor1_set[0], convoyor1_set[1] , convoyor1_set[2], convoyor1_set[3]);
-}
-function stokage1(){
+  }
+  function stokage1(){
   let i = 0;
   if (stockage1_place<stockage1_place_m)
   {
