@@ -2,7 +2,7 @@
 	<html>
 		<body>
 			<div>
-		    	<button onclick="myFunction()">Click me</button>
+		    	<button onclick="NewItem()">Click me</button>
 				<script src="convoyeur.js"></script>
 				<script src="generateur.js"></script>
 			</div>
@@ -30,8 +30,58 @@
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
 			];
-			//ajoute un element
-			function myFunction(){
+
+
+			
+			//Ici on place tous les elements
+			function init()
+			{
+  				var ctx = document.getElementById('canvas').getContext('2d'); 
+				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
+  				Convoyeur(Xgenerateur+25,3*Ygenerateur,3*TailleGenerateur,1,ctx);
+  				Convoyeur(Xgenerateur+55,5*Ygenerateur,3*TailleGenerateur,1,ctx);
+
+			}
+			function clock(){
+  				var ctx = document.getElementById('canvas').getContext('2d'); 
+ 				
+ 				Deplacement(Positions)
+
+ 				//actualise toutes les nouvelles positions
+ 				for (let i = 0; i<max;i++)
+			 	{
+			 		if (Positions[i][0]>0 && Positions[i][0]<800)
+			 		{
+			 			//enleve l'ancien objet
+  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-1, TailleGenerateur/2+1,TailleGenerateur/2+1);
+					 	//nouvel position de l'objet
+					 	ctx.fillStyle = 'green';  
+					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2,TailleGenerateur/2);
+				 	}
+			 	}
+
+  				setTimeout(function(){clock()},CLOCK);
+  				
+			}
+			window.onload = init;
+			window.requestAnimationFrame(clock);
+
+			//gere le deplacement en fonction des éléments se trouvant aux alentours
+			function Deplacement(Positions)
+			{
+				for (let i = 0; i<max;i++)
+			 	{
+			 		if (Positions[i][0]!='')
+			 		{
+				 		var x = Positions[i][0];
+				 		var y = Positions[i][1];
+				 		Positions[i]=[x+1,y];
+			 		}
+			 	}
+			}
+
+			//ajoute un element et enregistre ses coordonnées
+			function NewItem(){
 				var x = Xgenerateur, y = Ygenerateur, taille = TailleGenerateur
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				ctx.fillStyle = 'green';  
@@ -44,48 +94,6 @@
 			 			Positions[i][0]=x+10;
 			 			Positions[i][1]=y+taille/4;
 			 			break;
-			 		}
-			 	}
-			}
-
-			function init()
-			{
-  				var ctx = document.getElementById('canvas').getContext('2d'); 
-				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
-  				Convoyeur(Xgenerateur+25,3*Ygenerateur,3*TailleGenerateur,1,ctx);
-  				Convoyeur(Xgenerateur+55,5*Ygenerateur,3*TailleGenerateur,1,ctx);
-
-			}
-			function clock(){
-  				var ctx = document.getElementById('canvas').getContext('2d'); 
- 				Deplacement(Positions)
-
- 				for (let i = 0; i<max;i++)
-			 	{
-			 		if (Positions[i][0]>0 && Positions[i][0]<800)
-			 		{
-  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-1, TailleGenerateur/2+1,TailleGenerateur/2+1);
-					 	ctx.fillStyle = 'green';  
-					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2,TailleGenerateur/2);
-
-				 	}
-			 	}
-
-  				setTimeout(function(){clock()},CLOCK);
-  				
-			}
-			window.onload = init;
-			window.requestAnimationFrame(clock);
-
-			function Deplacement(Positions)
-			{
-				for (let i = 0; i<max;i++)
-			 	{
-			 		if (Positions[i][0]!='')
-			 		{
-				 		var x = Positions[i][0];
-				 		var y = Positions[i][1];
-				 		Positions[i]=[x+1,y];
 			 		}
 			 	}
 			}
