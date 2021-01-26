@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+	<html>
+		<body>
+			<div>
+		    	<button onclick="myFunction()">Click me</button>
+				<script src="convoyeur.js"></script>
+				<script src="generateur.js"></script>
+			</div>
+			<div>
+				<canvas id="canvas" width="800" height="800"></canvas>
+			</div>
+		</body>
+
+		<script>
+
+			var CLOCK=100;
+			var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50; 
+
+			//stockage de la position des objets
+			var max=50;
+			let Positions=[
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['',''],
+			];
+			//ajoute un element
+			function myFunction(){
+				var x = Xgenerateur, y = Ygenerateur, taille = TailleGenerateur
+  				var ctx = document.getElementById('canvas').getContext('2d'); 
+				ctx.fillStyle = 'green';  
+			 	ctx.fillRect(x+10, y+taille/4, taille/2,taille/2);
+			 	for (let i = 0; i<max;i++)
+			 	{
+			 		//dès qu'un emplacement est libre
+			 		if (Positions[i][0]=='')
+			 		{
+			 			Positions[i][0]=x+10;
+			 			Positions[i][1]=y+taille/4;
+			 			break;
+			 		}
+			 	}
+			}
+
+			function init()
+			{
+  				var ctx = document.getElementById('canvas').getContext('2d'); 
+				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
+  				Convoyeur(Xgenerateur+25,3*Ygenerateur,3*TailleGenerateur,1,ctx);
+  				Convoyeur(Xgenerateur+55,5*Ygenerateur,3*TailleGenerateur,1,ctx);
+
+			}
+			function clock(){
+  				var ctx = document.getElementById('canvas').getContext('2d'); 
+ 				Deplacement(Positions)
+
+ 				for (let i = 0; i<max;i++)
+			 	{
+			 		if (Positions[i][0]>0 && Positions[i][0]<800)
+			 		{
+  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-1, TailleGenerateur/2+1,TailleGenerateur/2+1);
+					 	ctx.fillStyle = 'green';  
+					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2,TailleGenerateur/2);
+
+				 	}
+			 	}
+
+  				setTimeout(function(){clock()},CLOCK);
+  				
+			}
+			window.onload = init;
+			window.requestAnimationFrame(clock);
+
+			function Deplacement(Positions)
+			{
+				for (let i = 0; i<max;i++)
+			 	{
+			 		if (Positions[i][0]!='')
+			 		{
+				 		var x = Positions[i][0];
+				 		var y = Positions[i][1];
+				 		Positions[i]=[x+1,y];
+			 		}
+			 	}
+			}
+		</script>
+	</body>
+
+</html>
