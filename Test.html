@@ -1,22 +1,78 @@
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <script type="application/javascript">
-    function draw() {
-      var canvas = document.getElementById("canvas");
-      if (canvas.getContext) {
-        var ctx = canvas.getContext("2d");
+<html><head></head><body>
+  <div>
+      <button onclick="myFunction()">Click me</button>
+  </div>
+  <div>
+    <canvas id="canvas" width="600" height="400"></canvas>
+  </div>
+
+
+<script>
+var x=0;
+var y=0;
+var z=0;
+var CLOCK=100;
+let object1 = [];
+let object2 = [];
+
+function myFunction(){
+  z++;
+  if (z==2){
+    z=0;
+  }  
+}
+
+function init(){
+  x=0;
+  y=100;
+  object1 = [x, y];
+  x+=30;
+  object2 = [x, y];
+  
+
+  document.getElementById('canvas')
+  var ctx = document.getElementById('canvas').getContext('2d');
 
         ctx.fillStyle = 'rgb(200, 0, 0)';
-        ctx.fillRect(10, 10, 50, 50);
+        ctx.fillRect(100, 100, 50, 50);
 
         ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-        ctx.fillRect(30, 30, 50, 50);
-      }
-    }
-  </script>
- </head>
- <body onload="draw();">
-   <canvas id="canvas" width="150" height="150"></canvas>
- </body>
-</html>
+        ctx.fillRect(200, 100, 50, 3);
+}
+
+function clock(){ 
+  document.getElementById('canvas')
+    var ctx = document.getElementById('canvas').getContext('2d'); 
+  if (z==0){
+    ctx.clearRect(0,0,1000,800);
+    ctx.fillStyle = 'green';  
+    ctx.fillRect(object1[0], object1[1], 10, 10); 
+    ctx.fillStyle = 'blue'; 
+    ctx.fillRect(object2[0], object2[1], 10, 10); 
+    object1[0]+=2;
+    object2[0]+=2;  
+  }
+
+  if (z==1){
+    ctx.clearRect(0,0,1000,800);
+    ctx.fillStyle = 'green';  
+    ctx.fillRect(object1[0], object1[1], 10, 10); 
+    ctx.fillStyle = 'blue'; 
+    ctx.fillRect(object2[0], object2[1], 10, 10);   
+    object1[1]+=2;
+    object2[1]+=2; 
+  }
+
+        ctx.strokeStyle = 'rgb(200, 0, 0)';
+        ctx.strokeRect(100, 100, 50, 50);
+
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+        ctx.fillRect(200, 110, 50, 3);
+  setTimeout(function(){clock()},CLOCK);
+}
+window.onload = init;
+window.requestAnimationFrame(clock);
+
+</script>
+
+</body></html>
