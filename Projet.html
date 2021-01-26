@@ -11,7 +11,7 @@
 var x=0;
 var y=0;
 var z=0;
-var CLOCK=100;
+var CLOCK=25;
 let object1 = [];
 let object2 = [];
 var stockage1 = 0;
@@ -45,6 +45,17 @@ function init(){
 function clock(){ 
   document.getElementById('canvas')
     var ctx = document.getElementById('canvas').getContext('2d'); 
+  if (object1[0]==200)
+  {
+      object1[0]=0;
+      stokage1++;
+  }
+
+  if (object2[0]==200)
+  {
+      object2[0]=0;
+      stokage1++;
+  }
   
   if (stokage1!=9)
   {
@@ -68,20 +79,22 @@ function clock(){
       object2[1]+=2; 
     }
   }
-  if (object1[0]==200)
-  {
-      object1[0]=0;
-      stokage1++;
-  }
-  if (object2[0]==200)
-  {
-      object2[0]=0;
-      stokage1++;
-  }
+
+
+  
+
   ctx.strokeStyle = 'rgb(200, 0, 0)';
-  for (let i = 0; i<stokage1; i++)
+  for (let i = 0; i<=stokage1; i++)
   {
-       
+       if (i==1) {ctx.fillRect(221, 81, 10, 10);}
+       if (i==2) {ctx.fillRect(232, 81, 10, 10);}
+       if (i==3) {ctx.fillRect(243, 81, 10, 10);}
+       if (i==4) {ctx.fillRect(221, 92, 10, 10);}
+       if (i==5) {ctx.fillRect(232, 92, 10, 10);}
+       if (i==6) {ctx.fillRect(243, 92, 10, 10);}
+       if (i==7) {ctx.fillRect(221, 103, 10, 10);}
+       if (i==8) {ctx.fillRect(232, 103, 10, 10);}
+       if (i==9) {ctx.fillRect(243, 103, 10, 10);}
   }
         ctx.strokeStyle = 'rgb(200, 0, 0)';
         ctx.strokeRect(220, 80, 50, 50);
