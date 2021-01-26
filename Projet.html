@@ -56,31 +56,25 @@ function clock(){
       object2[0]=0;
       stokage1++;
   }
-  
-  if (stokage1!=9)
+
+  if (stokage1<9)
   {
-    if (z==0){
-      ctx.clearRect(0,0,1000,800);
-      ctx.fillStyle = 'green';  
-      ctx.fillRect(object1[0], object1[1], 10, 10); 
-      ctx.fillStyle = 'blue'; 
-      ctx.fillRect(object2[0], object2[1], 10, 10); 
+    if (z==0){ 
       object1[0]+=2;
       object2[0]+=2;  
     }
 
-    if (z==1){
-      ctx.clearRect(0,0,1000,800);
-      ctx.fillStyle = 'green';  
-      ctx.fillRect(object1[0], object1[1], 10, 10); 
-      ctx.fillStyle = 'blue'; 
-      ctx.fillRect(object2[0], object2[1], 10, 10);   
+    if (z==1){  
       object1[1]+=2;
       object2[1]+=2; 
     }
   }
 
-
+ctx.clearRect(0,0,1000,800);
+      ctx.fillStyle = 'green';  
+      ctx.fillRect(object1[0], object1[1], 10, 10); 
+      ctx.fillStyle = 'blue'; 
+      ctx.fillRect(object2[0], object2[1], 10, 10);
   
 
   ctx.strokeStyle = 'rgb(200, 0, 0)';
