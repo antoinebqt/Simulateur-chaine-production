@@ -2,10 +2,8 @@
 function Deplacement(Positions){
 	var x, y;
 	var ctx = document.getElementById('canvas').getContext('2d'); 
-	Convoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
-	Convoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
 	for (let i = 0; i < max; i++){
- 		if((mouvement[i]==0) && (Positions[i][0]!='') && (Positions[i][1]!='')){
+ 		if(mouvement[i]==0 && Positions[i][0]!='' && Positions[i][1]!=''){
  			x = Positions[i][0];
 			y = Positions[i][1];
 			Positions[i] = [x, y + 1];

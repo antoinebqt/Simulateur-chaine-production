@@ -12,6 +12,7 @@
     <body>
       <div>
           <button onclick="NewItem()">Start</button>
+        <script src="variable.js"></script>
         <script src="convoyeur.js"></script>
         <script src="generateur.js"></script>
         <script src="deplacement.js"></script>
@@ -23,39 +24,22 @@
 
     <script>
 
-      var CLOCK = 75;
-      var ClockGenerateur = 5000;
-      var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
-      var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
-      var tailleCube=TailleGenerateur/2;
-      var Yconvoyeur = Ygenerateur + TailleGenerateur + 100;
-
-      //Stockage de la position des objets
-      var max = 50;
-      let Positions = [
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['',''],
-      ['',''],['',''],['',''],['',''],['','']
-      ];
-
+      
       //Ici on place tous les elements de la simulation
       function init(){
         var ctx = document.getElementById('canvas').getContext('2d'); 
-        Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
+        
         FirstConvoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
         FirstConvoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
+        Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
       }
 
       function clock(){
         var ctx = document.getElementById('canvas').getContext('2d'); 
-        
+        //pour chaque first convoyeur
+        Convoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
+        Convoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
+
         Deplacement(Positions);
         Nettoyage(Positions,ctx);
 
@@ -63,8 +47,6 @@
       }
       window.onload = init;
       window.requestAnimationFrame(clock);
-    
-       
     </script>
   </body>
 </html>
