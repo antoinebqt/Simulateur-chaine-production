@@ -27,6 +27,7 @@
 			var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
 			var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
 			var tailleCube=TailleGenerateur/2;
+			var Yconvoyeur = Ygenerateur + TailleGenerateur + 100;
 
 			//Stockage de la position des objets
 			var max = 50;
@@ -47,7 +48,7 @@
 			function init(){
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
-  				FirstConvoyeur(25,150,150,1,ctx,Positions,mouvement,tailleCube);
+  				FirstConvoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
   				FirstConvoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
 			}
 
@@ -60,7 +61,7 @@
  				for (let i = 0; i < max; i++){
 			 		if (Positions[i][0] > 0 && Positions[i][0] < canvas.width){
 			 			//Enleve l'ancien objet
-  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-1, TailleGenerateur/2, TailleGenerateur/2+2);
+  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-2, TailleGenerateur/2+1, TailleGenerateur/2+3);
 					 	//Créer l'objet avec sa nouvelle position
 					 	ctx.fillStyle = 'green';  
 					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2, TailleGenerateur/2);
@@ -79,13 +80,14 @@
 			function Deplacement(Positions){
 				var x, y;
 				var ctx = document.getElementById('canvas').getContext('2d'); 
-				Convoyeur(25,150,150,1,ctx,Positions,mouvement,tailleCube);
+				Convoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
 				Convoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
 				for (let i = 0; i < max; i++){
  						if((mouvement[i]==0) && (Positions[i][0]!='') && (Positions[i][1]!='')){
  							x = Positions[i][0];
 			                y = Positions[i][1];
 			                Positions[i] = [x, y + 1];
+			                mouvement[1]==1;
  						}
 			 	}
 				for (let i = 0; i < max; i++){
@@ -100,11 +102,11 @@
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				if (nbCube < max){
 					ctx.fillStyle = 'green';
-					ctx.fillRect(x + 15, y + tailleCube/2, tailleCube, tailleCube);
+					ctx.fillRect(x + 12, y + tailleCube/2, tailleCube, tailleCube);
 				 	for (let i = 0; i < max; i++){
 				 		//Dès qu'un emplacement est libre
 				 		if (Positions[i][0] == ''){
-				 			Positions[i][0] = x + 15;
+				 			Positions[i][0] = x + 12;
 				 			Positions[i][1] = y + tailleCube/2;
 				 			nbCube++;
 				 			break;
