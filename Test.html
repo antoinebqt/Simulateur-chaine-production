@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 	<html>
+		<head>
+			<title>Canvas Thomas Refined</title>
+			<style>
+				canvas {
+					border: 1px solid black;
+				}
+			</style>
+		</head>
 		<body>
 			<div>
-		    	<button onclick="NewItem()">Click me</button>
+		    	<button onclick="NewItem()">Start</button>
 				<script src="convoyeur.js"></script>
 				<script src="generateur.js"></script>
+				<script src="deplacement.js"></script>
 			</div>
 			<div>
 				<canvas id="canvas" width="800" height="800"></canvas>
@@ -13,12 +22,13 @@
 
 		<script>
 
-			var CLOCK=100;
+			var CLOCK = 100;
+			var ClockGenerateur = 5000;
 			var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50; 
 
-			//stockage de la position des objets
-			var max=50;
-			let Positions=[
+			//Stockage de la position des objets
+			var max = 50;
+			let Positions = [
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
@@ -28,76 +38,42 @@
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
-			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['','']
 			];
 
-
-			
-			//Ici on place tous les elements
-			function init()
-			{
+			//Ici on place tous les elements de la simulation
+			function init(){
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
-  				Convoyeur(Xgenerateur+25,3*Ygenerateur,3*TailleGenerateur,1,ctx);
-  				Convoyeur(Xgenerateur+55,5*Ygenerateur,3*TailleGenerateur,1,ctx);
-
+  				Convoyeur(25,100,150,1,ctx);
+  				Convoyeur(200,100,100,1,ctx);
 			}
+
 			function clock(){
   				var ctx = document.getElementById('canvas').getContext('2d'); 
  				
  				Deplacement(Positions)
 
- 				//actualise toutes les nouvelles positions
- 				for (let i = 0; i<max;i++)
-			 	{
-			 		if (Positions[i][0]>0 && Positions[i][0]<800)
-			 		{
-			 			//enleve l'ancien objet
-  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-1, TailleGenerateur/2+1,TailleGenerateur/2+1);
-					 	//nouvel position de l'objet
+ 				//Actualise toutes les nouvelles positions
+ 				for (let i = 0; i < max; i++){
+			 		if (Positions[i][0] > 0 && Positions[i][0] < canvas.width){
+			 			//Enleve l'ancien objet
+  						ctx.clearRect(Positions[i][0]-1, Positions[i][1]-1, TailleGenerateur/2, TailleGenerateur/2+2);
+					 	//Créer l'objet avec sa nouvelle position
 					 	ctx.fillStyle = 'green';  
-					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2,TailleGenerateur/2);
+					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2, TailleGenerateur/2);
+					 	//ecrit les nombres dans les objets
+					 	ctx.fillStyle = 'white';
+						ctx.font = '20px serif';
+  						ctx.fillText(i + 1, Positions[i][0], Positions[i][1] + 5 + TailleGenerateur/4);
 				 	}
 			 	}
-
   				setTimeout(function(){clock()},CLOCK);
-  				
 			}
+
 			window.onload = init;
 			window.requestAnimationFrame(clock);
 
-			//gere le deplacement en fonction des éléments se trouvant aux alentours
-			function Deplacement(Positions)
-			{
-				for (let i = 0; i<max;i++)
-			 	{
-			 		if (Positions[i][0]!='')
-			 		{
-				 		var x = Positions[i][0];
-				 		var y = Positions[i][1];
-				 		Positions[i]=[x+1,y];
-			 		}
-			 	}
-			}
-
-			//ajoute un element et enregistre ses coordonnées
-			function NewItem(){
-				var x = Xgenerateur, y = Ygenerateur, taille = TailleGenerateur
-  				var ctx = document.getElementById('canvas').getContext('2d'); 
-				ctx.fillStyle = 'green';  
-			 	ctx.fillRect(x+10, y+taille/4, taille/2,taille/2);
-			 	for (let i = 0; i<max;i++)
-			 	{
-			 		//dès qu'un emplacement est libre
-			 		if (Positions[i][0]=='')
-			 		{
-			 			Positions[i][0]=x+10;
-			 			Positions[i][1]=y+taille/4;
-			 			break;
-			 		}
-			 	}
-			}
 		</script>
 	</body>
-
 </html>
