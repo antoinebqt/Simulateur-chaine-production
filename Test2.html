@@ -23,7 +23,9 @@
 
 			var CLOCK = 50;
 			var ClockGenerateur = 5000;
-			var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50; 
+			var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
+			var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
+			var tailleCube=TailleGenerateur/2;
 
 			//Stockage de la position des objets
 			var max = 50;
@@ -37,15 +39,15 @@
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
-			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['','']
 			];
 
 			//Ici on place tous les elements de la simulation
 			function init(){
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
-  				Convoyeur(25,100,150,1,ctx,Positions);
-  				Convoyeur(200,100,100,1,ctx,Positions);
+  				FirstConvoyeur(25,100,150,1,ctx,Positions,mouvement,tailleCube);
+  				FirstConvoyeur(190,100,100,1,ctx,Positions,mouvement,tailleCube);
 			}
 
 			function clock(){
@@ -74,12 +76,11 @@
 
 			//Gere le deplacement en fonction des éléments se trouvant aux alentours
 			function Deplacement(Positions){
+				var ctx = document.getElementById('canvas').getContext('2d'); 
+				Convoyeur(25,100,150,1,ctx,Positions,mouvement,tailleCube);
+				Convoyeur(190,100,100,1,ctx,Positions,mouvement,tailleCube);
 				for (let i = 0; i < max; i++){
-			 		if (Positions[i][0] != ''){
-				 		var x = Positions[i][0];
-				 		var y = Positions[i][1];
-				 		Positions[i] = [x + 1,y];
-			 		}
+ 						mouvement[i]=0;
 			 	}
 			}
 
@@ -90,11 +91,11 @@
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				if (nbCube < max){
 					ctx.fillStyle = 'green';
-					ctx.fillRect(x + 10, y + tailleCube/2, tailleCube, tailleCube);
+					ctx.fillRect(x + 15, y + tailleCube/2, tailleCube, tailleCube);
 				 	for (let i = 0; i < max; i++){
 				 		//Dès qu'un emplacement est libre
 				 		if (Positions[i][0] == ''){
-				 			Positions[i][0] = x + 10;
+				 			Positions[i][0] = x + 15;
 				 			Positions[i][1] = y + tailleCube/2;
 				 			nbCube++;
 				 			break;
