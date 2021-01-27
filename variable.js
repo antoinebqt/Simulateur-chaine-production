@@ -1,6 +1,5 @@
 var CLOCK = 75;
 var ClockGenerateur = 5000;
-var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
 var tailleCube=TailleGenerateur/2;
 var Yconvoyeur = Ygenerateur + TailleGenerateur + 100;

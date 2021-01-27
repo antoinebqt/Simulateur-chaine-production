@@ -23,12 +23,12 @@
     </body>
 
     <script>
-
+      var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
       
       //Ici on place tous les elements de la simulation
       function init(){
         var ctx = document.getElementById('canvas').getContext('2d'); 
-        
+
         FirstConvoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
         FirstConvoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
         Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
