@@ -13,6 +13,7 @@
 		    	<button onclick="NewItem()">Start</button>
 				<script src="convoyeur.js"></script>
 				<script src="generateur.js"></script>
+				<script src="deplacement.js"></script>
 			</div>
 			<div>
 				<canvas id="canvas" width="800" height="800"></canvas>
@@ -37,7 +38,7 @@
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
 			['',''],['',''],['',''],['',''],['',''],
-			['',''],['',''],['',''],['',''],['',''],
+			['',''],['',''],['',''],['',''],['','']
 			];
 
 			//Ici on place tous les elements de la simulation
@@ -61,6 +62,7 @@
 					 	//Créer l'objet avec sa nouvelle position
 					 	ctx.fillStyle = 'green';  
 					 	ctx.fillRect(Positions[i][0], Positions[i][1], TailleGenerateur/2, TailleGenerateur/2);
+					 	//ecrit les nombres dans les objets
 					 	ctx.fillStyle = 'white';
 						ctx.font = '20px serif';
   						ctx.fillText(i + 1, Positions[i][0], Positions[i][1] + 5 + TailleGenerateur/4);
@@ -72,37 +74,6 @@
 			window.onload = init;
 			window.requestAnimationFrame(clock);
 
-			//Gere le deplacement en fonction des éléments se trouvant aux alentours
-			function Deplacement(Positions){
-				for (let i = 0; i < max; i++){
-			 		if (Positions[i][0] != ''){
-				 		var x = Positions[i][0];
-				 		var y = Positions[i][1];
-				 		Positions[i] = [x + 1,y];
-			 		}
-			 	}
-			}
-
-			//Ajoute un element et enregistre ses coordonnées
-			var nbCube = 0;
-			function NewItem(){
-				var x = Xgenerateur, y = Ygenerateur, tailleCube = TailleGenerateur/2;
-  				var ctx = document.getElementById('canvas').getContext('2d'); 
-				if (nbCube < max){
-					ctx.fillStyle = 'green';
-					ctx.fillRect(x + 10, y + tailleCube/2, tailleCube, tailleCube);
-				 	for (let i = 0; i < max; i++){
-				 		//Dès qu'un emplacement est libre
-				 		if (Positions[i][0] == ''){
-				 			Positions[i][0] = x + 10;
-				 			Positions[i][1] = y + tailleCube/2;
-				 			nbCube++;
-				 			break;
-				 		}
-				 	}
-				}
-			 	setTimeout(function(){NewItem()},ClockGenerateur);
-			}
 		</script>
 	</body>
 </html>
