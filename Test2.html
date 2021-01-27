@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+	<!DOCTYPE html>
 	<html>
 		<head>
 			<title>Canvas Thomas Refined</title>
@@ -46,8 +47,8 @@
 			function init(){
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
-  				FirstConvoyeur(25,100,150,1,ctx,Positions,mouvement,tailleCube);
-  				FirstConvoyeur(190,100,100,1,ctx,Positions,mouvement,tailleCube);
+  				FirstConvoyeur(25,150,150,1,ctx,Positions,mouvement,tailleCube);
+  				FirstConvoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
 			}
 
 			function clock(){
@@ -76,9 +77,17 @@
 
 			//Gere le deplacement en fonction des éléments se trouvant aux alentours
 			function Deplacement(Positions){
+				var x, y;
 				var ctx = document.getElementById('canvas').getContext('2d'); 
-				Convoyeur(25,100,150,1,ctx,Positions,mouvement,tailleCube);
-				Convoyeur(190,100,100,1,ctx,Positions,mouvement,tailleCube);
+				Convoyeur(25,150,150,1,ctx,Positions,mouvement,tailleCube);
+				Convoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
+				for (let i = 0; i < max; i++){
+ 						if((mouvement==0) && (Positions[i][0]!='')){
+ 							x = Positions[i][0];
+			                y = Positions[i][1];
+			                Positions[i] = [x, y + 1];
+ 						}
+			 	}
 				for (let i = 0; i < max; i++){
  						mouvement[i]=0;
 			 	}
