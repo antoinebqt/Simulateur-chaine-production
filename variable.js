@@ -1,8 +1,7 @@
-var CLOCK = 75;
-var ClockGenerateur = 5000;
-var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
-var tailleCube=TailleGenerateur/2;
-var Yconvoyeur = Ygenerateur + TailleGenerateur + 100;
+//Variable à parametrer 
+var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
+var CLOCK = 50;
+var ClockGenerateur = 4000;
 
 //Stockage de la position des objets
 var max = 50;
@@ -18,3 +17,7 @@ let Positions = [
       ['',''],['',''],['',''],['',''],['',''],
       ['',''],['',''],['',''],['',''],['','']
       ];
+
+//Autres variables générale
+var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var tailleCube = TailleGenerateur/2;

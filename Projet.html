@@ -1,52 +1,48 @@
 <!DOCTYPE html>
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Canvas Refined</title>
-      <style>
-        canvas {
-          border: 1px solid black;
-        }
-      </style>
-    </head>
-    <body>
-      <div>
-          <button onclick="NewItem()">Start</button>
-        <script src="variable.js"></script>
-        <script src="convoyeur.js"></script>
-        <script src="generateur.js"></script>
-        <script src="deplacement.js"></script>
-      </div>
-      <div>
-        <canvas id="canvas" width="800" height="800"></canvas>
-      </div>
-    </body>
-
-    <script>
-      var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
-      
-      //Ici on place tous les elements de la simulation
-      function init(){
-        var ctx = document.getElementById('canvas').getContext('2d'); 
-
-        FirstConvoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
-        FirstConvoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
-        Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
+<html>
+  <head>
+    <title>Canvas Refined</title>
+    <style>
+      canvas{
+        border: 1px solid black;
       }
-
-      function clock(){
-        var ctx = document.getElementById('canvas').getContext('2d'); 
-        //pour chaque first convoyeur
-        Convoyeur(10,150,150,1,ctx,Positions,mouvement,tailleCube);
-        Convoyeur(190,150,100,1,ctx,Positions,mouvement,tailleCube);
-
-        Deplacement(Positions);
-        Nettoyage(Positions,ctx);
-
-        setTimeout(function(){clock()},CLOCK);
-      }
-      window.onload = init;
-      window.requestAnimationFrame(clock);
-    </script>
+    </style>
+  </head>
+  <body>
+    <div>
+      <script src="variable.js"></script>
+      <script src="convoyeur.js"></script>
+      <script src="generateur.js"></script>
+      <script src="deplacement.js"></script>
+    </div>
+    <div>
+      <canvas id="canvas" width="800" height="800"></canvas>
+    </div>
   </body>
+
+  <script>
+    //Ici on place tous les elements de la simulation
+    function init(){
+      var ctx = document.getElementById('canvas').getContext('2d');
+
+      Generateur(Xgenerateur, Ygenerateur, TailleGenerateur, ctx);
+      FirstConvoyeur(10,150,150,1,ctx);
+      FirstConvoyeur(150,180,100,1,ctx);
+    }
+
+    function clock(){
+      var ctx = document.getElementById('canvas').getContext('2d'); 
+      //Pour chaque FirstConvoyeur
+      Convoyeur(10, 150, 150, 1, ctx, Positions, mouvement, tailleCube);
+      Convoyeur(150, 180, 100, 1, ctx, Positions, mouvement, tailleCube);
+
+      Deplacement(Positions);
+      Nettoyage(Positions,ctx);
+
+      setTimeout(function(){clock()},CLOCK);
+    }
+
+    window.onload = init;
+    window.requestAnimationFrame(clock);
+  </script>
 </html>
