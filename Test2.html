@@ -21,7 +21,7 @@
 
 		<script>
 
-			var CLOCK = 100;
+			var CLOCK = 50;
 			var ClockGenerateur = 5000;
 			var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50; 
 
@@ -44,8 +44,8 @@
 			function init(){
   				var ctx = document.getElementById('canvas').getContext('2d'); 
 				Generateur(Xgenerateur,Ygenerateur,TailleGenerateur,1,ctx, Positions);
-  				Convoyeur(25,100,150,1,ctx);
-  				Convoyeur(200,100,100,1,ctx);
+  				Convoyeur(25,100,150,1,ctx,Positions);
+  				Convoyeur(200,100,100,1,ctx,Positions);
 			}
 
 			function clock(){
