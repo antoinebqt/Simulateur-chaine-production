@@ -24,5 +24,7 @@ function NewItem(){
             }
         }
     }
-	setTimeout(function(){NewItem()},ClockGenerateur);
+    if (stopped != 1){
+    	setTimeout(function(){NewItem()},ClockGenerateur);
+    }
 }
