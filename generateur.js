@@ -1,4 +1,4 @@
-function Generateur(x,y,taille,ctx){
+function Generateur(x,y,taille){
 	//Dessine le générateur
 	ctx.fillStyle = 'red';  
  	ctx.fillRect(x, y, 10, taille); 
@@ -10,7 +10,6 @@ function Generateur(x,y,taille,ctx){
 var nbCube = 0;
 function NewItem(){
 	var x = Xgenerateur, y = Ygenerateur;
-	var ctx = document.getElementById('canvas').getContext('2d'); 
     if (nbCube < max){
 	    ctx.fillStyle = 'green';
 	    ctx.fillRect(x + 12, y + tailleCube/2, tailleCube, tailleCube);
@@ -19,7 +18,7 @@ function NewItem(){
 	        if (Positions[i][0] == ''){
 	            Positions[i][0] = x + 12;
 	            Positions[i][1] = y + tailleCube/2;
-	            nbCube++;
+	            //nbCube++;
 	            break;
             }
         }

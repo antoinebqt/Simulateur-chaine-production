@@ -13,6 +13,7 @@
       <button onclick="stop()">Stop</button>
       <script src="variable.js"></script>
       <script src="convoyeur.js"></script>
+      <script src="machine.js"></script>
       <script src="generateur.js"></script>
       <script src="deplacement.js"></script>
     </div>
@@ -22,24 +23,21 @@
   </body>
 
   <script>
-    var stopped = 0;
+  var ctx = document.getElementById('canvas').getContext('2d'); 
     //Ici on place tous les elements de la simulation
     function init(){
-      var ctx = document.getElementById('canvas').getContext('2d');
-
-      Generateur(Xgenerateur, Ygenerateur, TailleGenerateur, ctx);
-      FirstConvoyeur(10,150,150,ctx);
-      FirstConvoyeur(150,180,100,ctx);
+      Generateur(Xgenerateur, Ygenerateur, TailleGenerateur);
+      FirstConvoyeur();
+      machineSpawn();
     }
 
     function clock(){
-      var ctx = document.getElementById('canvas').getContext('2d'); 
       //Pour chaque FirstConvoyeur
-      Convoyeur(10, 150, 150, ctx, 5, Positions, OldPositions, mouvement, tailleCube);
-      Convoyeur(150, 180, 100, ctx, 2, Positions, OldPositions, mouvement, tailleCube);
+      Machine();
+      Convoyeur();
 
-      Deplacement(Positions, OldPositions);
-      Nettoyage(Positions, OldPositions, ctx);
+      Deplacement();
+      Nettoyage();
 
       if (stopped != 1 ){
         setTimeout(function(){clock()},CLOCK);
