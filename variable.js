@@ -4,7 +4,7 @@ var stopped = 0;
 //Variable à parametrer 
 var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
 var tailleCube = TailleGenerateur/2;
-var ClockGenerateur = 50;
+var ClockGenerateur = 500;
 
 //Stockage de la position des objets
 let Positions = [
@@ -38,16 +38,16 @@ var max = Positions.length;
 //x,y,taille, vitesse
 let ConvoyeurList = [
       [10,150,150,5],
-      [150,180,100,1],
-      [380,180,100,1]
+      [150,180,100,2],
+      [370,180,110,2]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
 
-//x,y,taille, vitesse, nbTravailleur, stockage actuelle,nbTravailleurActif
+//x,y, vitesse, stockage actuelle, nbTravailleur,nbTravailleurActif
 let MachineList = [
-      [260,100,1,2,0,0],
-      [490,100,1,2,0,0]
+      [260,100,1,0,3,0],
+      [490,100,1,0,3,0]
 ];
 
 var nbMachine = MachineList.length;

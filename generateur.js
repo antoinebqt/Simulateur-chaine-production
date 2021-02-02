@@ -18,7 +18,6 @@ function NewItem(){
 	        if (Positions[i][0] == ''){
 	            Positions[i][0] = x + 12;
 	            Positions[i][1] = y + tailleCube/2;
-	            //nbCube++;
 	            break;
             }
         }
