@@ -80,8 +80,7 @@ function TravailMachine(j)
 	    		Positions[i][0] = MachineList[j][0]-TailleGenerateur/2-10;
 	        	Positions[i][1] = MachineList[j][1]+TailleGenerateur/2;
 	    	}
-	        
-	        mouvement[i]=1;
+	        mouvement[i]=0;
 
 	        //retire 1 au stockage et au nb de travaileur actif
 			MachineList[j][5]--;
