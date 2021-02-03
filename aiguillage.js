@@ -30,7 +30,7 @@ function Aiguillage()
 			{
 				//Deplace vers la droite
 				OldPositions[j] = Positions[j];
-				Positions[j] = [Positions[j][0] + AiguillageList[i][2], Positions[j][1]];
+				Positions[j] = [Positions[j][0] + AiguillageList[i][2], Positions[j][1], Positions[j][2]];
 				//Mouvement effectué
 				mouvement[j] = 1;
 				if (Positions[j][0]+tailleCube>= AiguillageList[i][0]+tailleAiguillage)
@@ -55,7 +55,7 @@ function Aiguillage()
 			{
 				//Deplace vers la droite
 				OldPositions[j] = Positions[j];
-				Positions[j] = [Positions[j][0] + AiguillageList[i][2], Positions[j][1]];
+				Positions[j] = [Positions[j][0] + AiguillageList[i][2], Positions[j][1], Positions[j][2]];
 				//Mouvement effectué
 				mouvement[j] = 1;
 			}

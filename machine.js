@@ -39,7 +39,7 @@ function Machine()
 					MachineList[i][5]++;
 					MachineList[i][3]--;
 					if (stopped != 1){
-				    	setTimeout(function(){TravailMachine(i)},1000/MachineList[i][2]);
+				    	setInterval(function(){TravailMachine(i)},1000/MachineList[i][2]);
 				    }
 				}
 
@@ -59,7 +59,7 @@ function Machine()
 
 				//fait disparaitre le cube
 				OldPositions[j] = Positions[j];
-				Positions[j]=['',''];
+				Positions[j]=['','',0];
 				mouvement[j]=1;
 			}
 		}
@@ -80,8 +80,13 @@ function TravailMachine(j)
 	    		Positions[i][0] = MachineList[j][0]-TailleGenerateur/2-10;
 	        	Positions[i][1] = MachineList[j][1]+TailleGenerateur/2;
 	    	}
+
+	    	if (Positions[i][2] < 5 ){
+	    		Positions[i][2] = j+1;
+	    	}
+	    	
 	        
-	        mouvement[i]=1;
+	        mouvement[i]=0;
 
 	        //retire 1 au stockage et au nb de travaileur actif
 			MachineList[j][5]--;

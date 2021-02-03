@@ -4,11 +4,11 @@ function Deplacement(){
 	for (let i = 0; i < max; i++){
  		if((mouvement[i] == 0) && (Positions[i][0] != '') && (Positions[i][1] != '')){
             OldPositions[i] = Positions[i];
-			Positions[i] = [Positions[i][0], Positions[i][1] + 1];
+			Positions[i] = [Positions[i][0], Positions[i][1] + 1, Positions[i][2]];
  		}
  		if(Positions[i][1]>canvas.width)
  		{
- 			Positions[i]=["",""];
+ 			Positions[i]=["","",0];
  		}
  		mouvement[i] = 0;
  	}
@@ -26,8 +26,8 @@ function Nettoyage(){
 			if (Positions[i][0]!='')
 			{
 	            //Créer l'objet avec sa nouvelle position
-	            ctx.fillStyle = 'green';
-	            ctx.fillRect(Positions[i][0], Positions[i][1], tailleCube, tailleCube);
+                cube.src = "img/" + Positions[i][2] + ".png";
+                ctx.drawImage(cube, Positions[i][0], Positions[i][1]);
 			}
         }
     }

@@ -18,11 +18,12 @@ function NewItem(){
 	        if (Positions[i][0] == ''){
 	            Positions[i][0] = x + 12;
 	            Positions[i][1] = y + tailleCube/2;
+	            Positions[i][2] = 0;
 	            break;
             }
         }
     }
     if (stopped != 1){
-    	setTimeout(function(){NewItem()},ClockGenerateur);
+    	setInterval(function(){NewItem()},ClockGenerateur);
     }
 }

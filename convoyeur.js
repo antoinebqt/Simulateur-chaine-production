@@ -11,7 +11,7 @@ function Convoyeur(){
 	 		if((mouvement[i] == 0) && (Positions[i][0] <= x+longueur) && (Positions[i][0] >= x-taillecube) && (Positions[i][0] != '') && (Positions[i][1]+taillecube > y-3) && (Positions[i][1]+taillecube < y-1)){
 				//Deplace vers la droite
 				OldPositions[i] = Positions[i];
-				Positions[i] = [Positions[i][0] + vitesse, Positions[i][1]];
+				Positions[i] = [Positions[i][0] + vitesse, Positions[i][1], Positions[i][2]];
 				//Mouvement effectué
 				mouvement[i] = 1;
 			}
