@@ -43,7 +43,9 @@ let ConvoyeurList = [
       [600,180,100,2],
       [500,280,300,-2],
       [280,280,100,-2],
-      [100,380,300,2]
+      [200,450,200,2],
+      [200,570,350,-4],
+      [100,650,750,7]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
@@ -52,10 +54,19 @@ var nbConvoyeur = ConvoyeurList.length;
 let MachineList = [
       [260,100,10,0,3,0,0],
       [490,100,1,0,3,0,0],
-      [390,200,3,0,4,0,0]
+      [390,200,3,0,4,0,0],
+      [510,350,3,0,4,0,0]
 ];
 
 var nbMachine = MachineList.length;
+
+//x,y,vitesse, ratio vers le haut,nbObjet envoyé en haut, nbObjet total
+let AiguillageList = [
+      [405,450,2,0.7,0,0]
+];
+
+var nbAiguillage = AiguillageList.length;
+
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var CLOCK = 24; //24 pour que les animations paraissent fluide

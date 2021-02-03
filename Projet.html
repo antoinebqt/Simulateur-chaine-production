@@ -14,6 +14,7 @@
       <script src="variable.js"></script>
       <script src="convoyeur.js"></script>
       <script src="machine.js"></script>
+      <script src="aiguillage.js"></script>
       <script src="generateur.js"></script>
       <script src="deplacement.js"></script>
     </div>
@@ -27,13 +28,15 @@
     //Ici on place tous les elements de la simulation
     function init(){
       Generateur(Xgenerateur, Ygenerateur, TailleGenerateur);
-      FirstConvoyeur();
+      convoyeurSpawn();
+      aiguillageSpawn();
       machineSpawn();
     }
 
     function clock(){
       //Pour chaque FirstConvoyeur
       Machine();
+      Aiguillage();
       Convoyeur();
 
       Deplacement();

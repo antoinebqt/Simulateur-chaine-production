@@ -19,14 +19,11 @@ function Convoyeur(){
 	}
 }
 
-function FirstConvoyeur(){
+function convoyeurSpawn(){
 	for (let i = 0; i < nbConvoyeur;i++)
 	{
-		x = ConvoyeurList[i][0];
-		y = ConvoyeurList[i][1];
-		longueur = ConvoyeurList[i][2];
 		//Dessine les convoyeurs
   		ctx.fillStyle = 'blue';  
- 		ctx.fillRect(x, y, longueur, 3);
+ 		ctx.fillRect(ConvoyeurList[i][0], ConvoyeurList[i][1], ConvoyeurList[i][2], 3);
 	}
 }
