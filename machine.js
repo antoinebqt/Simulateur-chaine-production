@@ -77,7 +77,11 @@ function TravailMachine(j){
 	    		Positions[i][0] = MachineList[j][0] - TailleGenerateur/2 - 10;
 	        	Positions[i][1] = MachineList[j][1] + TailleGenerateur/2;
 	    	}
+<<<<<<< HEAD
 	        mouvement[i] = 0;
+=======
+	        mouvement[i]=0;
+>>>>>>> 63e21b5ffbbc98644cb2a5d3247385eedd3441e7
 
 	        //Retire 1 au nombre de travaileur actif
 			MachineList[j][5]--;
