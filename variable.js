@@ -4,7 +4,7 @@ var stopped = 0;
 //Variable à parametrer 
 var Xgenerateur = 0, Ygenerateur = 50, TailleGenerateur = 50;
 var tailleCube = TailleGenerateur/2;
-var ClockGenerateur = 500;
+var ClockGenerateur = 1000;
 
 //Stockage de la position des objets
 let Positions = [
@@ -39,18 +39,23 @@ var max = Positions.length;
 let ConvoyeurList = [
       [10,150,150,5],
       [150,180,100,2],
-      [370,180,110,2]
+      [370,180,110,2],
+      [600,180,100,2],
+      [500,280,300,-2],
+      [280,280,100,-2],
+      [100,380,300,2]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
 
-//x,y, vitesse, stockage actuelle, nbTravailleur,nbTravailleurActif
+//x,y, vitesse, stockage actuelle, nbTravailleur,nbTravailleurActif,sens=0,
 let MachineList = [
-      [260,100,1,0,3,0],
-      [490,100,1,0,3,0]
+      [260,100,10,0,3,0,0],
+      [490,100,1,0,3,0,0],
+      [390,200,3,0,4,0,0]
 ];
 
 var nbMachine = MachineList.length;
 //Autres variables générale
-var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var CLOCK = 24; //24 pour que les animations paraissent fluide

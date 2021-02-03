@@ -21,7 +21,7 @@ function Nettoyage(){
         	//Enleve l'ancien objet
         	if (OldPositions[i][0]!='')
 			{
-           		ctx.clearRect(OldPositions[i][0]-1, OldPositions[i][1]-1, tailleCube+1, tailleCube+2);
+           		ctx.clearRect(OldPositions[i][0]-1, OldPositions[i][1]-1, tailleCube+2, tailleCube+2);
 			}
 			if (Positions[i][0]!='')
 			{
