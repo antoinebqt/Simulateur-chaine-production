@@ -25,8 +25,13 @@ function Deplacement(){
 	            	if (ok==1){break;}	
 	            }
             }
-
+            if(ok==0)
+            {
+				ctx.clearRect(Positions[i][0]-1,Positions[i][1]-1, tailleCube+2, tailleCube+2);
+				Positions[i]=['',''];
+            }
  		}
+
  		//Si le cube sort du canvas
  		if(Positions[i][1] > canvas.width){
  			Positions[i] = ["",""];
