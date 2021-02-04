@@ -31,7 +31,7 @@ function Machine(){
 					MachineList[i][5]++;
 					MachineList[i][3]--;
 					if (stopped != 1){
-				    	setTimeout(function(){TravailMachine(i)}, 1000/MachineList[i][2]);
+				    	setTimeout(function(){TravailMachine(i)}, 1000/MachineList[i][2]/VitesseAcceleration);
 				    }
 				}
 
