@@ -22,11 +22,11 @@ function Aiguillage(){
 			x = Positions[j][0];
 			y = Positions[j][1];
 			
-			//Si le cube est
+			//Si le cube est 
 			if ((x+tailleCube >= AiguillageList[i][0]) && (x+tailleCube < AiguillageList[i][0]+tailleAiguillage) && (y+tailleCube > AiguillageList[i][1]-3) && (y+tailleCube < AiguillageList[i][1]-1)){
-				//Deplace vers la droite
+				//Deplace vers la droite de la premiere partie
 				OldPositions[j] = Positions[j];
-				Positions[j] = [Positions[j][0] + AiguillageList[i][2], Positions[j][1]];
+				Positions[j] = [Positions[j][0] + (tailleAiguillage+2*tailleCube)*CLOCK/ AiguillageList[i][2]/1000, Positions[j][1]];
 				
 				//Mouvement effectué
 				mouvement[j] = 1;
@@ -56,9 +56,9 @@ function Aiguillage(){
 			
 			//Si le cube est
 			if ((mouvement[j] == 0) && (x+tailleCube >= AiguillageList[i][0]) && (x < AiguillageList[i][0]+2*tailleAiguillage) && (((y+tailleCube > AiguillageList[i][1]+tailleAiguillage-3) && (y+tailleCube < AiguillageList[i][1]+tailleAiguillage-1)) || ((y+tailleCube > AiguillageList[i][1]-tailleAiguillage-3) && (y+tailleCube < AiguillageList[i][1]-tailleAiguillage-1)))){
-				//Deplace vers la droite
+				//Deplace vers la droite sur les deux convoyeurs sortants
 				OldPositions[j] = Positions[j];
-				Positions[j] = [Positions[j][0] + AiguillageList[i][2], Positions[j][1]];
+				Positions[j] = [Positions[j][0] +(tailleAiguillage+2*tailleCube)*CLOCK/ AiguillageList[i][2]/1000, Positions[j][1]];
 				//Mouvement effectué
 				mouvement[j] = 1;
 			}

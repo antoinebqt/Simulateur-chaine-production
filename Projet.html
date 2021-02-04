@@ -12,6 +12,7 @@
   <body>
     <div>
       <button onclick="stop()">Stop</button>
+      <input type="range" id="Vitesse" name="Vitesse;" min="1" max="30" value="1">
       <script src="variable.js"></script>
       <script src="convoyeur.js"></script>
       <script src="machine.js"></script>
@@ -25,6 +26,7 @@
   </body>
 
   <script>
+    var VitesseAcceleration=1;
     var ctx = document.getElementById('canvas').getContext('2d'); 
     
     //Fonction créant les différents éléments de la silmulation
@@ -36,6 +38,7 @@
     }
 
     function clock(){
+      VitesseAcceleration = document.getElementById('Vitesse').value;
       Machine();
       Aiguillage();
       Convoyeur();
@@ -43,7 +46,7 @@
       Nettoyage();
 
       if (stopped != 1 ){
-        setTimeout(function(){clock()},CLOCK);
+        setTimeout(function(){clock()},CLOCK/VitesseAcceleration);
       }
     }
 

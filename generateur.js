@@ -11,7 +11,6 @@ var nbCube = 0;
 function NewItem(){
 	var x = Xgenerateur, y = Ygenerateur;
     if (nbCube < max){
-	    ctx.drawImage(cube, x + 12, y + tailleCube/2);
 	    for (let i = 0; i < max; i++){
 	        //Dès qu'un emplacement est libre
 	        if (Positions[i][0] == ''){
@@ -22,6 +21,6 @@ function NewItem(){
         }
     }
     if (stopped != 1){
-    	setTimeout(function(){NewItem()}, ClockGenerateur);
+    	setTimeout(function(){NewItem()}, ClockGenerateur/VitesseAcceleration);
     }
 }
