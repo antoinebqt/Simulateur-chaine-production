@@ -21,8 +21,21 @@ function Convoyeur(){
 
 function convoyeurSpawn(){
 	for (let i = 0; i < nbConvoyeur; i++){
+		if (ConvoyeurList[i][3] < 0){
+			tps = -ConvoyeurList[i][3];
+		} else tps = ConvoyeurList[i][3];
 		//Dessine les convoyeurs
-  		ctx.fillStyle = 'blue';  
+  		ctx.fillStyle = 'black';  
  		ctx.fillRect(ConvoyeurList[i][0], ConvoyeurList[i][1], ConvoyeurList[i][2], 3);
+ 		ctx.fillRect(ConvoyeurList[i][0], ConvoyeurList[i][1]+5, ConvoyeurList[i][2], 3);
+ 		ctx.lineWidth   = 2;
+ 		ctx.beginPath();
+ 		ctx.arc(ConvoyeurList[i][0]+1,  ConvoyeurList[i][1]+4, 3, Math.PI/2, 1.5*Math.PI, false);
+ 		ctx.stroke();  
+ 		ctx.beginPath();
+ 		ctx.arc(ConvoyeurList[i][0]+ConvoyeurList[i][2]-1,  ConvoyeurList[i][1]+4, 3, Math.PI*1.5, Math.PI/2, false);
+ 		ctx.stroke();  
+ 		ctx.font = '12px sans-serif';
+	    ctx.fillText('Temps : ' + tps + 's', ConvoyeurList[i][0], ConvoyeurList[i][1]+20);
 	}
 }
