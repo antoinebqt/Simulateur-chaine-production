@@ -93,6 +93,9 @@ cube.src = "img/cube.png";
 var machine = new Image();
 machine.src = "img/machine0.png";
 
+var generateur = new Image();
+generateur.src = "img/generateur.png";
+
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 

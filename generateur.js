@@ -1,7 +1,6 @@
 function Generateur(x,y,taille){
 	//Dessine le générateur
-	ctx.fillStyle = 'red';  
- 	ctx.fillRect(x, y, 10, taille); 
+	ctx.drawImage(generateur, x, y);
  	NewItem();
 }
 
