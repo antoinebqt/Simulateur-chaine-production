@@ -79,7 +79,7 @@ function TravailMachine(j){
 
 function VerifStockage(){
 	for (let i =0; i <nbMachine;i++){
-		if (MachineList[i][5] < MachineList[i][4] && MachineList[i][3]>=0){
+		if (MachineList[i][5] < MachineList[i][4] && MachineList[i][3]>0){
 			MachineList[i][5]++;
 			MachineList[i][3]--;
 			if (stopped != 1){

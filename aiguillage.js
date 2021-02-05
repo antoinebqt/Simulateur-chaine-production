@@ -2,11 +2,44 @@ let tailleAiguillage = 50;
 
 function aiguillageSpawn(){
 	for (let i =0; i < nbAiguillage; i++){
-		//Dessine les aiguillages
+		//Dessine le haut des aiguillages
 		ctx.fillStyle = 'brown';  
+		ctx.strokeStyle = 'brown';
  		ctx.fillRect(AiguillageList[i][0], AiguillageList[i][1], tailleAiguillage, 3);
  		ctx.fillRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] + tailleAiguillage, tailleAiguillage, 3);
  		ctx.fillRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] - tailleAiguillage, tailleAiguillage, 3);
+
+ 		//Dessine le bas des aiguillages
+ 		ctx.fillRect(AiguillageList[i][0], AiguillageList[i][1]+5, tailleAiguillage, 3);
+ 		ctx.fillRect(AiguillageList[i][0]  + tailleAiguillage, AiguillageList[i][1] + 5  + tailleAiguillage, tailleAiguillage, 3);
+ 		ctx.fillRect(AiguillageList[i][0]  + tailleAiguillage, AiguillageList[i][1] + 5  - tailleAiguillage, tailleAiguillage, 3);
+ 		ctx.lineWidth   = 2;
+ 		
+ 		//Dessine les arrondis de la première partie de l'aiguillage
+ 		ctx.beginPath();
+ 		ctx.arc(AiguillageList[i][0]+1, AiguillageList[i][1]+4, 3, Math.PI/2, 1.5*Math.PI, false);
+ 		ctx.stroke();  
+ 		ctx.beginPath();
+ 		ctx.arc(AiguillageList[i][0]+tailleAiguillage-1,  AiguillageList[i][1]+4, 3, Math.PI*1.5, Math.PI/2, false);
+ 		ctx.stroke();  
+
+ 		//Dessine les arrondis de l'aiguillage haut
+ 		ctx.beginPath();
+ 		ctx.arc(AiguillageList[i][0]+1 + tailleAiguillage, AiguillageList[i][1]+4 + tailleAiguillage, 3, Math.PI/2, 1.5*Math.PI, false);
+ 		ctx.stroke();  
+ 		ctx.beginPath();
+ 		ctx.arc(AiguillageList[i][0]+tailleAiguillage*2-1,  AiguillageList[i][1]+4 + tailleAiguillage, 3, Math.PI*1.5, Math.PI/2, false);
+ 		ctx.stroke(); 
+
+ 		//Dessine les arrondis de l'aiguillage bas
+ 		ctx.beginPath();
+ 		ctx.arc(AiguillageList[i][0]+1 + tailleAiguillage, AiguillageList[i][1]+4 - tailleAiguillage, 3, Math.PI/2, 1.5*Math.PI, false);
+ 		ctx.stroke();  
+ 		ctx.beginPath();
+ 		ctx.arc(AiguillageList[i][0]+tailleAiguillage*2-1,  AiguillageList[i][1]+4 - tailleAiguillage, 3, Math.PI*1.5, Math.PI/2, false);
+ 		ctx.stroke(); 
+
+
  		//Dessine les %
 	    ctx.fillStyle = 'black';
 	    ctx.font = '15px sans-serif';
