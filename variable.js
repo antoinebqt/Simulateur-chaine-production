@@ -79,10 +79,12 @@ let MachineList = [
 var nbMachine = MachineList.length;
 
 //AIGUILLAGES
-//x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total
+//x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
 let AiguillageList = [
-      [405, 450, 2, 0.7, 0, 0]
+      [405, 450, 2, 0.7, 0, 0, "001",0]
 ];
+
+
 
 var nbAiguillage = AiguillageList.length;
 
@@ -104,3 +106,5 @@ var tailleCube = TailleGenerateur/2;
 
 var stopped = 0;
 
+var z;
+var cycle;
