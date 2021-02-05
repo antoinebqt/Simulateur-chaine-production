@@ -76,10 +76,10 @@ function Aiguillage(){
 						AiguillageList[i][5]++;
 						Positions[j][1]-= tailleAiguillage;
 					}
-					ctx.clearRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] + tailleAiguillage + 3, 2 * tailleCube, tailleCube);
-					ctx.clearRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] - tailleAiguillage + 3, 2 * tailleCube, tailleCube);
-					
+
 					//Actualise le % de répartition
+					ctx.clearRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] + tailleAiguillage + 10, 2 * tailleCube, tailleCube);
+					ctx.clearRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] - tailleAiguillage + 10, 2 * tailleCube, tailleCube);
 					ctx.fillStyle = 'black';
 	    			ctx.font = '15px sans-serif';
 					ctx.fillText(Math.round(AiguillageList[i][4] / AiguillageList[i][5] * 100) + '%', AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] + 3 * tailleAiguillage/2);
