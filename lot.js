@@ -1,8 +1,7 @@
 function lotSpawn(){
 	for (let i = 0; i < nbLot; i++){
 		//Dessine les lots et leurs infos
-		ctx.fillStyle = "orange";
-    	ctx.fillRect(LotList[i][0], LotList[i][1], 75, 75);
+    	ctx.drawImage(lot, LotList[i][0], LotList[i][1]);
     	ctx.fillStyle = 'black';
 	    ctx.font = '15px sans-serif';
 	    ctx.fillText('Taille : ' + LotList[i][2], LotList[i][0] + 5, LotList[i][1] + 20);
@@ -57,11 +56,10 @@ function TravailLot(j){
 }
 
 function VerifStockageLot(){
-	for (let i =0; i <nbLot;i++){
+	for (let i =0; i < nbLot; i++){
 		//Dessine les lots et leurs infos
-		ctx.fillStyle = "orange";
-    	ctx.fillRect(LotList[i][0], LotList[i][1], 75, 75);
-    	ctx.fillStyle = 'black';
+		ctx.drawImage(lot, LotList[i][0], LotList[i][1]);
+    	ctx.fillStyle = 'white';
 	    ctx.font = '15px sans-serif';
 	    ctx.fillText('Taille : ' + LotList[i][2], LotList[i][0] + 5, LotList[i][1] + 20);
 	   	ctx.fillText('Stock : ' + LotList[i][3], LotList[i][0] + 5, LotList[i][1] + 35);

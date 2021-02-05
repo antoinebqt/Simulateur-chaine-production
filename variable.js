@@ -108,6 +108,9 @@ machine.src = "img/machine0.png";
 var generateur = new Image();
 generateur.src = "img/generateur.png";
 
+var lot = new Image();
+lot.src = "img/lot.png";
+
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
