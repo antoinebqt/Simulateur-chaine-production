@@ -26,15 +26,6 @@ function Machine(){
 
 				MachineList[i][3]++;
 
-				//Si un travaileur est libre
-				if (MachineList[i][5] < MachineList[i][4]){
-					MachineList[i][5]++;
-					MachineList[i][3]--;
-					if (stopped != 1){
-				    	setTimeout(function(){TravailMachine(i)}, 1000/MachineList[i][2]/VitesseAcceleration);
-				    }
-				}
-
 				//Change l'image en fonction de son stockage
 				if (MachineList[i][3] > 20){
 					machine.src = "img/machine20.png";
@@ -84,4 +75,17 @@ function TravailMachine(j){
 	        break;
         }
     }
+}
+
+function VerifStockage(){
+	for (let i =0; i <nbMachine;i++){
+		if (MachineList[i][5] < MachineList[i][4] && MachineList[i][3]>=0){
+			MachineList[i][5]++;
+			MachineList[i][3]--;
+			if (stopped != 1){
+			   	setTimeout(function(){TravailMachine(i)}, 1000/MachineList[i][2]/VitesseAcceleration);
+			}
+		}
+	}
+					
 }
