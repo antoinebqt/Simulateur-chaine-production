@@ -3,7 +3,7 @@ function Convoyeur(){
 		x = ConvoyeurList[t][0];
 		y = ConvoyeurList[t][1];
 		longueur = ConvoyeurList[t][2];
-		vitesse =(longueur+2*tailleCube)*CLOCK/ ConvoyeurList[t][3]/1000;
+		vitesse = (longueur+2*tailleCube)*CLOCK/ConvoyeurList[t][3]/1000;
 		taillecube = TailleGenerateur/2;
 		
 		for (let i = 0; i < max; i++){

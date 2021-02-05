@@ -19,6 +19,7 @@
       <script src="aiguillage.js"></script>
       <script src="generateur.js"></script>
       <script src="deplacement.js"></script>
+      <script src="lot.js"></script>
     </div>
     <div>
       <canvas id="canvas" width="1600" height="800"></canvas>
@@ -35,12 +36,15 @@
       convoyeurSpawn();
       aiguillageSpawn();
       machineSpawn();
+      lotSpawn();
     }
 
     function clock(){
       VitesseAcceleration = document.getElementById('Vitesse').value;
       Machine();
-      VerifStockage();
+      VerifStockageMachine();
+      Lot();
+      VerifStockageLot();
       AiguillageCycle();
       Convoyeur();
       Deplacement();
