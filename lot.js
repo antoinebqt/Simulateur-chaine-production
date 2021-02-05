@@ -7,6 +7,7 @@ function lotSpawn(){
 	    ctx.font = '15px sans-serif';
 	    ctx.fillText('Taille : ' + LotList[i][2], LotList[i][0] + 5, LotList[i][1] + 20);
 	    ctx.fillText('Stock : ' + LotList[i][3], LotList[i][0] + 5, LotList[i][1] + 35);
+	    ctx.fillText('Lots : ' + LotList[i][5], LotList[i][0] + 5, LotList[i][1] + 50);
 	}
 }
 
@@ -49,6 +50,7 @@ function TravailLot(j){
 	    	}
 	        mouvement[i] = 0;
 	        LotList[j][3] = LotList[j][3] -1*LotList[j][2];
+	        LotList[j][5]++;
 	        break;
         }
     }
@@ -63,6 +65,7 @@ function VerifStockageLot(){
 	    ctx.font = '15px sans-serif';
 	    ctx.fillText('Taille : ' + LotList[i][2], LotList[i][0] + 5, LotList[i][1] + 20);
 	   	ctx.fillText('Stock : ' + LotList[i][3], LotList[i][0] + 5, LotList[i][1] + 35);
+	   	ctx.fillText('Lots : ' + LotList[i][5], LotList[i][0] + 5, LotList[i][1] + 50);
 		if (LotList[i][3] == LotList[i][2]){
 			if (stopped != 1){
 			   	setTimeout(function(){TravailLot(i)}, CLOCK/VitesseAcceleration);

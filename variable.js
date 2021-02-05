@@ -55,15 +55,15 @@ var max = Positions.length;
 //x, y, taille, vitesse en sec pour parcourir
 let ConvoyeurList = [
       [10, 150, 150, 5],
-      [150, 180, 100, 2],
-      [370, 180, 110, 2],
-      [600, 180, 100, 2],
-      [500, 280, 300, -2],
-      [280, 280, 100, -2],
-      [150, 450, 250, 2],
-      [200, 570, 350, -4],
-      [100, 650, 700, 7],
-      [895, 650, 100, 3]
+      [150, 190, 100, 2],
+      [370, 190, 110, 2],
+      [600, 190, 100, 2],
+      [500, 290, 300, -2],
+      [280, 290, 100, -2],
+      [150, 460, 250, 2],
+      [200, 580, 350, -4],
+      [100, 660, 700, 7],
+      [895, 660, 100, 3]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
@@ -71,19 +71,19 @@ var nbConvoyeur = ConvoyeurList.length;
 //MACHINES
 //x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0,
 let MachineList = [
-      [260, 100, 2, 0, 3, 0, 0],
-      [490, 100, 0.5, 0, 3, 0, 0],
-      [390, 200, 3, 0, 4, 0, 0],
-      [510, 350, 3, 0, 4, 0, 0]
+      [260, 110, 2, 0, 3, 0, 0],
+      [490, 110, 0.5, 0, 3, 0, 0],
+      [390, 210, 3, 0, 4, 0, 0],
+      [510, 360, 3, 0, 4, 0, 0]
 ];
 
 var nbMachine = MachineList.length;
 
 //LOTS
-//x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0
+//x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0, nbCube crées
 let LotList = [
-      [195, 220, 4, 0, 0],
-      [810, 590, 3, 0, 0]
+      [195, 230, 4, 0, 0, 0],
+      [810, 600, 3, 0, 0, 0]
 ];
 
 var nbLot = LotList.length;
@@ -91,7 +91,7 @@ var nbLot = LotList.length;
 //AIGUILLAGES
 //x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
 let AiguillageList = [
-      [405, 450, 2, 0.7, 0, 0, "001",0]
+      [405, 460, 2, 0.7, 0, 0, "001",0]
 ];
 
 
