@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Canvas Refined</title>
     <style>
       canvas{
@@ -11,6 +12,7 @@
   <body>
     <div>
       <button onclick="stop()">Stop</button>
+      <input type="range" id="Vitesse" name="Vitesse;" min="1" max="30" value="1">
       <script src="variable.js"></script>
       <script src="convoyeur.js"></script>
       <script src="machine.js"></script>
@@ -24,8 +26,10 @@
   </body>
 
   <script>
-  var ctx = document.getElementById('canvas').getContext('2d'); 
-    //Ici on place tous les elements de la simulation
+    var VitesseAcceleration=1;
+    var ctx = document.getElementById('canvas').getContext('2d'); 
+    
+    //Fonction créant les différents éléments de la silmulation
     function init(){
       Generateur(Xgenerateur, Ygenerateur, TailleGenerateur);
       convoyeurSpawn();
@@ -34,16 +38,15 @@
     }
 
     function clock(){
-      //Pour chaque FirstConvoyeur
+      VitesseAcceleration = document.getElementById('Vitesse').value;
       Machine();
       Aiguillage();
       Convoyeur();
-
       Deplacement();
       Nettoyage();
 
       if (stopped != 1 ){
-        setTimeout(function(){clock()},CLOCK);
+        setTimeout(function(){clock()},CLOCK/VitesseAcceleration);
       }
     }
 
