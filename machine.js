@@ -37,14 +37,6 @@ function Machine(){
 					machine.src = "img/machine5.png";
 				} 
 				else machine.src = "img/machine0.png"; 
-		    	
-		    	//Affiche la bonne image et ses infos correspondantes
-		    	ctx.drawImage(machine, MachineList[i][0], MachineList[i][1]);
-	            ctx.fillStyle = 'white';
-	            ctx.font = '15px sans-serif';
-	            ctx.fillText('Ouvrier : ' + MachineList[i][5] + '/' + MachineList[i][4], MachineList[i][0] + 15, MachineList[i][1] + 20);
-	            ctx.fillText('Vitesse : ' + MachineList[i][2], MachineList[i][0] + 15, MachineList[i][1] + 35);
-	            ctx.fillText('Stock : ' + MachineList[i][3], MachineList[i][0] + 15, MachineList[i][1] + 50);
 
 
 				//Fait disparaitre le cube
@@ -77,8 +69,15 @@ function TravailMachine(j){
     }
 }
 
-function VerifStockage(){
+function VerifStockageMachine(){
 	for (let i =0; i <nbMachine;i++){
+		//Affiche la bonne image et ses infos correspondantes
+		ctx.drawImage(machine, MachineList[i][0], MachineList[i][1]);
+	    ctx.fillStyle = 'white';
+	    ctx.font = '15px sans-serif';
+	    ctx.fillText('Ouvrier : ' + MachineList[i][5] + '/' + MachineList[i][4], MachineList[i][0] + 15, MachineList[i][1] + 20);
+	    ctx.fillText('Vitesse : ' + MachineList[i][2], MachineList[i][0] + 15, MachineList[i][1] + 35);
+	    ctx.fillText('Stock : ' + MachineList[i][3], MachineList[i][0] + 15, MachineList[i][1] + 50);
 		if (MachineList[i][5] < MachineList[i][4] && MachineList[i][3]>0){
 			MachineList[i][5]++;
 			MachineList[i][3]--;
@@ -86,6 +85,5 @@ function VerifStockage(){
 			   	setTimeout(function(){TravailMachine(i)}, 1000/MachineList[i][2]/VitesseAcceleration);
 			}
 		}
-	}
-					
+	}				
 }

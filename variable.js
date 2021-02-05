@@ -1,5 +1,5 @@
 //Variable Clock
-var CLOCK = 50; //24 pour que les animations paraissent fluide
+var CLOCK = 50;
 var ClockGenerateur = 1000;
 
 //Stockage de la position des objets
@@ -60,9 +60,10 @@ let ConvoyeurList = [
       [600, 180, 100, 2],
       [500, 280, 300, -2],
       [280, 280, 100, -2],
-      [200, 450, 200, 2],
+      [150, 450, 250, 2],
       [200, 570, 350, -4],
-      [100, 650, 750, 7]
+      [100, 650, 700, 7],
+      [895, 650, 100, 3]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
@@ -77,6 +78,15 @@ let MachineList = [
 ];
 
 var nbMachine = MachineList.length;
+
+//LOTS
+//x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0
+let LotList = [
+      [195, 220, 4, 0, 0],
+      [810, 590, 3, 0, 0]
+];
+
+var nbLot = LotList.length;
 
 //AIGUILLAGES
 //x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total
