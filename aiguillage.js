@@ -33,15 +33,18 @@ function Aiguillage(){
 				
 				if (Positions[j][0]+tailleCube >= AiguillageList[i][0]+tailleAiguillage){
 					//Si le % du bas est plus petit que le % souhaité
-					if ((AiguillageList[i][5] == 0) || (AiguillageList[i][4]/AiguillageList[i][5] < AiguillageList[i][3])){
+					k=Aiguillagelist[i][7];
+					if (AiguillageList[i][6][k]=='0'){
 						AiguillageList[i][4]++;
 						AiguillageList[i][5]++;
 						Positions[j][1]+= tailleAiguillage;
+						AiguillageList[i][7]=(AiguillageList[i][7]+1)%AiguillageList[i][6].length;
 					}
 					//Sinon on envoie le cube en haut
 					else{
 						AiguillageList[i][5]++;
 						Positions[j][1]-= tailleAiguillage;
+						AiguillageList[i][7]=(AiguillageList[i][7]+1)%AiguillageList[i][6].length;
 					}
 					ctx.clearRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] + tailleAiguillage + 3, 2 * tailleCube, tailleCube);
 					ctx.clearRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] - tailleAiguillage + 3, 2 * tailleCube, tailleCube);
