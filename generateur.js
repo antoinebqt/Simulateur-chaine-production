@@ -20,7 +20,7 @@ function NewItem(){
            	ctx.clearRect(0, 0, 150,25);
     		ctx.fillStyle = 'black';
 	    	ctx.font = '15px sans-serif';
-	    	ctx.fillText('Cubes : ' + nbCube, 0,20 );
+	    	ctx.fillText('Cube : '+nbCube, 0,20 );
 	        break;
         }
     }
