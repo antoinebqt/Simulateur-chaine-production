@@ -94,7 +94,7 @@ var nbLot = LotList.length;
 //LOT Speciaux
 //x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
 let LotsList = [
-      [710, 580, 1, 0, 0, 0, 0, 1]
+      [710, 580, 2, 0, 0, 0, 0, 1]
 ];
 
 var nbLots = LotsList.length;

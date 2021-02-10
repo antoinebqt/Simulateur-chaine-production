@@ -4,7 +4,7 @@ function lotsSpawn(){
       ctx.drawImage(lot, LotsList[i][0], LotsList[i][1]);
       ctx.fillStyle = 'black';
           ctx.font = '15px sans-serif';
-          ctx.fillText('Taille : ' + LotsList[i][2], LotsList[i][0] + 5, LotsList[i][1] + 20);
+          ctx.fillText('Taille : ' + LotsList[i][2] + ' & ' + LotsList[i][7], LotsList[i][0] + 5, LotsList[i][1] + 20);
           ctx.fillText('Stock 1 : ' + LotsList[i][3], LotsList[i][0] + 5, LotsList[i][1] + 35);
           ctx.fillText('Stock 2 : ' + LotsList[i][6], LotsList[i][0] + 5, LotsList[i][1] + 50);
           ctx.fillText('Lots : ' + LotsList[i][5], LotsList[i][0] + 5, LotsList[i][1] + 65);
@@ -63,11 +63,11 @@ function TravailLots(j){
 
 function VerifStockageLots(){
       for (let i = 0; i < nbLots; i++){
-            //Dessine les lots et leurs infos
+          //Dessine les lots et leurs infos
           ctx.drawImage(lot, LotsList[i][0], LotsList[i][1]);
           ctx.fillStyle = 'white';
           ctx.font = '15px sans-serif';
-          ctx.fillText('Taille : ' + LotsList[i][2], LotsList[i][0] + 5, LotsList[i][1] + 20);
+          ctx.fillText('Taille : ' + LotsList[i][2] + ' & ' + LotsList[i][7], LotsList[i][0] + 5, LotsList[i][1] + 20);
           ctx.fillText('Stock 1 : ' + LotsList[i][3], LotsList[i][0] + 5, LotsList[i][1] + 35);
           ctx.fillText('Stock 2 : ' + LotsList[i][6], LotsList[i][0] + 5, LotsList[i][1] + 50);
           ctx.fillText('Lots : ' + LotsList[i][5], LotsList[i][0] + 5, LotsList[i][1] + 65);
