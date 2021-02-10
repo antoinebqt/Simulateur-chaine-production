@@ -64,19 +64,13 @@ function VerifStockageLot(){
 	    ctx.fillText('Taille : ' + LotList[i][2], LotList[i][0] + 5, LotList[i][1] + 20);
 	   	ctx.fillText('Stock : ' + LotList[i][3], LotList[i][0] + 5, LotList[i][1] + 35);
 	   	ctx.fillText('Lots : ' + LotList[i][5], LotList[i][0] + 5, LotList[i][1] + 50);
-<<<<<<< HEAD
-		if (LotList[i][3] == LotList[i][2]){
-=======
+
 		if (LotList[i][3] >= LotList[i][2]){
->>>>>>> Mathis
+
 			if (stopped != 1){
 			   	setTimeout(function(){TravailLot(i)}, CLOCK/VitesseAcceleration);
 			}
 		}
 	}				
-<<<<<<< HEAD
-} 
-=======
 } 
 
->>>>>>> Mathis
