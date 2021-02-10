@@ -71,12 +71,11 @@ function VerifStockageLots(){
           ctx.fillText('Stock 1 : ' + LotsList[i][3], LotsList[i][0] + 5, LotsList[i][1] + 35);
           ctx.fillText('Stock 2 : ' + LotsList[i][6], LotsList[i][0] + 5, LotsList[i][1] + 50);
           ctx.fillText('Lots : ' + LotsList[i][5], LotsList[i][0] + 5, LotsList[i][1] + 65);
-            if (LotsList[i][3] == LotsList[i][2] && LotsList[i][6] == LotsList[i][7]){
-                  console.log(LotsList[i][3]);
+            if (LotsList[i][3] >= LotsList[i][2] && LotsList[i][6] >= LotsList[i][7]){
                   if (stopped != 1){
                         setTimeout(function(){TravailLots(i)}, CLOCK/VitesseAcceleration);
                   }
             }
       }                       
-} 
+}
 
