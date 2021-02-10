@@ -15,12 +15,10 @@ function NewItem(){
 	        Positions[i][0] = x + 12;
 	        Positions[i][1] = y + tailleCube/2;
 	        nbCube++;
-
-
            	ctx.clearRect(0, 0, 150,25);
     		ctx.fillStyle = 'black';
 	    	ctx.font = '15px sans-serif';
-	    	ctx.fillText('Cube : '+nbCube, 0,20 );
+	    	ctx.fillText('Cubes crées : ' + nbCube, 0,20 );
 	        break;
         }
     }

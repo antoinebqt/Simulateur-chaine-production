@@ -18,9 +18,8 @@ function Machine(){
 			let taille = TailleGenerateur * 2;
 			var diff = Positions[j][0] - OldPositions[j][0];
 			
-			//Si
 			if (((x >= MachineList[i][0]-TailleGenerateur/2-5) && (x < MachineList[i][0]+TailleGenerateur/2) && (y > MachineList[i][1]) && (y < MachineList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < MachineList[i][0]+9*TailleGenerateur/4) && (x > MachineList[i][0]+7*TailleGenerateur/4) && (y > MachineList[i][1]) && (y < MachineList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
-				if (x>=MachineList[i][0]-TailleGenerateur/2-5 && x<MachineList[i][0]+TailleGenerateur/2 && y>MachineList[i][1] && y<MachineList[i][1]+taille && mouvement[j]==0 && diff>=0){
+				if ((x >= MachineList[i][0]-TailleGenerateur/2-5) && (x < MachineList[i][0]+TailleGenerateur/2) && (y > MachineList[i][1]) && (y < MachineList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)){
 					MachineList[i][6] = 1
 				}
 
@@ -37,15 +36,6 @@ function Machine(){
 					machine.src = "img/machine5.png";
 				} 
 				else machine.src = "img/machine0.png"; 
-		    	
-		    	//Affiche la bonne image et ses infos correspondantes
-		    	ctx.drawImage(machine, MachineList[i][0], MachineList[i][1]);
-	            ctx.fillStyle = 'white';
-	            ctx.font = '15px sans-serif';
-	            ctx.fillText('Ouvrier : ' + MachineList[i][5] + '/' + MachineList[i][4], MachineList[i][0] + 15, MachineList[i][1] + 20);
-	            ctx.fillText('Vitesse : ' + MachineList[i][2], MachineList[i][0] + 15, MachineList[i][1] + 35);
-	            ctx.fillText('Stock : ' + MachineList[i][3], MachineList[i][0] + 15, MachineList[i][1] + 50);
-
 
 				//Fait disparaitre le cube
 				OldPositions[j] = Positions[j];
@@ -77,9 +67,16 @@ function TravailMachine(j){
     }
 }
 
-function VerifStockage(){
-	for (let i =0; i <nbMachine;i++){
-		if (MachineList[i][5] < MachineList[i][4] && MachineList[i][3]>0){
+function VerifStockageMachine(){
+	for (let i = 0; i < nbMachine; i++){
+		//Affiche la bonne image et ses infos correspondantes
+		ctx.drawImage(machine, MachineList[i][0], MachineList[i][1]);
+	    ctx.fillStyle = 'white';
+	    ctx.font = '15px sans-serif';
+	    ctx.fillText('Ouvrier : ' + MachineList[i][5] + '/' + MachineList[i][4], MachineList[i][0] + 15, MachineList[i][1] + 20);
+	    ctx.fillText('Vitesse : ' + MachineList[i][2], MachineList[i][0] + 15, MachineList[i][1] + 35);
+	    ctx.fillText('Stock : ' + MachineList[i][3], MachineList[i][0] + 15, MachineList[i][1] + 50);
+		if ((MachineList[i][5] < MachineList[i][4]) && (MachineList[i][3] > 0)){
 			MachineList[i][5]++;
 			MachineList[i][3]--;
 			if (stopped != 1){
