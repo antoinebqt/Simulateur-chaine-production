@@ -20,6 +20,7 @@
       <script src="generateur.js"></script>
       <script src="deplacement.js"></script>
       <script src="lot.js"></script>
+      <script src="lotprecis.js"></script>
     </div>
     <div>
       <canvas id="canvas" width="1600" height="800"></canvas>
@@ -37,6 +38,7 @@
       aiguillageSpawn();
       machineSpawn();
       lotSpawn();
+      lotsSpawn();
     }
 
     function clock(){
@@ -45,10 +47,13 @@
       VerifStockageMachine();
       Lot();
       VerifStockageLot();
+      Lots();
+      VerifStockageLots();
       AiguillageCycle();
       Convoyeur();
       Deplacement();
       Nettoyage();
+
 
       if (stopped != 1 ){
         setTimeout(function(){clock()},CLOCK/VitesseAcceleration);
