@@ -70,12 +70,12 @@ let ConvoyeurList = [
 var nbConvoyeur = ConvoyeurList.length;
 
 //MACHINES
-//x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0,
+//x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0, image correspondante = 0
 let MachineList = [
-      [260, 110, 2, 0, 3, 0, 0],
-      [490, 110, 0.5, 0, 3, 0, 0],
-      [390, 220, 3, 0, 4, 0, 0],
-      [510, 360, 3, 0, 4, 0, 0],
+      [260, 110, 2, 0, 3, 0, 0, 0],
+      [490, 110, 10, 0, 3, 0, 0, 0],
+      [390, 220, 3, 0, 4, 0, 0, 0],
+      [510, 360, 5, 0, 4, 0, 0, 0],
 ];
 
 var nbMachine = MachineList.length;
@@ -83,13 +83,21 @@ var nbMachine = MachineList.length;
 //LOT
 //x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0, nbCube crées
 let LotList = [
-      [175, 230, 4, 0, 0, 0],
-      [950, 590, 3, 0, 0, 0]
+      [175, 230, 3, 0, 0, 0]
       
 ];
 
 
 var nbLot = LotList.length;
+
+//DECOUPEUR
+//x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
+let DecoupeurList = [
+      [950, 590, 3, 0, 0, 0, 3]
+];
+
+
+var nbDecoupeur = DecoupeurList.length;
 
 //LOT Speciaux
 //x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
@@ -102,10 +110,8 @@ var nbLots = LotsList.length;
 //AIGUILLAGES
 //x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
 let AiguillageList = [
-      [405, 460, 2, 0.7, 0, 0, "001",0]
+      [405, 460, 2, 0.7, 0, 0, "011",0]
 ];
-
-
 
 var nbAiguillage = AiguillageList.length;
 
@@ -113,14 +119,17 @@ var nbAiguillage = AiguillageList.length;
 var cube = new Image();
 cube.src = "img/cube.png";
 
-var machine = new Image();
-machine.src = "img/machine0.png";
+var machine0 = new Image();
+machine0.src = "img/machine0.png";
 
 var generateur = new Image();
 generateur.src = "img/generateur.png";
 
 var lot = new Image();
 lot.src = "img/lot.png";
+
+var decoupeur = new Image();
+decoupeur.src = "img/decoupeur.png";
 
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];

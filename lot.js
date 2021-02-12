@@ -15,7 +15,7 @@ function Lot(){
 		for (let j = 0; j < max; j++){
 			let x = Positions[j][0];
 			let y = Positions[j][1];
-			let taille = 75;
+			let taille = 100;
 			var diff = Positions[j][0] - OldPositions[j][0];
 
 			//Si
@@ -48,8 +48,6 @@ function TravailLot(j){
 	        	Positions[i][1] = LotList[j][1] + TailleGenerateur/2;
 	    	}
 	        mouvement[i] = 0;
-	        LotList[j][3] = LotList[j][3] -1*LotList[j][2];
-	        LotList[j][5]++;
 	        break;
         }
     }
@@ -59,7 +57,7 @@ function VerifStockageLot(){
 	for (let i =0; i < nbLot; i++){
 		//Dessine les lots et leurs infos
 		ctx.drawImage(lot, LotList[i][0], LotList[i][1]);
-    	ctx.fillStyle = 'white';
+    	ctx.fillStyle = 'black';
 	    ctx.font = '15px sans-serif';
 	    ctx.fillText('Taille : ' + LotList[i][2], LotList[i][0] + 5, LotList[i][1] + 20);
 	   	ctx.fillText('Stock : ' + LotList[i][3], LotList[i][0] + 5, LotList[i][1] + 35);
@@ -68,6 +66,8 @@ function VerifStockageLot(){
 		if (LotList[i][3] >= LotList[i][2]){
 
 			if (stopped != 1){
+				LotList[i][3] = LotList[i][3] -1*LotList[i][2];
+	        	LotList[i][5]++;
 			   	setTimeout(function(){TravailLot(i)}, CLOCK/VitesseAcceleration);
 			}
 		}

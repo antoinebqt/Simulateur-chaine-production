@@ -16,7 +16,7 @@ function Lots(){
             for (let j = 0; j < max; j++){
                   let x = Positions[j][0];
                   let y = Positions[j][1];
-                  let taille = 75;
+                  let taille = 100;
                   var diff = Positions[j][0] - OldPositions[j][0];
                   //Si
                   if (((x >= LotsList[i][0]-TailleGenerateur/2-5) && (x < LotsList[i][0]+TailleGenerateur/2) && (y > LotsList[i][1]) && (y < LotsList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < LotsList[i][0]+9*TailleGenerateur/4) && (x > LotsList[i][0]+7*TailleGenerateur/4) && (y > LotsList[i][1]) && (y < LotsList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
@@ -53,9 +53,7 @@ function TravailLots(j){
                   Positions[i][1] = LotsList[j][1] + TailleGenerateur/2;
             }
               mouvement[i] = 0;
-              LotsList[j][3] = LotsList[j][3] -1*LotsList[j][2];
-              LotsList[j][6] = LotsList[j][6] -1*LotsList[j][7];
-              LotsList[j][5]++;
+              
               break;
         }
     }
@@ -65,7 +63,7 @@ function VerifStockageLots(){
       for (let i = 0; i < nbLots; i++){
           //Dessine les lots et leurs infos
           ctx.drawImage(lot, LotsList[i][0], LotsList[i][1]);
-          ctx.fillStyle = 'white';
+          ctx.fillStyle = 'black';
           ctx.font = '15px sans-serif';
           ctx.fillText('Taille : ' + LotsList[i][2] + ' & ' + LotsList[i][7], LotsList[i][0] + 5, LotsList[i][1] + 20);
           ctx.fillText('Stock 1 : ' + LotsList[i][3], LotsList[i][0] + 5, LotsList[i][1] + 35);
@@ -73,6 +71,9 @@ function VerifStockageLots(){
           ctx.fillText('Lots : ' + LotsList[i][5], LotsList[i][0] + 5, LotsList[i][1] + 65);
             if (LotsList[i][3] >= LotsList[i][2] && LotsList[i][6] >= LotsList[i][7]){
                   if (stopped != 1){
+                        LotsList[i][3] = LotsList[i][3] -1*LotsList[i][2];
+                        LotsList[i][6] = LotsList[i][6] -1*LotsList[i][7];
+                        LotsList[i][5]++;
                         setTimeout(function(){TravailLots(i)}, CLOCK/VitesseAcceleration);
                   }
             }
