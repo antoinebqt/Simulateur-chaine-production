@@ -73,7 +73,7 @@ var nbConvoyeur = ConvoyeurList.length;
 //x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0, image correspondante = 0
 let MachineList = [
       [260, 110, 2, 0, 3, 0, 0, 0],
-      [490, 110, 10, 0, 3, 0, 0, 0],
+      [490, 110, 1, 0, 3, 0, 0, 0],
       [390, 220, 3, 0, 4, 0, 0, 0],
       [510, 360, 5, 0, 4, 0, 0, 0],
 ];

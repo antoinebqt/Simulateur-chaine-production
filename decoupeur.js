@@ -3,7 +3,7 @@ function decoupeurSpawn(){
 		//Dessine les decoupeurs et leurs infos
     	ctx.drawImage(decoupeur, DecoupeurList[i][0], DecoupeurList[i][1]);
     	ctx.fillStyle = 'black';
-	    ctx.font = '15px sans-serif';
+	    ctx.font = '14px sans-serif';
 	    ctx.fillText('Taille : ' + DecoupeurList[i][2], DecoupeurList[i][0] + 5, DecoupeurList[i][1] + 20);
 	    ctx.fillText('Vitesse : ' + DecoupeurList[i][6] + 's', DecoupeurList[i][0] + 5, DecoupeurList[i][1] + 35);
 	    ctx.fillText('Decoupés : ' + DecoupeurList[i][5], DecoupeurList[i][0] + 5, DecoupeurList[i][1] + 50);
@@ -58,7 +58,7 @@ function VerifStockageDecoupeur(){
 		//Dessine les decoupeurs et leurs infos
 		ctx.drawImage(decoupeur, DecoupeurList[i][0], DecoupeurList[i][1]);
     	ctx.fillStyle = 'black';
-	    ctx.font = '15px sans-serif';
+	    ctx.font = '14px sans-serif';
 	    ctx.fillText('Taille : ' + DecoupeurList[i][2], DecoupeurList[i][0] + 5, DecoupeurList[i][1] + 20);
 	   	ctx.fillText('Vitesse : ' + DecoupeurList[i][6] + 's', DecoupeurList[i][0] + 5, DecoupeurList[i][1] + 35);
 	   	ctx.fillText('Decoupés : ' + DecoupeurList[i][5], DecoupeurList[i][0] + 5, DecoupeurList[i][1] + 50);
