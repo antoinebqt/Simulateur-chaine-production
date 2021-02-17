@@ -51,6 +51,10 @@ let OldPositions = [
 
 var max = Positions.length;
 
+
+
+
+
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
 let ConvoyeurList = [
@@ -64,10 +68,17 @@ let ConvoyeurList = [
       [600, 610, 100, 4],
       [500, 660, 200, 7],
       [820, 660, 120, 7],
-      [1060, 660, 100, 3]
+      [1060, 660, 100, 3],
+      [920, 780, 300, -5],
+      [650, 730, 150, -4],
+      [530, 780, 270, -6],
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
+
+
+
+
 
 //MACHINES
 //x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0, image correspondante = 0
@@ -80,6 +91,10 @@ let MachineList = [
 
 var nbMachine = MachineList.length;
 
+
+
+
+
 //LOT
 //x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0, nbCube crées
 let LotList = [
@@ -87,8 +102,11 @@ let LotList = [
       
 ];
 
-
 var nbLot = LotList.length;
+
+
+
+
 
 //DECOUPEUR
 //x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
@@ -96,8 +114,23 @@ let DecoupeurList = [
       [950, 590, 3, 0, 0, 0, 3]
 ];
 
-
 var nbDecoupeur = DecoupeurList.length;
+
+
+
+
+
+//DECOUPEUR DOUBLE
+//x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
+let DecoupeurDoubleList = [
+      [810, 700, 1, 0, 0, 0, 4]
+];
+
+var nbDecoupeurDouble = DecoupeurDoubleList.length;
+
+
+
+
 
 //LOT Speciaux
 //x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
@@ -107,6 +140,10 @@ let LotsList = [
 
 var nbLots = LotsList.length;
 
+
+
+
+
 //AIGUILLAGES
 //x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
 let AiguillageList = [
@@ -114,6 +151,10 @@ let AiguillageList = [
 ];
 
 var nbAiguillage = AiguillageList.length;
+
+
+
+
 
 //IMAGES
 var cube = new Image();
@@ -130,6 +171,9 @@ lot.src = "img/lot.png";
 
 var decoupeur = new Image();
 decoupeur.src = "img/decoupeur.png";
+
+var decoupeurDouble = new Image();
+decoupeurDouble.src = "img/decoupeur.png";
 
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
