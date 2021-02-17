@@ -53,8 +53,8 @@ var max = Positions.length;
 
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
-let ConvoyeurList = [
-      [10, 150, 150, 5],
+let Co]nvoyeurList = [
+      [10, 150, 150, 5,
       [150, 190, 100, 2],
       [370, 190, 110, 2],
       [600, 190, 100, 2],
@@ -65,6 +65,10 @@ let ConvoyeurList = [
       [500, 660, 200, 7],
       [820, 660, 120, 7],
       [1060, 660, 100, 3]
+];
+
+Let ConvoyeurButéeList =[
+
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
