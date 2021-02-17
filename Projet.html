@@ -11,8 +11,8 @@
   </head>
   <body>
     <div>
-      <button onclick="stop()">Stop</button>
       <button onclick="play()">Play</button>
+      <button onclick="stop()">Stop</button>
       <input type="range" id="Vitesse" name="Vitesse;" min="1" max="30" value="1">
       <script src="variable.js"></script>
       <script src="convoyeur.js"></script>
@@ -21,8 +21,9 @@
       <script src="generateur.js"></script>
       <script src="deplacement.js"></script>
       <script src="lot.js"></script>
-      <script src="lotprecis.js"></script>
+      <script src="lotdouble.js"></script>
       <script src="decoupeur.js"></script>
+      <script src="decoupeurdouble.js"></script>
     </div>
     <div>
       <canvas id="canvas" width="1600" height="800"></canvas>
@@ -41,7 +42,8 @@
       machineSpawn();
       lotSpawn();
       decoupeurSpawn();
-      lotsSpawn();
+      decoupeurDoubleSpawn();
+      lotDoubleSpawn();
     }
 
     function clock(){
@@ -52,8 +54,10 @@
       VerifStockageLot();
       Decoupeur();
       VerifStockageDecoupeur();
-      Lots();
-      VerifStockageLots();
+      DecoupeurDouble();
+      VerifStockageDecoupeurDouble();
+      LotDouble();
+      VerifStockageLotDouble();
       AiguillageCycle();
       Convoyeur();
       Deplacement();

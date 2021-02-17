@@ -51,6 +51,10 @@ let OldPositions = [
 
 var max = Positions.length;
 
+
+
+
+
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
 let ConvoyeurList = [
@@ -64,10 +68,17 @@ let ConvoyeurList = [
       [600, 610, 100, 4],
       [500, 660, 200, 7],
       [820, 660, 120, 7],
-      [1060, 660, 100, 3]
+      [1060, 660, 100, 3],
+      [920, 780, 300, -5],
+      [650, 730, 150, -2],
+      [530, 780, 270, -8]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
+
+
+
+
 
 //MACHINES
 //x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0, image correspondante = 0
@@ -80,6 +91,10 @@ let MachineList = [
 
 var nbMachine = MachineList.length;
 
+
+
+
+
 //LOT
 //x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0, nbCube crées
 let LotList = [
@@ -87,8 +102,23 @@ let LotList = [
       
 ];
 
-
 var nbLot = LotList.length;
+
+
+
+
+
+//LOT DOUBLE
+//x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
+let LotDoubleList = [
+      [710, 580, 2, 0, 0, 0, 0, 1]
+];
+
+var nbLotDouble = LotDoubleList.length;
+
+
+
+
 
 //DECOUPEUR
 //x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
@@ -96,16 +126,23 @@ let DecoupeurList = [
       [950, 590, 3, 0, 0, 0, 3]
 ];
 
-
 var nbDecoupeur = DecoupeurList.length;
 
-//LOT Speciaux
-//x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
-let LotsList = [
-      [710, 580, 2, 0, 0, 0, 0, 1]
+
+
+
+
+//DECOUPEUR DOUBLE
+//x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
+let DecoupeurDoubleList = [
+      [810, 700, 1, 0, 0, 0, 4]
 ];
 
-var nbLots = LotsList.length;
+var nbDecoupeurDouble = DecoupeurDoubleList.length;
+
+
+
+
 
 //AIGUILLAGES
 //x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
@@ -114,6 +151,10 @@ let AiguillageList = [
 ];
 
 var nbAiguillage = AiguillageList.length;
+
+
+
+
 
 //IMAGES
 var cube = new Image();
@@ -128,8 +169,18 @@ generateur.src = "img/generateur.png";
 var lot = new Image();
 lot.src = "img/lot.png";
 
+var lotdouble = new Image();
+lotdouble.src = "img/lotdouble.png";
+
 var decoupeur = new Image();
 decoupeur.src = "img/decoupeur.png";
+
+var decoupeurdouble = new Image();
+decoupeurdouble.src = "img/decoupeurdouble.png";
+
+
+
+
 
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
