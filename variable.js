@@ -53,8 +53,7 @@ var max = Positions.length;
 
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
-let Co]nvoyeurList = [
-      [10, 150, 150, 5,
+let ConvoyeurList = [
       [150, 190, 100, 2],
       [370, 190, 110, 2],
       [600, 190, 100, 2],
@@ -67,11 +66,13 @@ let Co]nvoyeurList = [
       [1060, 660, 100, 3]
 ];
 
-Let ConvoyeurButéeList =[
-
+let ConvoyeurButéeList =[
+      [10, 150, 150, 5]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
+
+var nbConvoyeurButée = ConvoyeurButéeList.length;
 
 //MACHINES
 //x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0, image correspondante = 0

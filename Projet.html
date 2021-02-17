@@ -23,6 +23,7 @@
       <script src="lot.js"></script>
       <script src="lotprecis.js"></script>
       <script src="decoupeur.js"></script>
+      <script src="convoyeurbutée.js"></script>
     </div>
     <div>
       <canvas id="canvas" width="1600" height="800"></canvas>
@@ -37,6 +38,7 @@
     function init(){
       Generateur(Xgenerateur, Ygenerateur, TailleGenerateur);
       convoyeurSpawn();
+      convoyeurButéeSpawn();
       aiguillageSpawn();
       machineSpawn();
       lotSpawn();
@@ -56,6 +58,7 @@
       VerifStockageLots();
       AiguillageCycle();
       Convoyeur();
+      ConvoyeurButée();
       Deplacement();
       Nettoyage();
 

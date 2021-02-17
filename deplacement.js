@@ -20,6 +20,20 @@ function Deplacement(){
 	            	}
 	            	if (ok == 1){break;}	
 	            }
+	            for(let k = 0; k < nbConvoyeurButée;k++){
+		            x = ConvoyeurButéeList[k][0];
+					y = ConvoyeurButéeList[k][1];
+					longueur = ConvoyeurButéeList[k][2];
+	            	if((Positions[i][0] <= x+longueur) && (Positions[i][0] >= x-taillecube) && (Positions[i][0] != '') && (Positions[i][1]+j+taillecube > y-3) && (Positions[i][1]+j+taillecube < y-1)){
+	            		Positions[i][1] = Positions[i][1]+j;
+	            		ok = 1;
+						mouvement[i] = 1;
+						ctx.clearRect(OldPositions[i][0]-1, OldPositions[i][1]-1-j, tailleCube+2, tailleCube+2);
+	            		break;
+	            	}
+	            	
+	            	if (ok == 1){break;}	
+	            }
             }
             if(ok == 0){
 				ctx.clearRect(Positions[i][0]-1,Positions[i][1]-1, tailleCube+2, tailleCube+2);
