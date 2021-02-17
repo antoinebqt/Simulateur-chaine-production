@@ -65,9 +65,9 @@ let ConvoyeurList = [
       [820, 660, 120, 7],
       [1060, 660, 100, 3]
 ];
-
+//x, y, taille, vitesse en sec pour parcourir, temps feu vert, temps feu rouge, etat
 let ConvoyeurButéeList =[
-      [10, 150, 150, 5]
+      [10, 150, 150, 5, 5, 5, 0]
 ];
 
 var nbConvoyeur = ConvoyeurList.length;
