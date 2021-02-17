@@ -142,3 +142,5 @@ var stopped = 0;
 var z;
 var cycle;
 var TailleMachine = 100;
+let Probleme = [0,0,0,0];
+var stopgenerateur = 0;

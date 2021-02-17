@@ -27,15 +27,20 @@ function Machine(){
 				//Change l'image en fonction de son stockage
 				if (MachineList[i][3] >= 20){
 					MachineList[i][7] = 20;
+					Probleme[i] = 1;
 				} 
 				else if (MachineList[i][3] >= 10){
 					MachineList[i][7] = 10;
+					
 				}
 				else if (MachineList[i][3] >= 5){
 					MachineList[i][7] = 5;
 				} 
 				else MachineList[i][7] = 0;
 
+				if (MachineList[i][7]==0){
+					Probleme[i]=0;
+				}
 				//Fait disparaitre le cube
 				OldPositions[j] = Positions[j];
 				Positions[j] = ['',''];
