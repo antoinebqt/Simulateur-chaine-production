@@ -145,9 +145,9 @@ var nbDecoupeurDouble = DecoupeurDoubleList.length;
 
 
 //AIGUILLAGES
-//x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
+//x, y, vitesse, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
 let AiguillageList = [
-      [405, 460, 2, 0.7, 0, 0, "011",0]
+      [405, 460, 2, 0, 0, "011",0]
 ];
 
 var nbAiguillage = AiguillageList.length;

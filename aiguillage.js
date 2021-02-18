@@ -2,7 +2,7 @@ let tailleAiguillage = 50;
 
 function aiguillageSpawn(){
 	for (let i = 0; i < nbAiguillage; i++){
-		cycle = AiguillageList[i][6];
+		cycle = AiguillageList[i][5];
 		//Dessine les aiguillages
 		//Dessine le haut des aiguillages
 		ctx.fillStyle = 'brown';  
@@ -49,7 +49,7 @@ function aiguillageSpawn(){
 	    ctx.fillText('1', AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] - tailleAiguillage/2);
 	}
 }
-
+/*
 function AiguillageProba(){
 	for (let i = 0; i < nbAiguillage; i++){
 		for (let j = 0; j < max; j++){
@@ -97,11 +97,11 @@ function AiguillageProba(){
 		}
 	}
 }
-
+*/
 function AiguillageCycle(){
 for (let i = 0; i < nbAiguillage; i++){
-			z = AiguillageList[i][7];
-			cycle = AiguillageList[i][6];
+			z = AiguillageList[i][6];
+			cycle = AiguillageList[i][5];
 
 		for (let j = 0; j < max; j++){
 			x = Positions[j][0];
@@ -118,15 +118,15 @@ for (let i = 0; i < nbAiguillage; i++){
 				if (Positions[j][0]+tailleCube >= AiguillageList[i][0]+tailleAiguillage){
 					//Si on est rendu à un 0 => on envoie en bas
 					if (cycle.charAt(z)=='0'){
+						AiguillageList[i][3]++;
 						AiguillageList[i][4]++;
-						AiguillageList[i][5]++;
 						Positions[j][1]+= tailleAiguillage;
-						AiguillageList[i][7] = ((AiguillageList[i][7]+1)%AiguillageList[i][6].length);
+						AiguillageList[i][6] = ((AiguillageList[i][6]+1)%AiguillageList[i][5].length);
 					}else //Sinon on envoie en haut
 					{
-						AiguillageList[i][5]++;
+						AiguillageList[i][4]++;
 						Positions[j][1]-= tailleAiguillage;
-						AiguillageList[i][7] = ((AiguillageList[i][7]+1)%AiguillageList[i][6].length);
+						AiguillageList[i][6] = ((AiguillageList[i][6]+1)%AiguillageList[i][5].length);
 					}
 				}
 			}

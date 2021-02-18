@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+    <script src="CodeMain.js"></script>
+    <script src="variable.js"></script>
+    <link type="text/css" rel="stylesheet" href="Main.css">
+  </head>
+  <body>
+    <button onclick="Preset(1)">Preset 1</button>
+    <button onclick="Preset(2)">Preset 2</button>
+    <button onclick="Preset(3)">Preset 3</button>
+    <button onclick="Preset(4)">Preset 4</button>
+    <br><br>
+    <button onclick="TabList()">Tableau de positions</button><br><br>
+    <t>Convoyeur</t><br>
+    <button onclick="AddLigne('convoyeur')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('convoyeur')">Supprimer Ligne</button>
+    <table id='convoyeur'>
+      <tr>
+        <td>x</td>
+        <td>y</td>
+        <td>taille</td>
+        <td>vitesse</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
+      </tr>
+    </table>
+    <button onclick="Actualiser('valeurConvoyeur')">Actualiser</button><br><br>
+
+    <t>Machine</t><br>
+    <button onclick="AddLigne('machine')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('machine')">Supprimer Ligne</button>
+    <table id='machine'>
+      <tr>
+        <td>x</td>
+        <td>y</td>
+        <td>vitesse</td>
+        <td>stockage</td>
+        <td>nbTravailleur</td>
+        <td>nbTravailleurActif</td>
+        <td>sens</td>
+        <td>image</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurMachine"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurMachine"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurMachine"></td>
+        <td>0</td>
+        <td><input type="number" min="0" max="100000000" class="valeurMachine"></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <button onclick="Actualiser('valeurMachine')">Actualiser</button><br><br>
+
+    <t>Lot</t><br>
+    <button onclick="AddLigne('lot')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('lot')">Supprimer Ligne</button>
+    <table id='lot'>
+      <tr>
+        <td>x</td>
+        <td>y</td>
+        <td>nbre lot à entrée</td>
+        <td>stockage</td>
+        <td>sens</td>
+        <td>nbCube crées</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurLot"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurLot"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurLot"></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <button onclick="Actualiser('valeurLot')">Actualiser</button><br><br>
+
+    <t>Decoupeur</t><br>
+    <button onclick="AddLigne('decoupeur')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('decoupeur')">Supprimer Ligne</button>
+    <table id='decoupeur'>
+      <tr>
+        <td>x</td>
+        <td>y</td>
+        <td>nb cube sortie</td>
+        <td>stockage</td>
+        <td>sens</td>
+        <td>nbCube découpé</td>
+        <td>temps en sec</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurDecoupeur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurDecoupeur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurDecoupeur"></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><input type="number" min="0" max="100000000" class="valeurDecoupeur"></td>
+      </tr>
+    </table>
+    <button onclick="Actualiser('valeurDecoupeur')">Actualiser</button><br><br>
+
+    <t>LotDouble</t><br>
+    <button onclick="AddLigne('lotDouble')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('lotDouble')">Supprimer Ligne</button>
+    <table id='lotDouble'>
+      <tr>
+        <td>x</td>
+        <td>y</td>
+        <td>nbre lots 1ere entrée</td>
+        <td>stockage 1</td>
+        <td>sens</td>
+        <td>nbCube crées</td>
+        <td>stockage 2</td>
+        <td>nbre lots 2e entrée</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurLotDouble"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurLotDouble"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurLotDouble"></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><input type="number" min="0" max="100000000" class="valeurLotDouble"></td>
+      </tr>
+    </table>
+    <button onclick="Actualiser('valeurLotDouble')">Actualiser</button><br><br>
+
+    <t>Aiguillage</t><br>
+    <button onclick="AddLigne('aiguillage')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('aiguillage')">Supprimer Ligne</button>
+    <table id='aiguillage'>
+      <tr>
+        <td>x</td>
+        <td>y</td>
+        <td>vitesse</td>
+        <td>nbObjet envoyé en haut</td>
+        <td>nbObjet total</td>
+        <td>cycle</td>
+        <td>curseur cycle</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurAiguillage"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurAiguillage"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurAiguillage"></td>
+        <td>0</td>
+        <td>0</td>
+        <td><input type="number" min="0" max="100000000" class="valeurAiguillage"></td>
+        <td>0</td>
+      </tr>
+    </table>
+    <button onclick="Actualiser('valeurAiguillage')">Actualiser</button><br><br>
+
+    <div>
+      <canvas id="canvasMain" width="1600" height="800"></canvas>
+    </div>
+
+    <script>
+        var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage']
+        function Clock()
+        {
+            (document.getElementById('canvasMain').getContext('2d')).clearRect(0, 0, canvasMain.width-1, canvasMain.height-1);
+            Affichage();
+            for (let i=0;i<ClassList.length;i++)
+            {
+                Actualiser(ClassList[i]);
+            }
+            setTimeout(function(){Clock()},200);
+        }
+
+
+    window.onload = Clock;
+  </script>
+</html>
