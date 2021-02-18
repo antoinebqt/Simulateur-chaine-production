@@ -148,7 +148,11 @@ function AddLigne(RefId)
 function SuppLigne(RefId)
 {
 	document.getElementById(RefId).deleteRow(1);
-	if(RefId == 'convoyeur' || RefId == 'machine' || RefId == 'lot' || RefId == 'decoupeur' || RefId == 'lotDouble' || RefId == 'aiguillage')tabConvoyeur.shift();
+	if(RefId == 'convoyeur')tabConvoyeur.shift();
+	if(RefId == 'lot')tabLot.shift();
+	if(RefId == 'decoupeur')tabDecoupeur.shift();
+	if(RefId == 'lotDouble')tabLotDouble.shift();
+	if(RefId == 'aiguillage')tabAiguillage.shift();
 }
 
 function Actualiser(RefClass)
