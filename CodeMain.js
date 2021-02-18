@@ -258,6 +258,7 @@ function Affichage()
 			var y = tabConvoyeur[i][1];
 			var t = tabConvoyeur[i][2];
 			ctx.fillStyle = 'black';
+			ctx.strokeStyle = 'black';
 	        ctx.fillRect(x, y, t, 3);
 	        ctx.fillRect(x, y + 5, t, 3);
 	        ctx.lineWidth = 2;
