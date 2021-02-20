@@ -9,10 +9,10 @@
     <link type="text/css" rel="stylesheet" href="Main.css">
   </head>
   <body>
-    <button onclick="Preset(1)">Preset 1</button>
-    <button onclick="Preset(2)">Preset 2</button>
-    <button onclick="Preset(3)">Preset 3</button>
-    <button onclick="Preset(4)">Preset 4</button>
+    <button onclick="Preset(0)">Preset 1</button>
+    <button onclick="Preset(1)">Preset 2</button>
+    <button onclick="Preset(2)">Preset 3</button>
+    <button onclick="Preset(3)">Preset 4</button>
     <br><br>
     <button onclick="TabList()">Tableau de positions</button><br><br>
     <t>Convoyeur</t><br>
@@ -184,9 +184,10 @@
     </div>
 
     <script>
-        var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];
+        
         function Clock()
         {
+            var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];
             (document.getElementById('canvasMain').getContext('2d')).clearRect(0, 0, canvasMain.width-1, canvasMain.height-1);
             Affichage();
             for (let i=0;i<ClassList.length;i++)
