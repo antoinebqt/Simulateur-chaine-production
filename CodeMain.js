@@ -27,6 +27,8 @@ let tabDecoupeurDouble = [
     [0,0,0,0,0,0,0]
 ];
 
+
+
 function AddLigne(RefId)
 {
 	var refTable = document.getElementById(RefId);
@@ -298,7 +300,7 @@ function Affichage()
 	{
 		if (i%25==0)
 		{
-			
+
 			ctx.fillStyle = 'grey';
 			ctx.fillRect(i, 5, 1, canvasMain.height-10);
 			ctx.fillStyle = 'black';
@@ -311,7 +313,6 @@ function Affichage()
 	        {
 				ctx.fillRect(i, 5, 4, 7);
 	        }
-
 		}
 	}
 	for(let i = 5; i<canvasMain.height-10;i++)
@@ -472,3 +473,29 @@ function Affichage()
 		}
 	}
 }
+
+
+
+//IMAGES
+var cube = new Image();
+cube.src = "img/cube.png";
+
+var machine0 = new Image();
+machine0.src = "img/machine0.png";
+
+var generateur = new Image();
+generateur.src = "img/generateur.png";
+
+var lot = new Image();
+lot.src = "img/lot.png";
+
+var lotdouble = new Image();
+lotdouble.src = "img/lotdouble.png";
+
+var decoupeur = new Image();
+decoupeur.src = "img/decoupeur.png";
+
+var decoupeurdouble = new Image();
+decoupeurdouble.src = "img/decoupeurdouble.png";
+
+var Xgenerateur = 0, Ygenerateur = 100;
