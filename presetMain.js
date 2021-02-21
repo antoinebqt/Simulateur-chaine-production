@@ -181,11 +181,17 @@ function Preset(number)
 			}else
 			{
 				if(i%MachineList[0].length==0 && i!=0) {k++; j=0;}
-				List[i].setAttribute("value", MachineList[k][j]);
+				//console.log(i,List[i]);
+				List[i].setAttribute("value", correction(MachineList[k][j]));
 			}
-			if(j==MachineList[0].length){k++; j=-1;i--;}
+			if(j==MachineList[0].length){k++; j=-1;i--}
 			j++;
 		}	
-	}
-		
+	}	
+}
+
+function correction(list)
+{
+	if(list == null) return 0;
+	return list;
 }
