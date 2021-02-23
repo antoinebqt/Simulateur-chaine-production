@@ -47,8 +47,10 @@ function convoyeurButéeSpawn() {
     }
 }
 
-function TimerButée(j){
-        ConvoyeurButéeList[j][6]++;
+function TimerButée(){
+    for (let j = 0; j < nbConvoyeurButée; j++){
+         ConvoyeurButéeList[j][6]++;
+         console.log("1sec");
         if (ConvoyeurButéeList[j][7]==0){
             if (ConvoyeurButéeList[j][6]>ConvoyeurButéeList[j][4]){
                 ConvoyeurButéeList[j][7]=1;
@@ -60,13 +62,8 @@ function TimerButée(j){
                 ConvoyeurButéeList[j][6]=0;
             }
         }
-}
-
-function VerifButée(){
-    for (let i = 0; i < nbConvoyeurButée; i++){
-         if (stopped != 1){
-                setTimeout(function(){TimerButée(i)}, (CLOCK/VitesseAcceleration)*20);
-            }
     }
-                    
+        if (stopped != 1){
+                setTimeout(function(){TimerButée()}, (CLOCK/VitesseAcceleration)*20);
+            }
 }
