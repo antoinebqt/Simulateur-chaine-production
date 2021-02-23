@@ -1,0 +1,19 @@
+table{
+  table-layout: fixed;
+  height: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td, th {
+  width: 100px;
+  border: 1px solid black;
+}
+
+input{
+  width: 92px;
+}
+      
+canvas{
+  border: 1px solid black;
+}

@@ -39,11 +39,11 @@ function TravailDecoupeur(j){
     for (let i = 0; i < max; i++){
         //Dès qu'un emplacement est libre
         if (Positions[i][0] == ''){
-            if (DecoupeurList[j][4] == 1){
+            if (DecoupeurList[j][4] == 1){ //Arrive de la gauche
                 Positions[i][0] = DecoupeurList[j][0] + 2 * TailleGenerateur + 5;
                 Positions[i][1] = DecoupeurList[j][1] + TailleGenerateur/2;
             }
-            else {
+            else { //Arrive de la droite
                 Positions[i][0] = DecoupeurList[j][0] - TailleGenerateur/2 - 10;
                 Positions[i][1] = DecoupeurList[j][1] + TailleGenerateur/2;
             }

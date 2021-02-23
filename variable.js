@@ -51,74 +51,80 @@ let OldPositions = [
 
 var max = Positions.length;
 
+
+
+var Tableau = localStorage.getObj('tab');
+
+
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
-let ConvoyeurList = [
-      [150, 190, 100, 2],
-      [370, 190, 110, 2],
-      [600, 190, 100, 2],
-      [500, 290, 300, -2],
-      [280, 290, 100, -2],
-      [130, 460, 270, 2],
-      [600, 610, 100, 4],
-      [500, 660, 200, 7],
-      [820, 660, 120, 7],
-      [1060, 660, 100, 3]
-];
-//x, y, taille, vitesse en sec pour parcourir, temps feu vert, temps feu rouge, etat
-let ConvoyeurButéeList =[
-      [10, 150, 150, 5, 5, 5, 0]
-];
+let ConvoyeurList = Tableau[0];
 
 var nbConvoyeur = ConvoyeurList.length;
 
-var nbConvoyeurButée = ConvoyeurButéeList.length;
+
+
+
 
 //MACHINES
 //x, y, vitesse, stockage actuelle, nbTravailleur, nbTravailleurActif, sens = 0, image correspondante = 0
-let MachineList = [
-      [260, 110, 2, 0, 3, 0, 0, 0],
-      [490, 110, 1, 0, 3, 0, 0, 0],
-      [390, 220, 3, 0, 4, 0, 0, 0],
-      [510, 360, 5, 0, 4, 0, 0, 0],
-];
+let MachineList = Tableau[1];
 
 var nbMachine = MachineList.length;
 
+
+
+
+
 //LOT
 //x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0, nbCube crées
-let LotList = [
-      [175, 230, 3, 0, 0, 0]
-      
-];
-
+let LotList = Tableau[2];
 
 var nbLot = LotList.length;
 
+
+
+
+
+//LOT DOUBLE
+//x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
+let LotDoubleList = Tableau[3];
+
+var nbLotDouble = LotDoubleList.length;
+
+
+
+
+
 //DECOUPEUR
 //x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
-let DecoupeurList = [
-      [950, 590, 3, 0, 0, 0, 3]
-];
-
+let DecoupeurList = Tableau[4];
 
 var nbDecoupeur = DecoupeurList.length;
 
-//LOT Speciaux
-//x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
-let LotsList = [
-      [710, 580, 2, 0, 0, 0, 0, 1]
-];
 
-var nbLots = LotsList.length;
+
+
+
+//DECOUPEUR DOUBLE
+//x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
+let DecoupeurDoubleList = Tableau[5];
+
+var nbDecoupeurDouble = DecoupeurDoubleList.length;
+
+
+
+
 
 //AIGUILLAGES
-//x, y, vitesse, ratio vers le haut, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
-let AiguillageList = [
-      [405, 460, 2, 0.7, 0, 0, "011",0]
-];
+//x, y, vitesse, nbObjet envoyé en haut, nbObjet total, cycle, curseur cycle
+let AiguillageList = Tableau[6];
 
 var nbAiguillage = AiguillageList.length;
+
+
+
+
 
 //IMAGES
 var cube = new Image();
@@ -133,8 +139,18 @@ generateur.src = "img/generateur.png";
 var lot = new Image();
 lot.src = "img/lot.png";
 
+var lotdouble = new Image();
+lotdouble.src = "img/lotdouble.png";
+
 var decoupeur = new Image();
 decoupeur.src = "img/decoupeur.png";
+
+var decoupeurdouble = new Image();
+decoupeurdouble.src = "img/decoupeurdouble.png";
+
+
+
+
 
 //Autres variables générale
 var mouvement = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
