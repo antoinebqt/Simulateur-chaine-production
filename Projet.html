@@ -18,6 +18,7 @@
       <script src="Files.js"></script>
       <script src="variable.js"></script>
       <script src="convoyeur.js"></script>
+      <script src="convoyeurbutée.js"></script>
       <script src="machine.js"></script>
       <script src="aiguillage.js"></script>
       <script src="generateur.js"></script>
@@ -46,6 +47,7 @@
       decoupeurSpawn();
       decoupeurDoubleSpawn();
       lotDoubleSpawn();
+      convoyeurButéeSpawn();
     }
 
     function clock(){
@@ -62,6 +64,8 @@
       VerifStockageLotDouble();
       AiguillageCycle();
       Convoyeur();
+      ConvoyeurButée();
+      VerifButée();
       Deplacement();
       Nettoyage();
 

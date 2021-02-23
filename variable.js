@@ -62,8 +62,11 @@ let ConvoyeurList = Tableau[0];
 
 var nbConvoyeur = ConvoyeurList.length;
 
+//Convoyeur Butée
+//x,y,taille,vitesse en sec, tps vert, tps rouge, timer, etat
+let ConvoyeurButéeList = [[1100,725,125,-10,10,5,0,0]];
 
-
+var nbConvoyeurButée = ConvoyeurButéeList.length;
 
 
 //MACHINES
