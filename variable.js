@@ -52,7 +52,6 @@ let OldPositions = [
 var max = Positions.length;
 
 
-
 var Tableau = localStorage.getObj('tab');
 
 
@@ -64,7 +63,7 @@ var nbConvoyeur = ConvoyeurList.length;
 
 //Convoyeur Butée
 //x,y,taille,vitesse en sec, tps vert, tps rouge, timer, etat
-let ConvoyeurButéeList = [[1100,725,125,-10,10,5,0,0]];
+let ConvoyeurButéeList = [[1100,725,125,-10,10,15,0,0]];
 
 var nbConvoyeurButée = ConvoyeurButéeList.length;
 
