@@ -1,19 +1,93 @@
+html {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background-blend-mode: multiply,multiply;
+  background-attachment: fixed;
+}
+
+button {
+  margin : 5px;
+  border: 2px solid whitesmoke;
+  cursor: pointer;
+  color: whitesmoke;
+  border-radius: 5px;
+  outline: none;
+  font-family: "Titillium Web";
+  font-size: 17px;
+  background-image: linear-gradient(to top, #1e20c5 0%, #49a6d1 100%);
+  padding: 1px 3px;
+}
+
+button:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #000;
+  transform: translateY(-0.2em);
+  transition: 0.2s;
+}
+
+button:active {
+  opacity: 50%;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+}
+hr {
+  margin-top: 0px;
+  width: 600px;
+  height: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+h1 {
+  margin: 0px;
+  text-align: center;
+  font-family: "Titillium Web";
+  color: whitesmoke;
+}
+
+p {
+  margin: 0px;
+  margin-left: 5px;
+  font-family: "Titillium Web";
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 25px;
+  color: whitesmoke;
+}
+
 table{
+  margin-left: 5px;
   table-layout: fixed;
   height: 100%;
-  border: 1px solid black;
+  text-align: center;
+  border: 3px solid whitesmoke;
   border-collapse: collapse;
+  font-family: "Titillium Web";
+  color: whitesmoke;
+  transition: 0.2s;
+}
+
+table:hover {
+  border : 3px solid #175db8;
 }
 
 td, th {
-  width: 100px;
-  border: 1px solid black;
+  padding: 3px;
+  border: 1px solid whitesmoke;
+  min-width: 50px;
 }
 
 input{
-  width: 92px;
+  border : 2px solid #175db8;
+  border-radius: 3px;
+  width: 100px;
+  outline: none;
 }
       
 canvas{
-  border: 1px solid black;
+  border: 3px solid whitesmoke;
+  border-radius: 5px;
+  background-color: rgba(248, 246, 246, 0.6);
 }

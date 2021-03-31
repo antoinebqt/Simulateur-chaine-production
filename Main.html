@@ -7,24 +7,32 @@
     <script src="presetMain.js"></script>
     <script src="Files.js"></script>
     <link type="text/css" rel="stylesheet" href="Main.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium Web|Cookie|Raleway:light" rel="stylesheet" />
   </head>
   <body>
-    <button onclick="Preset(0)">Preset 1</button>
-    <button onclick="Preset(1)">Preset 2</button>
-    <button onclick="Preset(2)">Preset 3</button>
-    <button onclick="Preset(3)">Preset 4</button>
-    <button onclick="Ecrire()">Redirection</button>
+    <h1>Menu principal</h1>
+    <hr>
+    <div class="menu">
+      <button onclick="Preset(0)">Preset 1</button>
+      <button onclick="Preset(1)">Preset 2</button>
+      <button onclick="Preset(2)">Preset 3</button>
+      <button onclick="Preset(3)">Preset 4</button>
+      <button onclick="Ecrire()">Redirection</button>
+      <br><br>
+      <button onclick="TabList()">Tableau de positions</button>
+    </div>
+   
     <br><br>
-    <button onclick="TabList()">Tableau de positions</button><br><br>
-    <t>Convoyeur</t><br>
+
+    <p>Convoyeur</p>
     <button onclick="AddLigne('convoyeur')">Ajouter Ligne</button>
     <button onclick="SuppLigne('convoyeur')">Supprimer Ligne</button>
     <table id='convoyeur'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>taille</td>
-        <td>vitesse</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Taille</td>
+        <td>Vitesse (en secondes)</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
@@ -32,21 +40,21 @@
         <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
         <td><input type="number" min="0" max="100000000" class="valeurConvoyeur"></td>
       </tr>
-    </table><br><br>
+    </table><br>
 
-    <t>Machine</t><br>
+    <p>Machine</p>
     <button onclick="AddLigne('machine')">Ajouter Ligne</button>
     <button onclick="SuppLigne('machine')">Supprimer Ligne</button>
     <table id='machine'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>vitesse</td>
-        <td>stockage</td>
-        <td>nbTravailleur</td>
-        <td>nbTravailleurActif</td>
-        <td>sens</td>
-        <td>image</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Vitesse (en secondes)</td>
+        <td>Stockage</td>
+        <td>Nombre de travailleur</td>
+        <td>Nombre de travailleur actif</td>
+        <td>Sens</td>
+        <td>Image</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurMachine"></td>
@@ -58,19 +66,19 @@
         <td>0</td>
         <td>0</td>
       </tr>
-    </table><br><br>
+    </table><br>
 
-    <t>Lot</t><br>
+    <p>Lot</p>
     <button onclick="AddLigne('lot')">Ajouter Ligne</button>
     <button onclick="SuppLigne('lot')">Supprimer Ligne</button>
     <table id='lot'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>nbre lot à entrée</td>
-        <td>stockage</td>
-        <td>sens</td>
-        <td>nbCube crées</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Nombre de cubes en entrée</td>
+        <td>Stockage</td>
+        <td>Sens</td>
+        <td>Nombre de cubes crées</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurLot"></td>
@@ -80,20 +88,20 @@
         <td>0</td>
         <td>0</td>
       </tr>
-    </table><br><br>
+    </table><br>
 
-    <t>Decoupeur</t><br>
+    <p>Decoupeur</p>
     <button onclick="AddLigne('decoupeur')">Ajouter Ligne</button>
     <button onclick="SuppLigne('decoupeur')">Supprimer Ligne</button>
     <table id='decoupeur'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>nb cube sortie</td>
-        <td>stockage</td>
-        <td>sens</td>
-        <td>nbCube découpé</td>
-        <td>temps en sec</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Nombre de cubes en sortie</td>
+        <td>Stockage</td>
+        <td>Sens</td>
+        <td>Nombre de cubes découpés</td>
+        <td>Vitesse (en secondes)</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurDecoupeur"></td>
@@ -104,21 +112,21 @@
         <td>0</td>
         <td><input type="number" min="0" max="100000000" class="valeurDecoupeur"></td>
       </tr>
-    </table><br><br>
+    </table><br>
 
-    <t>Lot Double</t><br>
+    <p>Lot Double</p>
     <button onclick="AddLigne('lotDouble')">Ajouter Ligne</button>
     <button onclick="SuppLigne('lotDouble')">Supprimer Ligne</button>
     <table id='lotDouble'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>nbre lots 1ere entrée</td>
-        <td>stockage 1</td>
-        <td>sens</td>
-        <td>nbCube crées</td>
-        <td>stockage 2</td>
-        <td>nbre lots 2e entrée</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Nombre de cubes pour l'entrée 1</td>
+        <td>Stockage 1</td>
+        <td>Sens</td>
+        <td>Nombre de cubes crées</td>
+        <td>Stockage 2</td>
+        <td>Nombre de cubes pour l'entrée 2</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurLotDouble"></td>
@@ -130,20 +138,20 @@
         <td>0</td>
         <td><input type="number" min="0" max="100000000" class="valeurLotDouble"></td>
       </tr>
-    </table><br><br>
+    </table><br>
 
-    <t>Aiguillage</t><br>
+    <p>Aiguillage</p>
     <button onclick="AddLigne('aiguillage')">Ajouter Ligne</button>
     <button onclick="SuppLigne('aiguillage')">Supprimer Ligne</button>
     <table id='aiguillage'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>vitesse</td>
-        <td>nbObjet envoyé en haut</td>
-        <td>nbObjet total</td>
-        <td>cycle</td>
-        <td>curseur cycle</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Vitesse (en secondes)</td>
+        <td>Nombre de cubes envoyé en haut</td>
+        <td>Nombre de cubes total</td>
+        <td>Cycle</td>
+        <td>Curseur cycle</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurAiguillage"></td>
@@ -154,20 +162,20 @@
         <td><input type="number" min="0" max="100000000" class="valeurAiguillage"></td>
         <td>0</td>
       </tr>
-    </table><br><br>
+    </table><br>
 
-    <t>Decoupeur Double</t><br>
+    <p>Decoupeur Double</p>
     <button onclick="AddLigne('decoupeurDouble')">Ajouter Ligne</button>
     <button onclick="SuppLigne('decoupeurDouble')">Supprimer Ligne</button>
     <table id='decoupeurDouble'>
       <tr>
-        <td>x</td>
-        <td>y</td>
-        <td>nb cube sortie</td>
-        <td>stockage</td>
-        <td>sens</td>
-        <td>nbCube découpé</td>
-        <td>temps en sec</td>
+        <td>X</td>
+        <td>Y</td>
+        <td>Nombre de cubes en sortie</td>
+        <td>Stockage</td>
+        <td>Sens</td>
+        <td>Nombre de cubes découpés</td>
+        <td>Vitesse (en secondes)</td>
       </tr>
       <tr>
         <td><input type="number" min="0" max="100000000" class="valeurDecoupeurDouble"></td>
@@ -178,27 +186,26 @@
         <td>0</td>
         <td><input type="number" min="0" max="100000000" class="valeurDecoupeurDouble"></td>
       </tr>
-    </table><br><br>
+    </table><br>
+
+    <p>Apercu :</p>
 
     <div>
       <canvas id="canvasMain" width="1600" height="800"></canvas>
     </div>
 
     <script>
-        
-        function Clock()
+      function Clock()
+      {
+        var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];
+        (document.getElementById('canvasMain').getContext('2d')).clearRect(0, 0, canvasMain.width-1, canvasMain.height-1);
+        Affichage();
+        for (let i=0;i<ClassList.length;i++)
         {
-            var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];
-            (document.getElementById('canvasMain').getContext('2d')).clearRect(0, 0, canvasMain.width-1, canvasMain.height-1);
-            Affichage();
-            for (let i=0;i<ClassList.length;i++)
-            {
-                Actualiser(ClassList[i]);
-            }
-            setTimeout(function(){Clock()},200);
+          Actualiser(ClassList[i]);
         }
-
-
+        setTimeout(function(){Clock()},200);
+      }
     window.onload = Clock;
   </script>
 </html>
