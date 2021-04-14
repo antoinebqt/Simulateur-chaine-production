@@ -80,10 +80,19 @@ td, th {
 }
 
 input{
-  border : 2px solid #175db8;
-  border-radius: 3px;
   width: 100px;
   outline: none;
+  font-family: "Titillium Web";
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
       
 canvas{
