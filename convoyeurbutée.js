@@ -21,8 +21,8 @@ function ConvoyeurButée() {
                 }
             }
         }
+        ctx.fillStyle = 'red';
         ctx.fillRect(ConvoyeurButéeList[t][0]+ConvoyeurButéeList[t][2]/2, ConvoyeurButéeList[t][1], 2, 5);
-
     }
 }
 
@@ -33,6 +33,7 @@ function convoyeurButéeSpawn() {
         } else tps = ConvoyeurButéeList[i][3];
         //Dessine les convoyeurs
         ctx.fillStyle = 'black';
+        ctx.strokeStyle = 'black';
         ctx.fillRect(ConvoyeurButéeList[i][0], ConvoyeurButéeList[i][1], ConvoyeurButéeList[i][2], 3);
         ctx.fillRect(ConvoyeurButéeList[i][0], ConvoyeurButéeList[i][1] + 5, ConvoyeurButéeList[i][2], 3);
         ctx.lineWidth = 2;

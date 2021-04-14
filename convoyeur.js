@@ -26,6 +26,7 @@ function convoyeurSpawn() {
         } else tps = ConvoyeurList[i][3];
         //Dessine les convoyeurs
         ctx.fillStyle = 'black';
+        ctx.strokeStyle = 'black';
         ctx.fillRect(ConvoyeurList[i][0], ConvoyeurList[i][1], ConvoyeurList[i][2], 3);
         ctx.fillRect(ConvoyeurList[i][0], ConvoyeurList[i][1] + 5, ConvoyeurList[i][2], 3);
         ctx.lineWidth = 2;

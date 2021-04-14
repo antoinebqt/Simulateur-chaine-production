@@ -1,0 +1,46 @@
+html {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply,multiply;
+    background-attachment: fixed;
+}
+  
+button {
+  margin : 5px;
+  border: 2px solid whitesmoke;
+  cursor: pointer;
+  color: whitesmoke;
+  border-radius: 5px;
+  outline: none;
+  font-family: "Titillium Web";
+  font-size: 17px;
+  padding: 1px 3px;
+  background-image: linear-gradient(to top, #1e20c5 0%, #49a6d1 100%);
+}
+  
+button:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #000;
+  transform: translateY(-0.2em);
+  transition: 0.2s;
+}
+  
+button:active {
+  opacity: 50%;
+}
+
+#play {
+  background-image: linear-gradient(to top, #1ec550 0%, #23a138 100%);
+}
+
+#stop {
+  background-image: linear-gradient(to top, #e63b3b 0%, #a12323 100%);
+}
+  
+.menu {
+    display: flex;
+}
+
+canvas {
+  border: 3px solid whitesmoke;
+  border-radius: 5px;
+  background-color: rgba(248, 246, 246, 0.6);
+} 

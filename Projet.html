@@ -11,9 +11,12 @@
   </head>
   <body>
     <div>
-      <button onclick="play()">Play</button>
-      <button onclick="stop()">Stop</button>
-      <input type="range" id="Vitesse" name="Vitesse;" min="1" max="30" value="1">
+      <div class="menu">
+        <button onclick="play()" id="play">Play</button>
+        <button onclick="stop()" id="stop">Stop</button>
+        <input type="range" id="Vitesse" name="Vitesse;" min="1" max="30" value="1">
+        <button onclick="Retour()">Retour</button>
+      </div>
       <script src="CodeMain.js"></script>
       <script src="Files.js"></script>
       <script src="variable.js"></script>
@@ -27,6 +30,8 @@
       <script src="lotdouble.js"></script>
       <script src="decoupeur.js"></script>
       <script src="decoupeurdouble.js"></script>
+      <link type="text/css" rel="stylesheet" href="Projet.css">
+      <link href="https://fonts.googleapis.com/css?family=Titillium Web|Cookie|Raleway:light" rel="stylesheet" />
     </div>
     <div>
       <canvas id="canvas" width="1600" height="800"></canvas>
@@ -88,5 +93,9 @@
     
     window.onload = init;
     window.requestAnimationFrame(clock);
+
+    function Retour(){
+      document.location.href="Main.html"; 
+    }
   </script>
 </html>
