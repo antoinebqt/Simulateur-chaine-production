@@ -1,0 +1,13 @@
+non assigné:
+faire que pour chaque machine on ne les considere pas comme existante en 0,0
+
+Thomas :
+créer des fichier .txt pour chaque preset
+créer la possibilité de cliquer pour mettre une machine
+implémenter les nouvelles machines dans le main
+
+Mathis:
+faire les blocs chelous que le prof demande
+
+Antoine:
+créer les ascenseurs/teleporteurs

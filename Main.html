@@ -194,7 +194,12 @@
       <canvas id="canvasMain" width="1600" height="800"></canvas>
     </div>
 
-    <script>
+    <script>/*
+      const fs = require('fs');
+      fs.appendFile('nouveauFichier.txt', 'Mon contenu', function (err) {
+         if (err) throw err;
+         console.log('Fichier créé !');
+      });*/
       function Clock()
       {
         var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];
