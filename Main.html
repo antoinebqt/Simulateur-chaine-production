@@ -188,18 +188,39 @@
       </tr>
     </table><br>
 
+    <p>Convoyeur Butée</p>
+    <button onclick="AddLigne('convoyeurButee')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('convoyeurButee')">Supprimer Ligne</button>
+    <table id='convoyeurButee'>
+      <tr>
+        <td>X</td>
+        <td>Y</td>
+        <td>Taille</td>
+        <td>Vitesse</td>
+        <td>Temps vert</td>
+        <td>Temps rouge</td>
+        <td>Timer</td>
+        <td>Etat</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeurButee"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeurButee"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeurButee"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeurButee"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeurButee"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurConvoyeurButee"></td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table><br>
+
     <p>Apercu :</p>
 
     <div>
       <canvas id="canvasMain" width="1600" height="800"></canvas>
     </div>
 
-    <script>/*
-      const fs = require('fs');
-      fs.appendFile('nouveauFichier.txt', 'Mon contenu', function (err) {
-         if (err) throw err;
-         console.log('Fichier créé !');
-      });*/
+    <script>
       function Clock()
       {
         var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];

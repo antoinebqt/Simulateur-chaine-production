@@ -43,6 +43,10 @@ let preset1 =
 	//aiguillage
 	[
       [405, 460, 2, 0, 0, "011",0]
+	],
+	//convoyeur butee
+	[
+	  [1100,725,125,-10,10,15,0,0]
 	]
 ]
 
@@ -91,6 +95,10 @@ let preset2 =
 	//aiguillage
 	[
       [405, 460, 2, 0, 0, "011",0]
+	],
+	//convoyeur butee
+	[
+	  [1100,725,125,-10,10,15,0,0]
 	]
 ]
 
@@ -139,6 +147,10 @@ let preset3 =
 	//aiguillage
 	[
       [405, 460, 2, 0, 0, "011",0]
+	],
+	//convoyeur butee
+	[
+	  [1100,725,125,-10,10,15,0,0]
 	]
 ]
 
@@ -187,6 +199,10 @@ let preset4 =
 	//aiguillage
 	[
       [405, 460, 2, 0, 0, "011",0]
+	],
+	//convoyeur butee
+	[
+	  [1100,725,125,-10,10,15,0,0]
 	]
 ]
 
@@ -194,8 +210,8 @@ function Preset(number)
 {
 	let ListofPreset = [preset1,preset2,preset3,preset4];
 	let preset = ListofPreset[number];
-	let idList = ['convoyeur','machine','lot','lotDouble','decoupeur','decoupeurDouble','aiguillage'];
-	var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurLotDouble','valeurDecoupeur','valeurDecoupeurDouble','valeurAiguillage'];
+	let idList = ['convoyeur','machine','lot','lotDouble','decoupeur','decoupeurDouble','aiguillage','convoyeurButee'];
+	var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurLotDouble','valeurDecoupeur','valeurDecoupeurDouble','valeurAiguillage','valeurConvoyeurButee'];
 
 	//met le bon nombre de lignes dans les tableaux
 	for(let i = 0; i<idList.length;i++)

@@ -54,7 +54,7 @@ var max = Positions.length;
 
 var Tableau = localStorage.getObj('tab');
 
-
+console.log(Tableau);
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
 let ConvoyeurList = Tableau[0];
@@ -63,7 +63,7 @@ var nbConvoyeur = ConvoyeurList.length;
 
 //Convoyeur Butée
 //x,y,taille,vitesse en sec, tps vert, tps rouge, timer, etat
-let ConvoyeurButéeList = [[1100,725,125,-10,10,15,0,0]];
+let ConvoyeurButéeList = Tableau[7];
 
 var nbConvoyeurButée = ConvoyeurButéeList.length;
 

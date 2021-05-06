@@ -27,6 +27,10 @@ let tabDecoupeurDouble = [
     [0,0,0,0,0,0,0]
 ];
 
+let tabConvoyeurButee = [
+    [0,0,0,0,0,0,0,0]
+];
+
 
 
 function AddLigne(RefId)
@@ -168,6 +172,26 @@ function AddLigne(RefId)
 			nouvelleCellule.appendChild(nouveauTexte);
 		}
 		tabDecoupeurDouble.unshift([0,0,0,0,0,0,0]);
+	}else if(RefId == 'convoyeurButee')
+	{
+		for(let i = 0; i<8;i++)
+		{
+			var nouvelleCellule = nouvelleLigne.insertCell(i);
+			if(i<6)
+			{
+			  	var nouveauTexte = document.createElement("INPUT");
+			  	nouveauTexte.setAttribute("type", "number");
+			  	nouveauTexte.setAttribute("min", "0");
+			  	nouveauTexte.setAttribute("max", "100000000");
+			  	nouveauTexte.setAttribute("class", "valeurConvoyeurButee");
+			}else
+			{
+				var nouveauTexte = document.createTextNode("0");
+			}
+
+			nouvelleCellule.appendChild(nouveauTexte);
+		}
+		tabDecoupeurDouble.unshift([0,0,0,0,0,0,0,0]);
 	}
 	
 }
@@ -176,11 +200,13 @@ function SuppLigne(RefId)
 {
 	document.getElementById(RefId).deleteRow(1);
 	if(RefId == 'convoyeur')tabConvoyeur.shift();
+	if(RefId == 'machine')tabMachine.shift();
 	if(RefId == 'lot')tabLot.shift();
 	if(RefId == 'decoupeur')tabDecoupeur.shift();
 	if(RefId == 'lotDouble')tabLotDouble.shift();
 	if(RefId == 'aiguillage')tabAiguillage.shift();
 	if(RefId == 'decoupeurDouble')tabDecoupeurDouble.shift();
+	if(RefId == 'convoyeurButee')tabConvoyeurButee.shift();
 }
 
 function Actualiser(RefClass)
@@ -273,6 +299,17 @@ function Actualiser(RefClass)
 			if (j>=7){j=0;k++;}
 		}
 	}
+	if(RefClass == 'valeurConvoyeurButee')
+	{
+		List = document.getElementsByClassName(RefClass);
+		let k=0,j=0;
+		for(let i = 0; i<List.length;i++)
+		{
+			tabDecoupeurDouble[k][j]=parseInt(List[i].value,10);
+			j++;
+			if (j>=8){j=0;k++;}
+		}
+	}
 	Affichage()
 }
 
@@ -284,6 +321,7 @@ function TabList()
 	console.log('tabDecoupeur',tabDecoupeur);
 	console.log('tabLotDouble',tabLotDouble);
 	console.log('tabAiguillage',tabAiguillage);
+	console.log('tabConvoyeurButee',tabConvoyeurButee);
 }
 
 //gere l'affichage des machines
@@ -470,6 +508,29 @@ function Affichage()
 		    ctx.fillText('Taille : ' + tabDecoupeurDouble[i][2], tabDecoupeurDouble[i][0] + 5, tabDecoupeurDouble[i][1] + 20);
 		    ctx.fillText('Vitesse : ' + tabDecoupeurDouble[i][6] + 's', tabDecoupeurDouble[i][0] + 5, tabDecoupeurDouble[i][1] + 35);
 		    ctx.fillText('Decoupés : ' + tabDecoupeurDouble[i][5], tabDecoupeurDouble[i][0] + 5, tabDecoupeurDouble[i][1] + 50);
+		}
+	}
+	for (let i = 0; i<tabConvoyeurButee.length;i++)
+	{
+		if(tabConvoyeurButee[i][0]!=0)
+		{
+			if (tabConvoyeurButee[i][3] < 0) {
+                tps = -tabConvoyeurButee[i][3];
+            } else tps = tabConvoyeurButee[i][3];
+            //Dessine les convoyeurs
+            ctx.fillStyle = 'black';
+            ctx.strokeStyle = 'black';
+            ctx.fillRect(tabConvoyeurButee[i][0], tabConvoyeurButee[i][1], tabConvoyeurButee[i][2], 3);
+            ctx.fillRect(tabConvoyeurButee[i][0], tabConvoyeurButee[i][1] + 5, tabConvoyeurButee[i][2], 3);
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(tabConvoyeurButee[i][0] + 1, tabConvoyeurButee[i][1] + 4, 3, Math.PI / 2, 1.5 * Math.PI, false);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(tabConvoyeurButee[i][0] + tabConvoyeurButee[i][2] - 1, tabConvoyeurButee[i][1] + 4, 3, Math.PI * 1.5, Math.PI / 2, false);
+            ctx.stroke();
+            ctx.font = '12px sans-serif';
+            ctx.fillText('Temps : ' + tps + 's', tabConvoyeurButee[i][0], tabConvoyeurButee[i][1] + 20);
 		}
 	}
 }
