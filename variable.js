@@ -128,6 +128,16 @@ var nbAiguillage = AiguillageList.length;
 
 
 
+//TELEPORTEUR
+//x, y, identifiant du téléporteur, identifiant du téléporteur où le cube doit aller, Temps de téléportation, Sens (coté où le cube apparaitra apres s'est téléporté a ce téléporteur, 1 = droite du tp, 2 = gauche du tp)
+let TeleporteurList = Tableau[8];
+
+var nbTeleporteur = TeleporteurList.length;
+
+
+
+
+
 //IMAGES
 var cube = new Image();
 cube.src = "img/cube.png";

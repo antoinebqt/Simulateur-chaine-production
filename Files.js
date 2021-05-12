@@ -1,7 +1,7 @@
 function Ecrire()
 {
 	localStorage.clear();
-	preset = [tabConvoyeur, tabMachine, tabLot, tabLotDouble, tabDecoupeur, tabDecoupeurDouble, tabAiguillage,tabConvoyeurButee]
+	preset = [tabConvoyeur, tabMachine, tabLot, tabLotDouble, tabDecoupeur, tabDecoupeurDouble, tabAiguillage, tabConvoyeurButee, tabTeleporteur]
 
 	localStorage.setObj('tab', preset);
 	Redirection();

@@ -214,6 +214,28 @@
       </tr>
     </table><br>
 
+    <p>Téléporteur</p>
+    <button onclick="AddLigne('teleporteur')">Ajouter Ligne</button>
+    <button onclick="SuppLigne('teleporteur')">Supprimer Ligne</button>
+    <table id='teleporteur'>
+      <tr>
+        <td>X</td>
+        <td>Y</td>
+        <td>Id</td>
+        <td>Envoie vers</td>
+        <td>Vitesse</td>
+        <td>Sens</td>
+      </tr>
+      <tr>
+        <td><input type="number" min="0" max="100000000" class="valeurTeleporteur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurTeleporteur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurTeleporteur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurTeleporteur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurTeleporteur"></td>
+        <td><input type="number" min="0" max="100000000" class="valeurTeleporteur"></td>
+      </tr>
+    </table><br>
+
     <p>Apercu :</p>
 
     <div>
@@ -223,7 +245,7 @@
     <script>
       function Clock()
       {
-        var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble'];
+        var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurDecoupeur','valeurLotDouble','valeurAiguillage','valeurDecoupeurDouble','valeurConvoyeurButee','valeurTeleporteur'];
         (document.getElementById('canvasMain').getContext('2d')).clearRect(0, 0, canvasMain.width-1, canvasMain.height-1);
         Affichage();
         for (let i=0;i<ClassList.length;i++)

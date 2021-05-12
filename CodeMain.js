@@ -31,6 +31,10 @@ let tabConvoyeurButee = [
     [0,0,0,0,0,0,0,0]
 ];
 
+let tabTeleporteur = [
+    [0,0,0,0,0,0]
+];
+
 
 
 function AddLigne(RefId)
@@ -191,7 +195,27 @@ function AddLigne(RefId)
 
 			nouvelleCellule.appendChild(nouveauTexte);
 		}
-		tabDecoupeurDouble.unshift([0,0,0,0,0,0,0,0]);
+		tabConvoyeurButee.unshift([0,0,0,0,0,0,0,0]);
+	}else if(RefId == 'teleporteur')
+	{
+		for(let i = 0; i<6;i++)
+		{
+			var nouvelleCellule = nouvelleLigne.insertCell(i);
+			if(i<6)
+			{
+			  	var nouveauTexte = document.createElement("INPUT");
+			  	nouveauTexte.setAttribute("type", "number");
+			  	nouveauTexte.setAttribute("min", "0");
+			  	nouveauTexte.setAttribute("max", "100000000");
+			  	nouveauTexte.setAttribute("class", "valeurTeleporteur");
+			}else
+			{
+				var nouveauTexte = document.createTextNode("0");
+			}
+
+			nouvelleCellule.appendChild(nouveauTexte);
+		}
+		tabTeleporteur.unshift([0,0,0,0,0,0]);
 	}
 	
 }
@@ -207,6 +231,7 @@ function SuppLigne(RefId)
 	if(RefId == 'aiguillage')tabAiguillage.shift();
 	if(RefId == 'decoupeurDouble')tabDecoupeurDouble.shift();
 	if(RefId == 'convoyeurButee')tabConvoyeurButee.shift();
+	if(RefId == 'teleporteur')tabTeleporteur.shift();
 }
 
 function Actualiser(RefClass)
@@ -305,9 +330,20 @@ function Actualiser(RefClass)
 		let k=0,j=0;
 		for(let i = 0; i<List.length;i++)
 		{
-			tabDecoupeurDouble[k][j]=parseInt(List[i].value,10);
+			tabConvoyeurButee[k][j]=parseInt(List[i].value,10);
 			j++;
 			if (j>=8){j=0;k++;}
+		}
+	}
+	if(RefClass == 'valeurTeleporteur')
+	{
+		List = document.getElementsByClassName(RefClass);
+		let k=0,j=0;
+		for(let i = 0; i<List.length;i++)
+		{
+			tabTeleporteur[k][j]=parseInt(List[i].value,10);
+			j++;
+			if (j>=6){j=0;k++;}
 		}
 	}
 	Affichage()
@@ -321,7 +357,9 @@ function TabList()
 	console.log('tabDecoupeur',tabDecoupeur);
 	console.log('tabLotDouble',tabLotDouble);
 	console.log('tabAiguillage',tabAiguillage);
+	console.log('tabDecoupeurDouble',tabDecoupeurDouble);
 	console.log('tabConvoyeurButee',tabConvoyeurButee);
+	console.log('tabTeleporteur',tabTeleporteur);
 }
 
 //gere l'affichage des machines
@@ -379,6 +417,9 @@ function Affichage()
 	{
 		if(tabConvoyeur[i][0]!=0)
 		{
+			if (tabConvoyeur[i][3] < 0) {
+                tps = -tabConvoyeur[i][3];
+            } else tps = tabConvoyeur[i][3];
 			var x = tabConvoyeur[i][0];
 			var y = tabConvoyeur[i][1];
 			var t = tabConvoyeur[i][2];
@@ -394,7 +435,7 @@ function Affichage()
 	        ctx.arc(x + t - 1, y + 4, 3, Math.PI * 1.5, Math.PI / 2, false);
 	        ctx.stroke();
 	        ctx.font = '12px sans-serif';
-	        ctx.fillText('Temps : ' +  tabConvoyeur[i][3] + 's', x, y + 20);
+	        ctx.fillText('Temps : ' +  tps + 's', x, y + 20);
 		}
 	}
 	for (let i = 0; i<tabMachine.length;i++)
@@ -533,6 +574,22 @@ function Affichage()
             ctx.fillText('Temps : ' + tps + 's', tabConvoyeurButee[i][0], tabConvoyeurButee[i][1] + 20);
 		}
 	}
+	for (let i = 0; i<tabTeleporteur.length;i++)
+	{
+		if(tabTeleporteur[i][0]!=0)
+		{
+            //Dessine les téléporteurs
+            ctx.drawImage(teleporteur, tabTeleporteur[i][0], tabTeleporteur[i][1]);
+	    	ctx.fillStyle = 'white';
+		    ctx.font = '17px sans-serif';
+		    ctx.fillText(tabTeleporteur[i][2], tabTeleporteur[i][0] + 8, tabTeleporteur[i][1] + 19);
+			ctx.fillStyle = 'black';
+		    ctx.font = '12px sans-serif';
+		    if(tabTeleporteur[i][3] != 0){
+                ctx.fillText('Vers : ' + tabTeleporteur[i][3], tabTeleporteur[i][0] - 5, tabTeleporteur[i][1] - 5);
+            }
+		}
+	}
 }
 
 
@@ -558,5 +615,8 @@ decoupeur.src = "img/decoupeur.png";
 
 var decoupeurdouble = new Image();
 decoupeurdouble.src = "img/decoupeurdouble.png";
+
+var teleporteur = new Image();
+teleporteur.src = "img/teleporteur.png";
 
 var Xgenerateur = 0, Ygenerateur = 100;

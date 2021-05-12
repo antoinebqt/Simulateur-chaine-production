@@ -15,7 +15,8 @@ let preset1 =
       [1060, 660, 100, 3],
       [920, 780, 300, -5],
       [650, 730, 150, -2],
-      [530, 780, 270, -8]
+      [530, 780, 270, -8],
+	  [1100, 200,200, 8]
 	],
 	//machine
 	[
@@ -47,6 +48,12 @@ let preset1 =
 	//convoyeur butee
 	[
 	  [1100,725,125,-10,10,15,0,0]
+	],
+	//teleporteur
+	[
+	  [625,260,1,2,5,2],
+	  [1100, 170, 2, null, null, 1],
+	  [1275, 170, 3, 1, 3, null]
 	]
 ]
 
@@ -67,7 +74,8 @@ let preset2 =
       [1060, 660, 100, 3],
       [920, 780, 300, -5],
       [650, 730, 150, -2],
-      [530, 780, 270, -8]
+      [530, 780, 270, -8],
+	  [1100, 200,200, 8]
 	],
 	//machine
 	[
@@ -99,6 +107,12 @@ let preset2 =
 	//convoyeur butee
 	[
 	  [1100,725,125,-10,10,15,0,0]
+	],
+	//teleporteur
+	[
+	  [625,260,1,2,5,2],
+	  [1100, 170, 2, null, null, 1],
+	  [1275, 170, 3, 1, 3, null]
 	]
 ]
 
@@ -119,7 +133,8 @@ let preset3 =
       [1060, 660, 100, 3],
       [920, 780, 300, -5],
       [650, 730, 150, -2],
-      [530, 780, 270, -8]
+      [530, 780, 270, -8],
+	  [1100, 200,200, 8]
 	],
 	//machine
 	[
@@ -151,6 +166,12 @@ let preset3 =
 	//convoyeur butee
 	[
 	  [1100,725,125,-10,10,15,0,0]
+	],
+	//teleporteur
+	[
+	  [625,260,1,2,5,2],
+	  [1100, 170, 2, null, null, 1],
+	  [1275, 170, 3, 1, 3, null]
 	]
 ]
 
@@ -171,7 +192,8 @@ let preset4 =
       [1060, 660, 100, 3],
       [920, 780, 300, -5],
       [650, 730, 150, -2],
-      [530, 780, 270, -8]
+      [530, 780, 270, -8],
+	  [1100, 200,200, 8]
 	],
 	//machine
 	[
@@ -203,6 +225,12 @@ let preset4 =
 	//convoyeur butee
 	[
 	  [1100,725,125,-10,10,15,0,0]
+	],
+	//teleporteur
+	[
+	  [625,260,1,2,5,2],
+	  [1100, 170, 2, null, null, 1],
+	  [1275, 170, 3, 1, 3, null]
 	]
 ]
 
@@ -210,8 +238,8 @@ function Preset(number)
 {
 	let ListofPreset = [preset1,preset2,preset3,preset4];
 	let preset = ListofPreset[number];
-	let idList = ['convoyeur','machine','lot','lotDouble','decoupeur','decoupeurDouble','aiguillage','convoyeurButee'];
-	var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurLotDouble','valeurDecoupeur','valeurDecoupeurDouble','valeurAiguillage','valeurConvoyeurButee'];
+	let idList = ['convoyeur','machine','lot','lotDouble','decoupeur','decoupeurDouble','aiguillage','convoyeurButee','teleporteur'];
+	var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurLotDouble','valeurDecoupeur','valeurDecoupeurDouble','valeurAiguillage','valeurConvoyeurButee','valeurTeleporteur'];
 
 	//met le bon nombre de lignes dans les tableaux
 	for(let i = 0; i<idList.length;i++)
