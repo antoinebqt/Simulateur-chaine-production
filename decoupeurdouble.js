@@ -23,7 +23,6 @@ function DecoupeurDouble(){
 				let taille = 100;
 				var diff = Positions[j][0] - OldPositions[j][0];
 
-				//Si
 				if (((x >= DecoupeurDoubleList[i][0]-TailleGenerateur/2-5) && (x < DecoupeurDoubleList[i][0]+TailleGenerateur/2) && (y > DecoupeurDoubleList[i][1]) && (y < DecoupeurDoubleList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < DecoupeurDoubleList[i][0]+9*TailleGenerateur/4) && (x > DecoupeurDoubleList[i][0]+7*TailleGenerateur/4) && (y > DecoupeurDoubleList[i][1]) && (y < DecoupeurDoubleList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
 					if (x>=DecoupeurDoubleList[i][0]-TailleGenerateur/2-5 && x<DecoupeurDoubleList[i][0]+TailleGenerateur/2 && y>DecoupeurDoubleList[i][1] && y<DecoupeurDoubleList[i][1]+taille && mouvement[j]==0 && diff>=0){
 						DecoupeurDoubleList[i][4] = 1

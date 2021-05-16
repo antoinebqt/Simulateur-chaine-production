@@ -23,7 +23,6 @@ function Decoupeur(){
 				let taille = 100;
 				var diff = Positions[j][0] - OldPositions[j][0];
 
-				//Si
 				if (((x >= DecoupeurList[i][0]-TailleGenerateur/2-5) && (x < DecoupeurList[i][0]+TailleGenerateur/2) && (y > DecoupeurList[i][1]) && (y < DecoupeurList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < DecoupeurList[i][0]+9*TailleGenerateur/4) && (x > DecoupeurList[i][0]+7*TailleGenerateur/4) && (y > DecoupeurList[i][1]) && (y < DecoupeurList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
 					if (x>=DecoupeurList[i][0]-TailleGenerateur/2-5 && x<DecoupeurList[i][0]+TailleGenerateur/2 && y>DecoupeurList[i][1] && y<DecoupeurList[i][1]+taille && mouvement[j]==0 && diff>=0){
 						DecoupeurList[i][4] = 1

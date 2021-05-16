@@ -32,7 +32,7 @@ let tabConvoyeurButee = [
 ];
 
 let tabTeleporteur = [
-    [0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0]
 ];
 
 
@@ -198,10 +198,10 @@ function AddLigne(RefId)
 		tabConvoyeurButee.unshift([0,0,0,0,0,0,0,0]);
 	}else if(RefId == 'teleporteur')
 	{
-		for(let i = 0; i<6;i++)
+		for(let i = 0; i<8;i++)
 		{
 			var nouvelleCellule = nouvelleLigne.insertCell(i);
-			if(i<6)
+			if(i!=3 && i<7)
 			{
 			  	var nouveauTexte = document.createElement("INPUT");
 			  	nouveauTexte.setAttribute("type", "number");
@@ -215,7 +215,7 @@ function AddLigne(RefId)
 
 			nouvelleCellule.appendChild(nouveauTexte);
 		}
-		tabTeleporteur.unshift([0,0,0,0,0,0]);
+		tabTeleporteur.unshift([0,0,0,0,0,0,0,0]);
 	}
 	
 }
@@ -341,9 +341,10 @@ function Actualiser(RefClass)
 		let k=0,j=0;
 		for(let i = 0; i<List.length;i++)
 		{
+			if (j==3){j++;}
 			tabTeleporteur[k][j]=parseInt(List[i].value,10);
 			j++;
-			if (j>=6){j=0;k++;}
+			if (j>=7){j=0;k++;}
 		}
 	}
 	Affichage()
@@ -570,6 +571,9 @@ function Affichage()
             ctx.beginPath();
             ctx.arc(tabConvoyeurButee[i][0] + tabConvoyeurButee[i][2] - 1, tabConvoyeurButee[i][1] + 4, 3, Math.PI * 1.5, Math.PI / 2, false);
             ctx.stroke();
+			ctx.fillStyle = 'red';
+            ctx.fillRect(tabConvoyeurButee[i][0]+tabConvoyeurButee[i][2]/2, tabConvoyeurButee[i][1], 2, 5);
+			ctx.fillStyle = 'black';
             ctx.font = '12px sans-serif';
             ctx.fillText('Temps : ' + tps + 's', tabConvoyeurButee[i][0], tabConvoyeurButee[i][1] + 20);
 		}
@@ -582,12 +586,17 @@ function Affichage()
             ctx.drawImage(teleporteur, tabTeleporteur[i][0], tabTeleporteur[i][1]);
 	    	ctx.fillStyle = 'white';
 		    ctx.font = '17px sans-serif';
-		    ctx.fillText(tabTeleporteur[i][2], tabTeleporteur[i][0] + 8, tabTeleporteur[i][1] + 19);
+		    ctx.fillText(tabTeleporteur[i][4], tabTeleporteur[i][0] + 8, tabTeleporteur[i][1] + 19);
 			ctx.fillStyle = 'black';
 		    ctx.font = '12px sans-serif';
-		    if(tabTeleporteur[i][3] != 0){
-                ctx.fillText('Vers : ' + tabTeleporteur[i][3], tabTeleporteur[i][0] - 5, tabTeleporteur[i][1] - 5);
+		    if(tabTeleporteur[i][5] != 0){
+                ctx.fillText('Vers : ' + tabTeleporteur[i][5], tabTeleporteur[i][0] - 5, tabTeleporteur[i][1] - 5);
             }
+			if(tabTeleporteur[i][6] == 1){
+				ctx.fillText('Pose a droite', tabTeleporteur[i][0] - 5, tabTeleporteur[i][1] - 15);
+			} else if (tabTeleporteur[i][6] == 2){
+				ctx.fillText('Pose a gauche', tabTeleporteur[i][0] - 5, tabTeleporteur[i][1] - 15);
+			}
 		}
 	}
 }

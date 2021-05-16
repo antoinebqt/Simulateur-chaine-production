@@ -23,7 +23,6 @@ function Lot(){
 				let taille = 100;
 				var diff = Positions[j][0] - OldPositions[j][0];
 
-				//Si
 				if (((x >= LotList[i][0]-TailleGenerateur/2-5) && (x < LotList[i][0]+TailleGenerateur/2) && (y > LotList[i][1]) && (y < LotList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < LotList[i][0]+9*TailleGenerateur/4) && (x > LotList[i][0]+7*TailleGenerateur/4) && (y > LotList[i][1]) && (y < LotList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
 					if (x>=LotList[i][0]-TailleGenerateur/2-5 && x<LotList[i][0]+TailleGenerateur/2 && y>LotList[i][1] && y<LotList[i][1]+taille && mouvement[j]==0 && diff>=0){
 						LotList[i][4] = 1

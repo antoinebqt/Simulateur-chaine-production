@@ -30,7 +30,7 @@ function NewItem(){
 	        }
 	    }
 	}
-	    if (stopped != 1){
-	    	setTimeout(function(){NewItem()}, ClockGenerateur/VitesseAcceleration);
-	    }
+	if (stopped != 1){
+	    setTimeout(function(){NewItem()}, ClockGenerateur/VitesseAcceleration);
+	}
 }

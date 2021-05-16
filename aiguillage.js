@@ -136,7 +136,6 @@ function AiguillageCycle(){
 					}
 				}
 				
-				//Si le cube est
 				if ((mouvement[j] == 0) && (x+tailleCube >= AiguillageList[i][0]) && (x < AiguillageList[i][0]+2*tailleAiguillage) && (((y+tailleCube > AiguillageList[i][1]+tailleAiguillage-3) && (y+tailleCube < AiguillageList[i][1]+tailleAiguillage-1)) || ((y+tailleCube > AiguillageList[i][1]-tailleAiguillage-3) && (y+tailleCube < AiguillageList[i][1]-tailleAiguillage-1)))){
 					//Deplace vers la droite sur les deux convoyeurs sortants
 					OldPositions[j] = Positions[j];

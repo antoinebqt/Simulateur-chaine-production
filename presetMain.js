@@ -16,7 +16,7 @@ let preset1 =
       [920, 780, 300, -5],
       [650, 730, 150, -2],
       [530, 780, 270, -8],
-	  [1100, 200,200, 8]
+	  [100, 760, 300, 8]
 	],
 	//machine
 	[
@@ -51,9 +51,9 @@ let preset1 =
 	],
 	//teleporteur
 	[
-	  [625,260,1,2,5,2],
-	  [1100, 170, 2, null, null, 1],
-	  [1275, 170, 3, 1, 3, null]
+	  [625,  260, 5,    0, 1, 2,    2,    0],
+	  [150, 730, null, 0, 2, null, 1,    0],
+	  [350, 730, 3,    0, 3, 1,    null, 0]
 	]
 ]
 
@@ -61,21 +61,22 @@ let preset2 =
 [
 	//convoyeur
 	[
-      [10, 150, 150, 5],
-      [150, 190, 100, 2],
-      [370, 190, 110, 2],
-      [600, 190, 100, 2],
-      [500, 290, 300, -2],
-      [280, 290, 100, -2],
-      [130, 460, 270, 2],
-      [600, 610, 100, 4],
-      [500, 660, 200, 7],
-      [820, 660, 120, 7],
-      [1060, 660, 100, 3],
-      [920, 780, 300, -5],
-      [650, 730, 150, -2],
-      [530, 780, 270, -8],
-	  [1100, 200,200, 8]
+		[10, 150, 150, 5],
+		[150, 190, 100, 2],
+		[370, 190, 110, 2],
+		[600, 190, 100, 2],
+		[500, 290, 300, -2],
+		[280, 290, 100, -2],
+		[130, 460, 270, 2],
+		[600, 610, 100, 4],
+		[500, 660, 200, 7],
+		[820, 660, 120, 7],
+		[1060, 660, 100, 3],
+		[920, 780, 300, -5],
+		[650, 730, 150, -2],
+		[530, 780, 270, -8],
+		[100, 760, 300, 8],
+		[90, 560, 350, 9],
 	],
 	//machine
 	[
@@ -110,9 +111,9 @@ let preset2 =
 	],
 	//teleporteur
 	[
-	  [625,260,1,2,5,2],
-	  [1100, 170, 2, null, null, 1],
-	  [1275, 170, 3, 1, 3, null]
+	  [625,  260, 5,    0, 1, 2,    2,    0],
+	  [150, 730, null, 0, 2, null, 1,    0],
+	  [350, 730, 3,    0, 3, 1,    null, 0]
 	]
 ]
 
@@ -120,21 +121,22 @@ let preset3 =
 [
 	//convoyeur
 	[
-      [10, 150, 150, 5],
-      [150, 190, 100, 2],
-      [370, 190, 110, 2],
-      [600, 190, 100, 2],
-      [500, 290, 300, -2],
-      [280, 290, 100, -2],
-      [130, 460, 270, 2],
-      [600, 610, 100, 4],
-      [500, 660, 200, 7],
-      [820, 660, 120, 7],
-      [1060, 660, 100, 3],
-      [920, 780, 300, -5],
-      [650, 730, 150, -2],
-      [530, 780, 270, -8],
-	  [1100, 200,200, 8]
+		[10, 150, 150, 5],
+		[150, 190, 100, 2],
+		[370, 190, 110, 2],
+		[600, 190, 100, 2],
+		[500, 290, 300, -2],
+		[280, 290, 100, -2],
+		[130, 460, 270, 2],
+		[600, 610, 100, 4],
+		[500, 660, 200, 7],
+		[820, 660, 120, 7],
+		[1060, 660, 100, 3],
+		[920, 780, 300, -5],
+		[650, 730, 150, -2],
+		[530, 780, 270, -8],
+		[100, 760, 300, 8],
+		[90, 560, 350, 9],
 	],
 	//machine
 	[
@@ -169,9 +171,9 @@ let preset3 =
 	],
 	//teleporteur
 	[
-	  [625,260,1,2,5,2],
-	  [1100, 170, 2, null, null, 1],
-	  [1275, 170, 3, 1, 3, null]
+	  [625,  260, 5,    0, 1, 2,    2,    0],
+	  [150, 530, null, 0, 2, null, 1,    0],
+	  [350, 530, 3,    0, 3, 1,    null, 0]
 	]
 ]
 
@@ -193,7 +195,8 @@ let preset4 =
       [920, 780, 300, -5],
       [650, 730, 150, -2],
       [530, 780, 270, -8],
-	  [1100, 200,200, 8]
+	  [1100, 200,200, 8],
+	  [1000, 300, 350, 9]
 	],
 	//machine
 	[
@@ -228,9 +231,9 @@ let preset4 =
 	],
 	//teleporteur
 	[
-	  [625,260,1,2,5,2],
-	  [1100, 170, 2, null, null, 1],
-	  [1275, 170, 3, 1, 3, null]
+		[625,  260, 5,    0, 1, 2,    2,    0],
+		[1100, 170, null, 0, 2, null, 1,    0],
+		[1275, 170, 3,    0, 3, 1,    null, 0]
 	]
 ]
 
@@ -259,31 +262,31 @@ function Preset(number)
 		}
 	}
 
+	
 	//place les chiffres dans les tableaux
-	for(let l = 0; l<ClassList.length;l++)
+	for(let l = 0; l<ClassList.length;l++) //Pour chaque type de machine
 	{
-		MachineList = preset[l];
-		List = document.getElementsByClassName(ClassList[l]);
+		MachineList = preset[l]; //Prend les arrays de la machine 
+		List = document.getElementsByClassName(ClassList[l]); //Le nombre de case a remplir
 		j = 0; k = 0;
-		for(let i = 0; i<List.length;i++)
+		for(let i = 0; i<List.length;i++) //Case par case (les case ou on écrit 0 nous meme ne sont pas prise en compte)
 		{
-			if(MachineList[k][j]==0)
+			if(MachineList[k][j]==0) //Si le parametre lu est un 0 (donc que ce n'est pas une case a remplir)
 			{
-				i--;
+				i--; //On décremente i pour ne pas passer a la case suivante vu qu'on a pas rempli celle ci
 			}else
 			{
-				if(i%MachineList[0].length==0 && i!=0) {k++; j=0;}
-				//console.log(i,List[i]);
-				List[i].setAttribute("value", correction(MachineList[k][j]));
+				List[i].setAttribute("value", correction(MachineList[k][j])); //On écrit dans la case la valeur du parametre
 			}
-			if(j==MachineList[0].length){k++; j=-1;i--}
+			if(j==MachineList[0].length){k++; j=-1;i--} //Si on a fini les parametre d'une ligne, on passe a la suivante
 			j++;
 		}	
-	}	
+	}
+
 }
 
 function correction(list)
 {
-	if(list == null) return 0;
+	if(list == null) return 0; //Remplace les null (les 0 que l'ont veut mettre en parametre mais qui ne sont pas obligatoirement a 0)
 	return list;
 }

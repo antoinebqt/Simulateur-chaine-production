@@ -65,25 +65,25 @@ function TravailLotDouble(j){
 
 function VerifStockageLotDouble(){
       for (let i = 0; i < nbLotDouble; i++){
-        if(!((LotDoubleList[i][0]==0 ||LotDoubleList[i][0]==null) && (LotDoubleList[i][1]==0||LotDoubleList[i][1]==null)))
-        {
-          //Dessine les lotDouble et leurs infos
-          ctx.drawImage(lotdouble, LotDoubleList[i][0], LotDoubleList[i][1]);
-          ctx.fillStyle = 'white';
-          ctx.font = '15px sans-serif';
-          ctx.fillText('Taille : ' + LotDoubleList[i][2] + ' & ' + LotDoubleList[i][7], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 20);
-          ctx.fillText('Stock 1 : ' + LotDoubleList[i][3], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 35);
-          ctx.fillText('Stock 2 : ' + LotDoubleList[i][6], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 50);
-          ctx.fillText('Lots : ' + LotDoubleList[i][5], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 65);
-          if (LotDoubleList[i][3] >= LotDoubleList[i][2] && LotDoubleList[i][6] >= LotDoubleList[i][7]){
-            if (stopped != 1){
-              LotDoubleList[i][3] = LotDoubleList[i][3] -1*LotDoubleList[i][2];
-              LotDoubleList[i][6] = LotDoubleList[i][6] -1*LotDoubleList[i][7];
-              LotDoubleList[i][5]++;
-              setTimeout(function(){TravailLotDouble(i)}, CLOCK/VitesseAcceleration);
+            if(!((LotDoubleList[i][0]==0 ||LotDoubleList[i][0]==null) && (LotDoubleList[i][1]==0||LotDoubleList[i][1]==null)))
+            {
+                  //Dessine les lotDouble et leurs infos
+                  ctx.drawImage(lotdouble, LotDoubleList[i][0], LotDoubleList[i][1]);
+                  ctx.fillStyle = 'white';
+                  ctx.font = '15px sans-serif';
+                  ctx.fillText('Taille : ' + LotDoubleList[i][2] + ' & ' + LotDoubleList[i][7], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 20);
+                  ctx.fillText('Stock 1 : ' + LotDoubleList[i][3], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 35);
+                  ctx.fillText('Stock 2 : ' + LotDoubleList[i][6], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 50);
+                  ctx.fillText('Lots : ' + LotDoubleList[i][5], LotDoubleList[i][0] + 5, LotDoubleList[i][1] + 65);
+                  if (LotDoubleList[i][3] >= LotDoubleList[i][2] && LotDoubleList[i][6] >= LotDoubleList[i][7]){
+                        if (stopped != 1){
+                              LotDoubleList[i][3] = LotDoubleList[i][3] -1*LotDoubleList[i][2];
+                              LotDoubleList[i][6] = LotDoubleList[i][6] -1*LotDoubleList[i][7];
+                              LotDoubleList[i][5]++;
+                              setTimeout(function(){TravailLotDouble(i)}, CLOCK/VitesseAcceleration);
+                        }
+                  }
             }
-          }
-        }
       }                       
 }
 

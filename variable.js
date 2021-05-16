@@ -88,6 +88,16 @@ var nbLot = LotList.length;
 
 
 
+//TELEPORTEUR
+//x, y, temps, en train de se tp, id, id receveur,  coté d'apparition (1 = droite, 2 = gauche), sens
+let TeleporteurList = Tableau[8];
+
+var nbTeleporteur = TeleporteurList.length;
+
+
+
+
+
 //LOT DOUBLE
 //x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
 let LotDoubleList = Tableau[3];
@@ -124,15 +134,6 @@ let AiguillageList = Tableau[6];
 
 var nbAiguillage = AiguillageList.length;
 
-
-
-
-
-//TELEPORTEUR
-//x, y, identifiant du téléporteur, identifiant du téléporteur où le cube doit aller, Temps de téléportation, Sens (coté où le cube apparaitra apres s'est téléporté a ce téléporteur, 1 = droite du tp, 2 = gauche du tp)
-let TeleporteurList = Tableau[8];
-
-var nbTeleporteur = TeleporteurList.length;
 
 
 
