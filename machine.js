@@ -1,6 +1,6 @@
 function machineSpawn(){
 	for (let i = 0; i < nbMachine; i++){
-		if(!((MachineList[i][0]==0 ||MachineList[i][0]==null) && (MachineList[i][1]==0||MachineList[i][1]==null)))
+		if(!((MachineList[i][0] == 0 || MachineList[i][0] == null) && (MachineList[i][1] == 0 || MachineList[i][1] == null)))
 		{
 			//Dessine les machines et leurs infos
 	    	ctx.drawImage(machine0, MachineList[i][0], MachineList[i][1]);
@@ -17,7 +17,7 @@ function machineSpawn(){
 function Machine(){
 	for (let i = 0; i < nbMachine; i++){
 		for (let j = 0; j < max; j++){
-			if(!((MachineList[i][0]==0 ||MachineList[i][0]==null) && (MachineList[i][1]==0||MachineList[i][1]==null)))
+			if(!((MachineList[i][0] == 0 || MachineList[i][0] == null) && (MachineList[i][1] == 0 || MachineList[i][1] == null)))
 			{
 				let x = Positions[j][0];
 				let y = Positions[j][1];
@@ -81,7 +81,7 @@ function TravailMachine(j){
 
 function VerifStockageMachine(){
 	for (let i = 0; i < nbMachine; i++){
-		if(!((MachineList[i][0]==0 ||MachineList[i][0]==null) && (MachineList[i][1]==0||MachineList[i][1]==null)))
+		if(!((MachineList[i][0] == 0 || MachineList[i][0] == null) && (MachineList[i][1] == 0 || MachineList[i][1] == null)))
 		{
 			//Affiche la bonne image et ses infos correspondantes
 			var machine = new Image();

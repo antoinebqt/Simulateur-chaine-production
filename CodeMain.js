@@ -32,7 +32,7 @@ let tabConvoyeurButee = [
 ];
 
 let tabTeleporteur = [
-    [0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0]
 ];
 
 
@@ -198,7 +198,7 @@ function AddLigne(RefId)
 		tabConvoyeurButee.unshift([0,0,0,0,0,0,0,0]);
 	}else if(RefId == 'teleporteur')
 	{
-		for(let i = 0; i<8;i++)
+		for(let i = 0; i<7;i++)
 		{
 			var nouvelleCellule = nouvelleLigne.insertCell(i);
 			if(i!=3 && i<7)
@@ -215,7 +215,7 @@ function AddLigne(RefId)
 
 			nouvelleCellule.appendChild(nouveauTexte);
 		}
-		tabTeleporteur.unshift([0,0,0,0,0,0,0,0]);
+		tabTeleporteur.unshift([0,0,0,0,0,0,0]);
 	}
 	
 }
@@ -344,7 +344,7 @@ function Actualiser(RefClass)
 			if (j==3){j++;}
 			tabTeleporteur[k][j]=parseInt(List[i].value,10);
 			j++;
-			if (j>=7){j=0;k++;}
+			if (j>=7){j=0;k++;} //IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 		}
 	}
 	Affichage()
@@ -576,6 +576,12 @@ function Affichage()
 			ctx.fillStyle = 'black';
             ctx.font = '12px sans-serif';
             ctx.fillText('Temps : ' + tps + 's', tabConvoyeurButee[i][0], tabConvoyeurButee[i][1] + 20);
+			ctx.fillStyle = 'green';
+            ctx.fillText(tabConvoyeurButee[i][4] + 's', tabConvoyeurButee[i][0] + 78, tabConvoyeurButee[i][1] + 20);
+            ctx.fillStyle = 'black';
+            ctx.fillText('/', tabConvoyeurButee[i][0] + 103, tabConvoyeurButee[i][1] + 20);
+            ctx.fillStyle = 'red';
+            ctx.fillText(tabConvoyeurButee[i][5] + 's', tabConvoyeurButee[i][0] + 109, tabConvoyeurButee[i][1] + 20);
 		}
 	}
 	for (let i = 0; i<tabTeleporteur.length;i++)

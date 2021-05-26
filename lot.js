@@ -1,6 +1,6 @@
 function lotSpawn(){
 	for (let i = 0; i < nbLot; i++){
-		if(!((LotList[i][0]==0 ||LotList[i][0]==null) && (LotList[i][1]==0||LotList[i][1]==null)))
+		if(!((LotList[i][0] == 0 || LotList[i][0] == null) && (LotList[i][1] == 0 || LotList[i][1] == null)))
         {
 			//Dessine les lots et leurs infos
 	    	ctx.drawImage(lot, LotList[i][0], LotList[i][1]);
@@ -16,7 +16,7 @@ function lotSpawn(){
 function Lot(){
 	for (let i = 0; i < nbLot; i++){
 		for (let j = 0; j < max; j++){
-			if(!((LotList[i][0]==0 ||LotList[i][0]==null) && (LotList[i][1]==0||LotList[i][1]==null)))
+			if(!((LotList[i][0] == 0 || LotList[i][0] == null) && (LotList[i][1] == 0 || LotList[i][1] == null)))
         	{
 				let x = Positions[j][0];
 				let y = Positions[j][1];
@@ -24,7 +24,7 @@ function Lot(){
 				var diff = Positions[j][0] - OldPositions[j][0];
 
 				if (((x >= LotList[i][0]-TailleGenerateur/2-5) && (x < LotList[i][0]+TailleGenerateur/2) && (y > LotList[i][1]) && (y < LotList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < LotList[i][0]+9*TailleGenerateur/4) && (x > LotList[i][0]+7*TailleGenerateur/4) && (y > LotList[i][1]) && (y < LotList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
-					if (x>=LotList[i][0]-TailleGenerateur/2-5 && x<LotList[i][0]+TailleGenerateur/2 && y>LotList[i][1] && y<LotList[i][1]+taille && mouvement[j]==0 && diff>=0){
+					if (x >= LotList[i][0]-TailleGenerateur/2-5 && x < LotList[i][0]+TailleGenerateur/2 && y > LotList[i][1] && y < LotList[i][1]+taille && mouvement[j] == 0 && diff >= 0){
 						LotList[i][4] = 1
 					}
 
@@ -60,7 +60,7 @@ function TravailLot(j){
 
 function VerifStockageLot(){
 	for (let i =0; i < nbLot; i++){
-		if(!((LotList[i][0]==0 ||LotList[i][0]==null) && (LotList[i][1]==0||LotList[i][1]==null)))
+		if(!((LotList[i][0] == 0 || LotList[i][0] == null) && (LotList[i][1] == 0 || LotList[i][1] == null)))
         {
 			//Dessine les lots et leurs infos
 			ctx.drawImage(lot, LotList[i][0], LotList[i][1]);

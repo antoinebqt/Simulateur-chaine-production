@@ -1,6 +1,6 @@
 function decoupeurDoubleSpawn(){
 	for (let i = 0; i < nbDecoupeurDouble; i++){
-		if(!((DecoupeurDoubleList[i][0]==0 ||DecoupeurDoubleList[i][0]==null) && (DecoupeurDoubleList[i][1]==0||DecoupeurDoubleList[i][1]==null)))
+		if(!((DecoupeurDoubleList[i][0] ==0  || DecoupeurDoubleList[i][0] == null) && (DecoupeurDoubleList[i][1] == 0 || DecoupeurDoubleList[i][1] == null)))
         {
 			//Dessine les decoupeurDoubles et leurs infos
 	    	ctx.drawImage(decoupeurdouble, DecoupeurDoubleList[i][0], DecoupeurDoubleList[i][1]);
@@ -16,7 +16,7 @@ function decoupeurDoubleSpawn(){
 function DecoupeurDouble(){
 	for (let i = 0; i < nbDecoupeurDouble; i++){
 		for (let j = 0; j < max; j++){
-			if(!((DecoupeurDoubleList[i][0]==0 ||DecoupeurDoubleList[i][0]==null) && (DecoupeurDoubleList[i][1]==0||DecoupeurDoubleList[i][1]==null)))
+			if(!((DecoupeurDoubleList[i][0] ==0 || DecoupeurDoubleList[i][0] == null) && (DecoupeurDoubleList[i][1] == 0 || DecoupeurDoubleList[i][1] == null)))
         	{
 				let x = Positions[j][0];
 				let y = Positions[j][1];
@@ -24,7 +24,7 @@ function DecoupeurDouble(){
 				var diff = Positions[j][0] - OldPositions[j][0];
 
 				if (((x >= DecoupeurDoubleList[i][0]-TailleGenerateur/2-5) && (x < DecoupeurDoubleList[i][0]+TailleGenerateur/2) && (y > DecoupeurDoubleList[i][1]) && (y < DecoupeurDoubleList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < DecoupeurDoubleList[i][0]+9*TailleGenerateur/4) && (x > DecoupeurDoubleList[i][0]+7*TailleGenerateur/4) && (y > DecoupeurDoubleList[i][1]) && (y < DecoupeurDoubleList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
-					if (x>=DecoupeurDoubleList[i][0]-TailleGenerateur/2-5 && x<DecoupeurDoubleList[i][0]+TailleGenerateur/2 && y>DecoupeurDoubleList[i][1] && y<DecoupeurDoubleList[i][1]+taille && mouvement[j]==0 && diff>=0){
+					if (x >= DecoupeurDoubleList[i][0]-TailleGenerateur/2-5 && x < DecoupeurDoubleList[i][0]+TailleGenerateur/2 && y > DecoupeurDoubleList[i][1] && y < DecoupeurDoubleList[i][1]+taille && mouvement[j] == 0 && diff >= 0){
 						DecoupeurDoubleList[i][4] = 1
 					}
 

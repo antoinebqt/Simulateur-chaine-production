@@ -1,6 +1,6 @@
 function decoupeurSpawn(){
 	for (let i = 0; i < nbDecoupeur; i++){
-		if(!((DecoupeurList[i][0]==0 ||DecoupeurList[i][0]==null) && (DecoupeurList[i][1]==0||DecoupeurList[i][1]==null)))
+		if(!((DecoupeurList[i][0] == 0 || DecoupeurList[i][0] == null) && (DecoupeurList[i][1] == 0 || DecoupeurList[i][1] == null)))
         {
 			//Dessine les decoupeurs et leurs infos
 	    	ctx.drawImage(decoupeur, DecoupeurList[i][0], DecoupeurList[i][1]);
@@ -16,7 +16,7 @@ function decoupeurSpawn(){
 function Decoupeur(){
 	for (let i = 0; i < nbDecoupeur; i++){
 		for (let j = 0; j < max; j++){
-			if(!((DecoupeurList[i][0]==0 ||DecoupeurList[i][0]==null) && (DecoupeurList[i][1]==0||DecoupeurList[i][1]==null)))
+			if(!((DecoupeurList[i][0] == 0 || DecoupeurList[i][0] == null) && (DecoupeurList[i][1] == 0 || DecoupeurList[i][1] == null)))
         	{
 				let x = Positions[j][0];
 				let y = Positions[j][1];
@@ -24,7 +24,7 @@ function Decoupeur(){
 				var diff = Positions[j][0] - OldPositions[j][0];
 
 				if (((x >= DecoupeurList[i][0]-TailleGenerateur/2-5) && (x < DecoupeurList[i][0]+TailleGenerateur/2) && (y > DecoupeurList[i][1]) && (y < DecoupeurList[i][1]+taille) && (mouvement[j] == 0) && (diff >= 0)) || ((x < DecoupeurList[i][0]+9*TailleGenerateur/4) && (x > DecoupeurList[i][0]+7*TailleGenerateur/4) && (y > DecoupeurList[i][1]) && (y < DecoupeurList[i][1]+taille) && (mouvement[j] == 0) && (diff < 0))){
-					if (x>=DecoupeurList[i][0]-TailleGenerateur/2-5 && x<DecoupeurList[i][0]+TailleGenerateur/2 && y>DecoupeurList[i][1] && y<DecoupeurList[i][1]+taille && mouvement[j]==0 && diff>=0){
+					if (x >= DecoupeurList[i][0]-TailleGenerateur/2-5 && x < DecoupeurList[i][0]+TailleGenerateur/2 && y > DecoupeurList[i][1] && y < DecoupeurList[i][1]+taille && mouvement[j] == 0 && diff >= 0){
 						DecoupeurList[i][4] = 1
 					}
 
@@ -60,7 +60,7 @@ function TravailDecoupeur(j){
 
 function VerifStockageDecoupeur(){
 	for (let i =0; i < nbDecoupeur; i++){
-		if(!((DecoupeurList[i][0]==0 ||DecoupeurList[i][0]==null) && (DecoupeurList[i][1]==0||DecoupeurList[i][1]==null)))
+		if(!((DecoupeurList[i][0] == 0 || DecoupeurList[i][0] == null) && (DecoupeurList[i][1] == 0 || DecoupeurList[i][1] == null)))
         {
 			//Dessine les decoupeurs et leurs infos
 			ctx.drawImage(decoupeur, DecoupeurList[i][0], DecoupeurList[i][1]);

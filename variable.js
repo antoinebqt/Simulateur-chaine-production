@@ -55,17 +55,21 @@ var max = Positions.length;
 var Tableau = localStorage.getObj('tab');
 
 console.log(Tableau);
+
 //CONVOYEURS
 //x, y, taille, vitesse en sec pour parcourir
 let ConvoyeurList = Tableau[0];
 
 var nbConvoyeur = ConvoyeurList.length;
 
-//Convoyeur Butée
+
+
+//CONVOYEURS BUTEE
 //x,y,taille,vitesse en sec, tps vert, tps rouge, timer, etat
 let ConvoyeurButéeList = Tableau[7];
 
 var nbConvoyeurButée = ConvoyeurButéeList.length;
+
 
 
 //MACHINES
@@ -76,9 +80,7 @@ var nbMachine = MachineList.length;
 
 
 
-
-
-//LOT
+//LOTS
 //x, y, nombre d'entrée nécessaire, stockage actuelle, sens = 0, nbCube crées
 let LotList = Tableau[2];
 
@@ -86,9 +88,7 @@ var nbLot = LotList.length;
 
 
 
-
-
-//TELEPORTEUR
+//TELEPORTEURS
 //x, y, temps, en train de se tp, id, id receveur,  coté d'apparition (1 = droite, 2 = gauche), sens
 let TeleporteurList = Tableau[8];
 
@@ -96,9 +96,7 @@ var nbTeleporteur = TeleporteurList.length;
 
 
 
-
-
-//LOT DOUBLE
+//LOTS DOUBLE
 //x, y, nombre d'entrée 1 nécessaire, stockage 1, sens = 0, nbCube crées, stockage 2, nombre d'entrée 2 necsessaire
 let LotDoubleList = Tableau[3];
 
@@ -106,9 +104,7 @@ var nbLotDouble = LotDoubleList.length;
 
 
 
-
-
-//DECOUPEUR
+//DECOUPEURS
 //x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
 let DecoupeurList = Tableau[4];
 
@@ -116,15 +112,11 @@ var nbDecoupeur = DecoupeurList.length;
 
 
 
-
-
-//DECOUPEUR DOUBLE
+//DECOUPEURS DOUBLE
 //x, y, nombre de cube en sortie, stockage actuelle, sens = 0, nbCube découpé, temps en seconde
 let DecoupeurDoubleList = Tableau[5];
 
 var nbDecoupeurDouble = DecoupeurDoubleList.length;
-
-
 
 
 
@@ -133,7 +125,6 @@ var nbDecoupeurDouble = DecoupeurDoubleList.length;
 let AiguillageList = Tableau[6];
 
 var nbAiguillage = AiguillageList.length;
-
 
 
 

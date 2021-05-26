@@ -1,4 +1,4 @@
-function Generateur(x,y,taille){
+function Generateur(x,y){
 	//Dessine le générateur
 	ctx.drawImage(generateur, x, y);
  	NewItem();
@@ -11,7 +11,7 @@ function NewItem(){
 	var x = Xgenerateur, y = Ygenerateur;
 	stopgenerateur=0;
 	for (let j = 0; j < nbMachine; j++){
-		if(Probleme[j]==1){
+		if(Probleme[j] == 1){
 			stopgenerateur = 1;
 		}
 	}

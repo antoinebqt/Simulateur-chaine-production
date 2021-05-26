@@ -2,13 +2,13 @@ let tailleAiguillage = 50;
 
 function aiguillageSpawn(){
 	for (let i = 0; i < nbAiguillage; i++){
-		if(!((AiguillageList[i][0]==0 ||AiguillageList[i][0]==null) && (AiguillageList[i][1]==0||AiguillageList[i][1]==null)))
+		if(!((AiguillageList[i][0] == 0 || AiguillageList[i][0] == null) && (AiguillageList[i][1] == 0 || AiguillageList[i][1] == null)))
         {
 			cycle = AiguillageList[i][5];
 			//Dessine les aiguillages
 			//Dessine le haut des aiguillages
-			ctx.fillStyle = 'brown';  
-			ctx.strokeStyle = 'brown';
+			ctx.fillStyle = 'DodgerBlue';  
+			ctx.strokeStyle = 'DodgerBlue';
 	 		ctx.fillRect(AiguillageList[i][0], AiguillageList[i][1], tailleAiguillage, 3);
 	 		ctx.fillRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] + tailleAiguillage, tailleAiguillage, 3);
 	 		ctx.fillRect(AiguillageList[i][0] + tailleAiguillage, AiguillageList[i][1] - tailleAiguillage, tailleAiguillage, 3);
@@ -103,10 +103,25 @@ function AiguillageProba(){
 */
 function AiguillageCycle(){
 	for (let i = 0; i < nbAiguillage; i++){
-		if(!((AiguillageList[i][0]==0 ||AiguillageList[i][0]==null) && (AiguillageList[i][1]==0||AiguillageList[i][1]==null)))
+		if(!((AiguillageList[i][0] ==0 || AiguillageList[i][0] == null) && (AiguillageList[i][1] == 0 || AiguillageList[i][1] == null)))
 	    {
 			z = AiguillageList[i][6];
 			cycle = AiguillageList[i][5];
+
+			//Dessine la fleche
+			ctx.strokeStyle = 'black';
+
+			ctx.clearRect(AiguillageList[i][0] + tailleAiguillage+10, AiguillageList[i][1]-20, 20, 50)
+			if(cycle.charAt(z)=='0'){
+				ctx.beginPath();
+				canvas_arrow(ctx, AiguillageList[i][0] + tailleAiguillage + 20, AiguillageList[i][1]-15, AiguillageList[i][0] + tailleAiguillage + 20, AiguillageList[i][1]+15);
+				ctx.stroke()
+			}
+			if(cycle.charAt(z)=='1'){
+				ctx.beginPath();
+				canvas_arrow(ctx, AiguillageList[i][0] + tailleAiguillage + 20, AiguillageList[i][1]+15, AiguillageList[i][0] + tailleAiguillage + 20, AiguillageList[i][1]-15);
+				ctx.stroke()
+			}
 
 			for (let j = 0; j < max; j++){
 				x = Positions[j][0];
@@ -148,3 +163,14 @@ function AiguillageCycle(){
 	}
 }
 
+function canvas_arrow(context, fromx, fromy, tox, toy) {
+	var headlen = 10; // length of head in pixels
+	var dx = tox - fromx;
+	var dy = toy - fromy;
+	var angle = Math.atan2(dy, dx);
+	context.moveTo(fromx, fromy);
+	context.lineTo(tox, toy);
+	context.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+	context.moveTo(tox, toy);
+	context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+  }

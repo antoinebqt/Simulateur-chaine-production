@@ -1,6 +1,6 @@
 function Convoyeur() {
     for (let t = 0; t < nbConvoyeur; t++) {
-        if(!((ConvoyeurList[t][0]==0 ||ConvoyeurList[t][0]==null) && (ConvoyeurList[t][1]==0||ConvoyeurList[t][1]==null)))
+        if(!((ConvoyeurList[t][0] == 0 || ConvoyeurList[t][0] == null) && (ConvoyeurList[t][1] == 0 || ConvoyeurList[t][1] == null)))
         {
             x = ConvoyeurList[t][0];
             y = ConvoyeurList[t][1];
@@ -24,7 +24,7 @@ function Convoyeur() {
 
 function convoyeurSpawn() {
     for (let i = 0; i < nbConvoyeur; i++) {
-        if(!((ConvoyeurList[i][0]==0 ||ConvoyeurList[i][0]==null) && (ConvoyeurList[i][1]==0||ConvoyeurList[i][1]==null)))
+        if(!((ConvoyeurList[i][0] == 0 || ConvoyeurList[i][0] == null) && (ConvoyeurList[i][1] == 0 || ConvoyeurList[i][1] == null)))
         {
             if (ConvoyeurList[i][3] < 0) {
                 tps = -ConvoyeurList[i][3];

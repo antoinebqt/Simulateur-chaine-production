@@ -65,7 +65,7 @@ function TravailLotDouble(j){
 
 function VerifStockageLotDouble(){
       for (let i = 0; i < nbLotDouble; i++){
-            if(!((LotDoubleList[i][0]==0 ||LotDoubleList[i][0]==null) && (LotDoubleList[i][1]==0||LotDoubleList[i][1]==null)))
+            if(!((LotDoubleList[i][0] == 0 || LotDoubleList[i][0] == null) && (LotDoubleList[i][1] == 0 || LotDoubleList[i][1] == null)))
             {
                   //Dessine les lotDouble et leurs infos
                   ctx.drawImage(lotdouble, LotDoubleList[i][0], LotDoubleList[i][1]);
