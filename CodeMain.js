@@ -460,7 +460,7 @@ function Affichage()
 		    ctx.font = '15px sans-serif';
 		    ctx.fillText('Taille : ' + tabLot[i][2], tabLot[i][0] + 5, tabLot[i][1] + 20);
 		    ctx.fillText('Stock : ' + tabLot[i][3], tabLot[i][0] + 5, tabLot[i][1] + 35);
-		    ctx.fillText('LotDouble : ' + tabLot[i][5], tabLot[i][0] + 5, tabLot[i][1] + 50);
+		    ctx.fillText('Lots : ' + tabLot[i][5], tabLot[i][0] + 5, tabLot[i][1] + 50);
 		}
 	}
 	for (let i = 0; i<tabDecoupeur.length;i++)
@@ -485,7 +485,7 @@ function Affichage()
 	        ctx.fillText('Taille : ' + tabLotDouble[i][2] + ' & ' + tabLotDouble[i][7], tabLotDouble[i][0] + 5, tabLotDouble[i][1] + 20);
 	        ctx.fillText('Stock 1 : ' + tabLotDouble[i][3], tabLotDouble[i][0] + 5, tabLotDouble[i][1] + 35);
 	        ctx.fillText('Stock 2 : ' + tabLotDouble[i][6], tabLotDouble[i][0] + 5, tabLotDouble[i][1] + 50);
-	        ctx.fillText('LotDouble : ' + tabLotDouble[i][5], tabLotDouble[i][0] + 5, tabLotDouble[i][1] + 65);
+	        ctx.fillText('Lots : ' + tabLotDouble[i][5], tabLotDouble[i][0] + 5, tabLotDouble[i][1] + 65);
 		}
 	}
 	for (let i = 0; i<tabAiguillage.length;i++)

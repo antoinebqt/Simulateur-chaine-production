@@ -45,11 +45,11 @@ function TravailLot(j){
 	    //Dès qu'un emplacement est libre
 	    if (Positions[i][0] == ''){
 	    	if (LotList[j][4] == 1){ //Arrive de la gauche
-	    		Positions[i][0] = LotList[j][0] + 2 * TailleGenerateur + 5;
+	    		Positions[i][0] = LotList[j][0] + 2 * TailleGenerateur + 15;
 	        	Positions[i][1] = LotList[j][1] + TailleGenerateur/2;
 	    	}
 	    	else { //Arrive de la droite
-	    		Positions[i][0] = LotList[j][0] - TailleGenerateur/2 - 10;
+	    		Positions[i][0] = LotList[j][0] - TailleGenerateur/2 - 20;
 	        	Positions[i][1] = LotList[j][1] + TailleGenerateur/2;
 	    	}
 	        mouvement[i] = 0;
