@@ -309,7 +309,7 @@ function Actualiser(RefClass)
 				tabAiguillage[k][j]=parseInt(List[i].value,10);
 			} 
 			j++;
-			if (j>=7){j=0;k++;}
+			if (j>=6){j=0;k++;}
 		}
 	}
 	if(RefClass == 'valeurDecoupeurDouble')
@@ -496,8 +496,8 @@ function Affichage()
 			cycle = tabAiguillage[i][5];
 			//Dessine les aiguillages
 			//Dessine le haut des aiguillages
-			ctx.fillStyle = 'brown';  
-			ctx.strokeStyle = 'brown';
+			ctx.fillStyle = 'DodgerBlue';  
+			ctx.strokeStyle = 'DodgerBlue';
 	 		ctx.fillRect(tabAiguillage[i][0], tabAiguillage[i][1], tailleAiguillage, 3);
 	 		ctx.fillRect(tabAiguillage[i][0] + tailleAiguillage, tabAiguillage[i][1] + tailleAiguillage, tailleAiguillage, 3);
 	 		ctx.fillRect(tabAiguillage[i][0] + tailleAiguillage, tabAiguillage[i][1] - tailleAiguillage, tailleAiguillage, 3);

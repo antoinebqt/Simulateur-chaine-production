@@ -78,9 +78,13 @@ function VerifStockageTeleporteur(){
 			if (TeleporteurList[i][3] >= 1){
 				if (stopped != 1){
 					TeleporteurList[i][3]--;
-				   	setTimeout(function(){TravailTeleporteur(i)}, (CLOCK/VitesseAcceleration)*20*TeleporteurList[i][2]);
+					if(TeleporteurList[i][2]==0 || TeleporteurList[i][2]==null){
+						setTimeout(function(){TravailTeleporteur(i)}, 1);
+					}else {
+						setTimeout(function(){TravailTeleporteur(i)}, (CLOCK/VitesseAcceleration)*20*TeleporteurList[i][2]);
+					}
+				}
 			}
 		}
-	}
-}				
+	}				
 }
