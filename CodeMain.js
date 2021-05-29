@@ -332,7 +332,7 @@ function Actualiser(RefClass)
 		{
 			tabConvoyeurButee[k][j]=parseInt(List[i].value,10);
 			j++;
-			if (j>=8){j=0;k++;}
+			if (j>=6){j=0;k++;}
 		}
 	}
 	if(RefClass == 'valeurTeleporteur')
@@ -344,7 +344,7 @@ function Actualiser(RefClass)
 			if (j==3){j++;}
 			tabTeleporteur[k][j]=parseInt(List[i].value,10);
 			j++;
-			if (j>=7){j=0;k++;} //IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+			if (j>=7){j=0;k++;}
 		}
 	}
 	Affichage()
