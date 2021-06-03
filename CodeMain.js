@@ -608,6 +608,58 @@ function Affichage()
 }
 
 
+function AlertValeur()
+{
+	preset = [tabConvoyeur, tabMachine, tabLot, tabLotDouble, tabDecoupeur, tabDecoupeurDouble, tabAiguillage, tabConvoyeurButee, tabTeleporteur];
+	for (let i=0; i < preset.length;i++)
+	{
+		for (let j=0; j < preset[i].length;j++)
+		{
+			if(preset[i][j][0]==0 && preset[i][j][1]==0)
+			{
+				if (i==0)preset[i][j] = [null, null, null, null];
+				else if (i==1)preset[i][j] = [null, null, null, null, null, null, null, null];
+				else if (i==2)preset[i][j] = [null, null, null, null, null, null];
+				else if (i==3)preset[i][j] = [null, null, null, null, null, null, null, null];
+				else if (i==4)preset[i][j] = [null, null, null, null, null, null, null];
+				else if (i==5)preset[i][j] = [null, null, null, null, null, null, null];
+				else if (i==6)preset[i][j] = [null, null, null, null, null, null, null];
+				else if (i==7)preset[i][j] = [null, null, null, null, null, null, null, null];
+				else if (i==8)preset[i][j] = [null, null, null, null, null, null, null];
+			}
+		}
+
+		if (i==8)//teleporteur
+		{
+			for (let j=0; j < preset[i].length;j++)
+			{
+				if(preset[i][j][2]==0) preset[i][j][2]=null;
+				if(preset[i][j][5]==0) preset[i][j][5]=null;
+				if(preset[i][j][6]==0) preset[i][j][6]=null;
+			}
+		}
+	}
+	alert(JSON.stringify(preset, new String('patate')));
+}
+
+function InputValeur()
+{
+	ValueText = document.getElementById('tableau').value;
+	preset5 = JSON.parse(ValueText);
+	console.log(preset5);
+	Preset(4);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 //IMAGES
 var cube = new Image();

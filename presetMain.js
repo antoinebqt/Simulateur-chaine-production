@@ -215,15 +215,54 @@ let preset4 =
 	],
 	//teleporteur
 	[
-		[null,  null, null, null, null, null, null],
-		[null, null, null, null, null, null, null],
-		[null, null, null, null, null, null, null]
+		[null,  null, null, null, null, null, null]
+	]
+]
+
+
+//sert pour ajouter les copier collés
+preset5 =[
+	//convoyeur
+	[
+      [null, null, null, null]
+	],
+	//machine
+	[
+      [null, null, null, null, null, null, null, null]
+	],
+	//lot
+	[
+      [null, null, null, null, null, null]
+	],
+	//lot double
+	[
+      [null, null, null, null, null, null, null, null]
+	],
+	//decoupeur
+	[
+      [null, null, null, null, null, null, null]
+	],
+	//decoupeur double
+	[
+      [null, null, null, null, null, null, null]
+	],
+	//aiguillage
+	[
+      [null, null, null, null, null, null,null]
+	],
+	//convoyeur butee
+	[
+	  [null, null, null, null, null, null, null, null]
+	],
+	//teleporteur
+	[
+		[null,  null, null, null, null, null, null]
 	]
 ]
 
 function Preset(number)
 {
-	let ListofPreset = [preset1,preset2,preset3,preset4];
+	let ListofPreset = [preset1,preset2,preset3,preset4,preset5];
 	let preset = ListofPreset[number];
 	let idList = ['convoyeur','machine','lot','lotDouble','decoupeur','decoupeurDouble','aiguillage','convoyeurButee','teleporteur'];
 	var ClassList = ['valeurConvoyeur','valeurMachine','valeurLot','valeurLotDouble','valeurDecoupeur','valeurDecoupeurDouble','valeurAiguillage','valeurConvoyeurButee','valeurTeleporteur'];
